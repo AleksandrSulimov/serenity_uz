@@ -1,0 +1,54 @@
+<acceptance-test-run title="Создание ППЗ 200 обычная" name="aurora_Member_ChangeData_MigrationCard" steps="16" successful="16" failures="0" skipped="0" ignored="0" pending="0" result="SUCCESS" duration="9076" timestamp="2016-04-26T10:24:06.763+03:00">
+  <user-story id="uz.test.Created_PPZ_200_Regular" name="Created ppz 200  regular" path="uz.test"/>
+  <tags>
+    <tag name="Created ppz 200  regular" type="story"/>
+  </tags>
+  <test-step result="SUCCESS" duration="2725">
+    <description>Открыть браузер и перейти по ссылке</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="40">
+    <description>Развернуть окно браузера на весь экран</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="282">
+    <description>Ожидаем загрузку экрана авторизации</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="150">
+    <description>Вводим в поле &quot;Имя пользователя&quot; значение &lt;span class=&apos;step-parameter&apos;&gt;_Safronov.OV&lt;/span&gt;</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="170">
+    <description>Вводим в поле &quot;Пароль&quot;</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="2352">
+    <description>Нажимаем кнопку &quot;Вход в систему&quot;</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="254">
+    <description>Ожидаем загрузку &quot;Меню&quot;</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="188">
+    <description>Проверяем нажат ли линк &quot;Управление закупками&quot; в &quot;Меню&quot;</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="279">
+    <description>Ожидаем загрузку вкладок на основной странице</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="279">
+    <description>Нажимаем на вкладку &quot;Формуляры&quot; на основной странице</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="442">
+    <description>Ожидаем загрузку &quot;Формуляры&quot;</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="273">
+    <description>Проверяем нажат ли линк &quot;Управление закупками&quot; в &quot;Формуляры&quot;</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="253">
+    <description>Проверяем нажат ли линк &quot;План закупок&quot; в &quot;Формуляры&quot;</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="420">
+    <description>Нажимаем линк &quot;План закупок&quot; в &quot;Формуляры&quot;</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="692">
+    <description>Нажимаем линк &quot;Позиции плана закупок - 200&quot; в &quot;Формуляры&quot;</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="194">
+    <description>Нажимаем кнопку &quot;Выйти&quot; в &quot;Шапке&quot; сайта</description>
+  </test-step>
+</acceptance-test-run>
