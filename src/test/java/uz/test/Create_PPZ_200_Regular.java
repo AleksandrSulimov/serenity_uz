@@ -20,7 +20,7 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 
 		menuSteps.waitingForAppletVisible();
 		if(!menuSteps.isPushedProcurementManagement()){
-			menuSteps.clickOnLinkProcurementManagement();
+			menuSteps.clickOnLinkProcurementManagement(); //ssss
 		}
 		
 		mainPageTabSteps.waitingForAppletVisible();
