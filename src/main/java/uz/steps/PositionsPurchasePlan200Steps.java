@@ -30,6 +30,20 @@ public class PositionsPurchasePlan200Steps extends ScenarioSteps {
 		applet.clickOnButtonCreteNewDocument();    	
 	}
 	
+	@Step("Нажимаем кнопку \"Обновить список документов\" на странице \"Позиции плана закупок 200\"")
+	public void clickOnButtonRefreshListOfDocument(){
+		applet.clickOnButtonRefreshListOfDocument();    	
+	}
+	
+	@Step("Проверяем задан ли \"фильтр\" на странице \"Позиции плана закупок 200\"")
+	public Boolean isFilterExist(){
+		return applet.isFilterExist();   	
+	}
+	@Step("Нажимаем кнопку \"Сбросить фильтр\" на странице \"Позиции плана закупок 200\"")
+	public void clickOnButtonResetFilter(){
+		applet.clickOnButtonResetFilter();    	
+	}
+	
 	@Step("Нажимаем кнопку \"Отправить на согласование\" на странице \"Позиции плана закупок 200\"")
 	public void clickOnButtonSendToMatching(){
 		applet.clickOnButtonSendToMatching();    	
@@ -65,7 +79,7 @@ public class PositionsPurchasePlan200Steps extends ScenarioSteps {
     	return applet.getTextStatus();    	
     }
     
-    @Step("Закрыть вклвдку \"Позиции плана закупок 200\"")
+    @Step("Закрыть вкладку \"Позиции плана закупок 200\"")
     public void clickOnLinkClosePPZ(){
     	applet.clickOnLinkClosePPZ();    	
     }

@@ -28,6 +28,7 @@ public class Header extends BasePage {
 	   * Клик по кнопке Выйти
 	   */
 	  public void clickOnButtonExit(){
+		  waitingForFieldVisible(exitButton);
 		  exitButton.waitUntilClickable().click();
 	  }
 

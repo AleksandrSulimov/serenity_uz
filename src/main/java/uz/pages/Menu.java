@@ -43,7 +43,7 @@ public class Menu extends BasePage {
 	   * Клик по линку Управление закупками
 	   */
 	  public void clickOnLinkProcurementManagement(){
-		  waitForLoadJS();
+		  waitingForFieldVisible(procurementManagementLink);
 		  procurementManagementLink.waitUntilClickable().click();
 		  
 	  }
@@ -53,7 +53,7 @@ public class Menu extends BasePage {
 	   * @return Boolean (true - если линк нажат)
 	   */
 	  public Boolean isPushedProcurementManagement(){
-		  waitForLoadJS();
+		  waitingForFieldVisible(isPushedProcurementManagementImg);
 		  String src = isPushedProcurementManagementImg.waitUntilClickable().getAttribute("src");
 		  if(src.contains("manage_purchase_on.png")){
 			  return true;
@@ -66,7 +66,7 @@ public class Menu extends BasePage {
 	   * Клик по линку Все
 	   */
 	  public void clickOnLinkAll(){
-		  waitForLoadJS();
+		  waitingForFieldVisible(allLink);
 		  allLink.waitUntilClickable().click();
 
 	  }
@@ -75,7 +75,7 @@ public class Menu extends BasePage {
 	   * @return Boolean (true - если линк нажат)
 	   */
 	  public Boolean isPushedAll(){
-		  waitForLoadJS();
+		  waitingForFieldVisible(isPushedAllImg);
 		  String src = isPushedAllImg.waitUntilClickable().getAttribute("src");
 		  if(src.contains("all_on.png")){
 			  return true;

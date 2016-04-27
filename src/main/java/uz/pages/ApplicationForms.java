@@ -60,7 +60,7 @@ public class ApplicationForms extends BasePage {
 	   * Клик по линку Управление закупками
 	   */
 	  public void clickOnLinkProcurementManagement(){
-		  waitForLoadJS();
+		  waitingForFieldVisible(procurementManagementLink);
 		  procurementManagementLink.waitUntilClickable().click();
 	  }
 	  /**
@@ -68,7 +68,7 @@ public class ApplicationForms extends BasePage {
 	   * @return Boolean (true - если линк нажат)
 	   */
 	  public Boolean isPushedLinkProcurementManagement(){
-		  waitForLoadJS();
+		  waitingForFieldVisible(procurementManagementLink);
 		  String title = procurementManagementLink.waitUntilClickable().getAttribute("title");
 		  if(title.contains("Свернуть")){
 			  return true;
@@ -81,7 +81,7 @@ public class ApplicationForms extends BasePage {
 	   * Клик по линку План закупок
 	   */
 	  public void clickOnLinkPlanProcurement(){
-		  waitForLoadJS();
+		  waitingForFieldVisible(planProcurementLink);
 		  planProcurementLink.waitUntilClickable().click();
 	  }
 	  /**
@@ -89,7 +89,7 @@ public class ApplicationForms extends BasePage {
 	   * @return Boolean (true - если линк нажат)
 	   */
 	  public Boolean isPushedLinkPlanProcurement(){
-		  waitForLoadJS();
+		  waitingForFieldVisible(planProcurementLink);
 		  String title = planProcurementLink.waitUntilClickable().getAttribute("title");
 		  if(title.contains("Свернуть")){
 			  return true;
@@ -101,7 +101,7 @@ public class ApplicationForms extends BasePage {
 	   * Клик по линку Позиции плана закупок - 200
 	   */
 	  public void clickOnLinkPositionPlanProcurement200(){
-		  waitForLoadJS();
+		  waitingForFieldVisible(positionPlanProcurement200Link);
 		  positionPlanProcurement200Link.waitUntilClickable().click();
 	  }
 	  
@@ -111,7 +111,7 @@ public class ApplicationForms extends BasePage {
 	   * @return Boolean (true - если линк нажат)
 	   */
 	  public boolean isPushedLinkPosition200() {
-		  waitForLoadJS();
+		  waitingForFieldVisible(position200Link);
 		  String title = position200Link.waitUntilClickable().getAttribute("title");
 		  if(title.contains("Свернуть")){
 			  return true;
@@ -122,7 +122,7 @@ public class ApplicationForms extends BasePage {
 	   * Клик по линку Позиция 200
 	   */
 	  public void clickOnLinkPosition200() {
-		  waitForLoadJS();
+		  waitingForFieldVisible(position200Link);
 		  position200Link.waitUntilClickable().click();
 	  }
 	  
@@ -132,7 +132,7 @@ public class ApplicationForms extends BasePage {
 	   * @return Boolean (true - если линк нажат)
 	   */
 	  public boolean isPushedLinkMyDocument() {
-		  waitForLoadJS();
+		  waitingForFieldVisible(myDocLink);
 		  String title = myDocLink.waitUntilClickable().getAttribute("title");
 		  if(title.contains("Свернуть")){
 			  return true;
@@ -143,7 +143,7 @@ public class ApplicationForms extends BasePage {
 	   * Клик по линку Мои документы
 	   */
 	  public void clickOnLinkMyDocument() {
-		  waitForLoadJS();
+		  waitingForFieldVisible(myDocLink);
 		  myDocLink.waitUntilClickable().click();
 	  }
 	  
@@ -151,7 +151,7 @@ public class ApplicationForms extends BasePage {
 	   * Клик по линку Позиции плана закупок на согласовании
 	   */
 	  public void clickOnLinkApproval() {
-		  waitForLoadJS();
+		  waitingForFieldVisible(approvalLink);
 		  approvalLink.waitUntilClickable().click();
 	  }
 	  
@@ -160,7 +160,7 @@ public class ApplicationForms extends BasePage {
 	   * Клик по линку Позиции плана закупок на утверждении
 	   */
 	  public void clickOnLinkStatement() {
-		  waitForLoadJS();
+		  waitingForFieldVisible(statementLink);
 		  statementLink.waitUntilClickable().click();
 	  }
 }

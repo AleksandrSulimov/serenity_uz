@@ -7,14 +7,14 @@ import org.openqa.selenium.WebDriver;
 
 
 /**
- * Позиции плана закупок на согласовании
+ * Позиции плана закупок на утверждении
  * @author s.serov 27.04.2016
  *
  */
-public class PositionsPurchasePlanOnApprovalPage extends PositionsPurchasePlan200Page {
+public class PositionsPurchasePlanOnStatementPage extends PositionsPurchasePlan200Page {
 	
 			
-	  public PositionsPurchasePlanOnApprovalPage(WebDriver driver) {
+	  public PositionsPurchasePlanOnStatementPage(WebDriver driver) {
 		super(driver);
 		setField(field);
 		setApplet(applet);
@@ -30,30 +30,30 @@ public class PositionsPurchasePlanOnApprovalPage extends PositionsPurchasePlan20
 	  private WebElementFacade field;
 	  
 	  //Закрыть ППЗ
-	  @FindBy(xpath=".//div[button[@title[contains(.,'Позиции плана закупок на согласовании')]]]/a[@title='Закрыть']")
-	  private WebElementFacade closePPZOnApprovalTabLink;
+	  @FindBy(xpath=".//div[button[@title[contains(.,'Позиции плана закупок на утверждении')]]]/a[@title='Закрыть']")
+	  private WebElementFacade closePPZOnStatementTabLink;
 	  
-	  //Кнопка Согласовать закупку
-	  @FindBy(xpath=".//button[@title='Согласовать']")
-	  private WebElementFacade approvalButton;
+	  //Кнопка Утвердить
+	  @FindBy(xpath=".//button[@title='Утвердить']")
+	  private WebElementFacade statementButton;
 	  
 	  
 	  /**
 	   * Закрыть Позиции плана закупок на согласовании
 	   */
-		public void clickOnLinkClosePPZOnApproval(){
+		public void clickOnLinkClosePPZOnStatement(){
 			waitForLoadJS();
 			getDriver().switchTo().defaultContent();
-			closePPZOnApprovalTabLink.waitUntilClickable().click();
+			closePPZOnStatementTabLink.waitUntilClickable().click();
 			
 		}
 	
 	  /**
-	   * Клик по кнопке Согласовать закупку
+	   * Клик по кнопке Утвердить
 	   */
-	  public void clickOnButtonApproval() {
-		  waitingForFieldVisible(approvalButton);
-		  approvalButton.waitUntilClickable().click();
+	  public void clickOnButtonStatement() {
+		  waitingForFieldVisible(statementButton);
+		  statementButton.waitUntilClickable().click();
 	  }
 	  
 	  

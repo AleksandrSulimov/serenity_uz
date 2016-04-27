@@ -24,17 +24,21 @@ public class PositionsPurchasePlanApprovalSteps extends ScenarioSteps {
 	public void waitingForAppletVisible() {
 		applet.waitingForAppletVisibleInFrame();
 	}
-	 
-	@Step("Нажимаем кнопку \"Создать новый документ\" на странице \"Позиции плана закупок на согласовании\"")
-	public void clickOnButtonCreteNewDocument(){
-		applet.clickOnButtonCreteNewDocument();    	
-	}
 	
-	@Step("Нажимаем кнопку \"Отправить на согласование\" на странице \"Позиции плана закупок на согласовании\"")
-	public void clickOnButtonSendToMatching(){
-		applet.clickOnButtonSendToMatching();    	
+	@Step("Нажимаем кнопку \"Обновить список документов\" на странице \"Позиции плана закупок на согласовании\"")
+	public void clickOnButtonRefreshListOfDocument(){
+		applet.clickOnButtonRefreshListOfDocument();    	
 	}
 		
+	@Step("Проверяем задан ли \"фильтр\" на странице \"Позиции плана закупок на согласовании\"")
+	public Boolean isFilterExist(){
+		return applet.isFilterExist();   	
+	}
+	@Step("Нажимаем кнопку \"Сбросить фильтр\" на странице \"Позиции плана закупок на согласовании\"")
+	public void clickOnButtonResetFilter(){
+		applet.clickOnButtonResetFilter();    	
+	}
+	
     @Step("Проверяем нажат ли линк \"Фильтр\" на странице \"Позиции плана закупок на согласовании\"")
     public Boolean isPushedLinkFilter() {
     	return applet.isPushedLinkFilter();
@@ -69,5 +73,10 @@ public class PositionsPurchasePlanApprovalSteps extends ScenarioSteps {
     public void clickOnLinkClosePPZOnApproval(){
     	applet.clickOnLinkClosePPZOnApproval();  	
     }
+    
+    @Step("Нажимаем кнопку \"Согласовать закупку\" на странице \"Позиции плана закупок на согласовании\"")
+	public void clickOnButtonApproval() {
+    	applet.clickOnButtonApproval();  	
+	}
     
 }

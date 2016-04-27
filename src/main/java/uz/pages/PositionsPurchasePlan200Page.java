@@ -7,6 +7,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 /**
@@ -54,6 +55,9 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	  //Номер позиции плана закупок в фильтре
 	  @FindBy(xpath=".//div/table/tbody/tr[2]/th[position() = (count(//th[contains(.,'Номер позиции плана закупок')]/preceding-sibling::*)+1)]/div/descendant::input")
 	  private WebElementFacade numberPositionPlanPurshedInFilterInput;
+	  //Сбросить фильтр
+	  @FindBy(xpath="(.//img[@src[contains(.,'funnel_delete.png')]]/..)[2]")
+	  private WebElementFacade resetFilterButton;
 	  
 	  //Состояние
 	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[position() = (count(//th[contains(.,'Состояние')]/preceding-sibling::*)+1)]/div")
@@ -62,6 +66,10 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	  //Бокс выбрать первую позицию
 	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[1]/div/span")
 	  private WebElementFacade checkBoxOnFirstRow;
+	  
+	  //Кнопка Создать новый документ
+	  @FindBy(xpath=".//button[@title='Обновить список документов']")
+	  private WebElementFacade refreshListOfDocumentButton;
 	 
 		
 	  /**
@@ -94,8 +102,9 @@ public class PositionsPurchasePlan200Page extends BasePage {
 		
 		public void clickOnLinkClosePPZ(){
 			waitForLoadJS();
-			closePPZTabLink.waitUntilClickable().click();
 			getDriver().switchTo().defaultContent();
+			closePPZTabLink.waitUntilClickable().click();
+			
 		}
 	
 		
@@ -103,7 +112,7 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	   * Клик по кнопке Создать новый документ
 	   */
 	  public void clickOnButtonCreteNewDocument(){
-		  waitForLoadJS();
+		  waitingForFieldVisible(creteNewDocumentButton);
 		  creteNewDocumentButton.waitUntilClickable().click();
 	  }
 	  
@@ -111,7 +120,7 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	   * Клик по кнопке Отправить на согласование
 	   */
 	  public void clickOnButtonSendToMatching(){
-		  waitForLoadJS();
+		  waitingForFieldVisible(sendToMatchingButton);
 		  sendToMatchingButton.waitUntilClickable().click();
 	  }
 	  /**
@@ -119,7 +128,7 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	   * @return Boolean (true - если линк нажат)
 	   */
 	  public Boolean isPushedLinkFilter(){
-		  waitForLoadJS();
+		  waitingForFieldVisible(filterLink);
 		  String src = filterLink.waitUntilClickable().getAttribute("src");
 		  if(!src.contains("filter_on.png")){
 			  return true;
@@ -130,7 +139,7 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	   * Клик по линку Фильтр
 	   */
 	  public void clickOnLinkFilter(){
-		  waitForLoadJS();
+		  waitingForFieldVisible(filterLink);
 		  filterLink.waitUntilClickable().click();
 		  waitingForFieldVisible(numberPositionPlanPurshedInFilterInput);
 	  }
@@ -138,7 +147,7 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	   * Очищаем Номер позиции плана закупок в фильтре
 	   */
 	  public void cleanPositionPlanPurshedInFilter(){
-		  waitForLoadJS();
+		  waitingForFieldVisible(numberPositionPlanPurshedInFilterInput);
 		  numberPositionPlanPurshedInFilterInput.waitUntilClickable().clear();
 		  numberPositionPlanPurshedInFilterInput.waitUntilClickable().typeAndEnter("");
 	  }
@@ -147,7 +156,7 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	   * @param string
 	   */
 	  public void setPositionPlanPurshedInFilter(String string){
-		  waitForLoadJS();
+		  waitingForFieldVisible(numberPositionPlanPurshedInFilterInput);
 		  numberPositionPlanPurshedInFilterInput.waitUntilClickable().clear();
 		  numberPositionPlanPurshedInFilterInput.waitUntilClickable().typeAndEnter(string);
 	  }
@@ -155,7 +164,7 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	   * Клик по чекбоксу выбора строки в первой строке
 	   */
 	  public void selectFirstRow(){
-		  waitForLoadJS();
+		  waitingForFieldVisible(checkBoxOnFirstRow);
 		  checkBoxOnFirstRow.waitUntilClickable().click();
 	  }
 	  /**
@@ -165,5 +174,49 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	  public String getTextStatus(){
 		  waitForLoadJS();
 		  return statusField.waitUntilClickable().getText();
+	  }
+
+	  /**
+	   * Нажать копку обновить список документов
+	   */
+	  public void clickOnButtonRefreshListOfDocument() {
+		  waitingForFieldVisible(refreshListOfDocumentButton);
+		  refreshListOfDocumentButton.waitUntilClickable().click();
+	  }
+	  
+	  /**
+	   * Проверем задан ли фильтр поиска
+	   * @return Boolean
+	   */
+	  public Boolean isFilterExist(){
+		  try {
+			  (new WebDriverWait(getDriver(), waitForUnviseble)).until(new ExpectedCondition<Boolean>() {
+					public Boolean apply(final WebDriver dirver) {
+				    	try {
+				    		if(!resetFilterButton.isCurrentlyVisible()){
+				    			return true;
+				    		}else{
+				    			return false;
+				    		}
+				    		
+						} catch (Exception e) {
+							 return false;
+						}
+		
+				    }
+				});
+				
+			} catch (Exception e) {
+			}
+		return resetFilterButton.isCurrentlyVisible();
+	  }
+
+	  /**
+	   * Нажать копку Сбросить фильтр
+	   */
+	  public void clickOnButtonResetFilter() {
+		  waitingForFieldVisible(resetFilterButton);
+		  resetFilterButton.waitUntilClickable().click();
+
 	  }
 }
