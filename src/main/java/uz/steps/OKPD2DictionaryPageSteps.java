@@ -49,10 +49,10 @@ public class OKPD2DictionaryPageSteps extends ScenarioSteps {
 	   * Раскрыть список первого уровня в справочнике
 	   * @param value
 	   */
-	public void openListFirstLevel(String value){
+	public void openListFirstLevel(String value, int num){
 		applet.checkElementTreeExists(value);
-		applet.clickOnElementFirstLevel(value);  
-		applet.openListFirstLevel(value);    	
+		applet.clickOnElementFirstLevel(value, num);  
+		applet.openListFirstLevel(value, num);    	
 	}
 	 /**
 	   * Раскрыть список второго уровня в справочнике
@@ -71,5 +71,44 @@ public class OKPD2DictionaryPageSteps extends ScenarioSteps {
 		applet.checkElementListExists(value);
 		applet.clickOnElementList(value);  
 	}
-    
+	@Step("Клик в поле \"Код\" в справочнике \"Справочник ОКПД 2\"")
+	public void clickOnFieldCode(){
+		applet.clickOnFieldCode();    	
+	}
+	@Step("Ввести текст {0} в поле \"Код\" в справочнике \"Справочник ОКПД 2\"")
+	public void setTextCode(String text){
+		applet.setTextCode(text);    	
+	}
+	@Step("Забрать значение из поля \"Код\" в справочнике \"Справочник ОКПД 2\"")
+	public String getValueCode(){
+		return applet.getValueCode();    	
+	}
+	@Step("Нажать кнопку \"Обновить\" в справочнике \"Справочник ОКПД 2\"")
+	public void clickOnButtonRefresh(){
+		applet.clickOnButtonRefresh();    	
+	}
+	@Step("Нажать кнопку \"OK\" в справочнике \"Справочник ОКПД 2\"")
+	public void clickOnButtonOK(){
+		applet.clickOnButtonOK();    	
+	}
+	@Step("Возвращает количество элементов со значением \"{0}\" в справочнике \"Справочник ОКПД 2\"")
+	public int getCountOfElemetTree(String value){
+		return applet.getCountOfElemetTree(value);    	
+	}
+	@Step("Кликнуть элемент со значением \"{0}\" в справочнике \"Справочник ОКПД 2\"")
+	public void clickOnElementTree(String value){
+		applet.clickOnElementTree(value, 1);    	
+	}
+	@Step("Кликнуть {1}-й элемент со значением \"{0}\" в справочнике \"Справочник ОКПД 2\"")
+	public void clickOnElementTree(String value, int num){
+		applet.clickOnElementTree(value, num);    	
+	}
+	@Step("Проверить нажата ли кнопка \"Видимость фильтров\" в справочнике \"Справочник ОКПД 2\"")
+	public boolean checkFilterOn(){
+		return applet.checkFilterOn();    	
+	}
+	@Step("Нажать кнопку \"Видимость фильтров\" в справочнике \"Справочник ОКПД 2\"")
+	public void clickFilter(){
+		applet.clickFilter();    	
+	}
 }

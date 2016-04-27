@@ -13,6 +13,7 @@ import uz.steps.ApplicationFormsSteps;
 import uz.steps.AssertSteps;
 import uz.steps.CommonSteps;
 import uz.steps.DictionaryPageSteps;
+import uz.steps.FrequencyOfPurchasesDictionaryPageSteps;
 import uz.steps.HeaderSteps;
 import uz.steps.LoginPageSteps;
 import uz.steps.MenuSteps;
@@ -68,6 +69,8 @@ public class TestCasesBase {
 	    protected ApprovalPositionPurchase200DialogSteps approvalPositionPurchase200DialogSteps;
 	    @Steps
 	    protected StatementPositionPurchase200DialogSteps statementPositionPurchase200DialogSteps;
+	    @Steps
+	    protected FrequencyOfPurchasesDictionaryPageSteps frequencyOfPurchasesDictionaryPageSteps;
 	    
 	    protected Helpers h = new Helpers();
 	    
