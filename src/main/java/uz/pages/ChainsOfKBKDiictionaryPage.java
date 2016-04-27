@@ -11,31 +11,31 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 /**
- * Справочник Периодичность осуществления закупки
+ * Справочник Цепочки КБК 
  * @author e.kuzmina 27.04.2016
  *
  */
-public class FrequencyOfPurchasesDictionaryPage extends BasePage {
+public class ChainsOfKBKDiictionaryPage extends BasePage {
 	
 			
-	  public FrequencyOfPurchasesDictionaryPage(WebDriver driver) {
+	  public ChainsOfKBKDiictionaryPage(WebDriver driver) {
 		super(driver);
 		setField(field);
 		setApplet(applet);
 	
 	  }
 	  
-	  @FindBy(xpath=".//div[div='Периодичность']")
+	  @FindBy(xpath=".//div[div='Цепочка КБК']")
 	  private WebElementFacade applet;
 	  
-	  @FindBy(xpath=".//div[div='Периодичность']")
+	  @FindBy(xpath=".//div[div='Выбор записи из справочника \"Цепочки КБК\"']")
 	  private WebElementFacade field;
 	  
-	  //Поле Периодичность
-	  @FindBy(xpath="(.//tr[th/div[text()='Периодичность']]/following-sibling::tr/descendant::td[input])[1]")
+	  //Поле Цепочка КБК 
+	  @FindBy(xpath=".//tr[th/div='Цепочка КБК']/following-sibling::tr/th[3]/descendant::td[input]")
 	  private WebElementFacade frequencyField;
 	  private static String frequencyFieldXpath = "(.//tr[th/div[text()='Периодичность']]/following-sibling::tr/descendant::td[input])[1]";
-	  @FindBy(xpath=".//tr[th/div[text()='Периодичность']]/following-sibling::tr/descendant::input[1]")
+	  @FindBy(xpath=".//tr[th/div='Цепочка КБК']/following-sibling::tr/th[3]/descendant::input")
 	  private WebElementFacade frequencyInput;
 
 	  //Радиокнопка в поле Периодичность

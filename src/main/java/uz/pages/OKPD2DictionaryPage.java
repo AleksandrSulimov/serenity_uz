@@ -98,6 +98,7 @@ public class OKPD2DictionaryPage extends BasePage {
 	   * @param type
 	   */
 	  public void clickOnElementFirstLevel(String value, int num){
+		  waitForLoadJS();
 		  String xPathLocator = "("+String.format(elementLevelField, value)+")["+num+"]";
 		  waitFor(ExpectedConditions.elementToBeClickable(By.xpath(xPathLocator)));
 		  getDriver().findElement(By.xpath(xPathLocator)).click();
@@ -107,6 +108,7 @@ public class OKPD2DictionaryPage extends BasePage {
 	   * @param type
 	   */
 	  public void openListFirstLevel(String value, int num){
+		  waitForLoadJS();
 		  String xPathLocator = "("+String.format(elementLevelSpan, value)+")["+num+"]";
 		  waitFor(ExpectedConditions.elementToBeClickable(By.xpath(xPathLocator)));
 		  getDriver().findElement(By.xpath(xPathLocator)).click();
@@ -116,6 +118,7 @@ public class OKPD2DictionaryPage extends BasePage {
 	   * @param type
 	   */
 	  public void clickOnElementSecondLevel(String value){
+		  waitForLoadJS();
 		  String xPathLocator = String.format(elementLevelField, value);
 		  waitFor(ExpectedConditions.elementToBeClickable(By.xpath(xPathLocator)));
 		  getDriver().findElement(By.xpath(xPathLocator)).click();
@@ -125,6 +128,7 @@ public class OKPD2DictionaryPage extends BasePage {
 	   * @param type
 	   */
 	  public void openListSecondLevel(String value){
+		  waitForLoadJS();
 		  String xPathLocator = String.format(elementLevelSpan, value);
 		  waitFor(ExpectedConditions.elementToBeClickable(By.xpath(xPathLocator)));
 		  getDriver().findElement(By.xpath(xPathLocator)).click();
@@ -134,6 +138,7 @@ public class OKPD2DictionaryPage extends BasePage {
 	   * @param type
 	   */
 	  public void checkElementTreeExists(String value){
+		  waitForLoadJS();
 		  String xPathLocator = String.format(elementLevelField, value);
 		  try{
 			  waitFor(ExpectedConditions.elementToBeClickable(By.xpath(xPathLocator)));
@@ -147,6 +152,7 @@ public class OKPD2DictionaryPage extends BasePage {
 	   * @param type
 	   */
 	  public void checkElementListExists(String value){
+		  waitForLoadJS();
 		  String xPathLocator = String.format(elementListField, value);
 		  try{
 			  waitFor(ExpectedConditions.elementToBeClickable(By.xpath(xPathLocator)));
@@ -160,6 +166,7 @@ public class OKPD2DictionaryPage extends BasePage {
 	   * @param type
 	   */
 	  public void clickOnElementList(String value){
+		  waitForLoadJS();
 		  String xPathLocator = String.format(elementListField, value);
 		  waitFor(ExpectedConditions.elementToBeClickable(By.xpath(xPathLocator)));
 		  getDriver().findElement(By.xpath(xPathLocator)).click();
@@ -168,6 +175,7 @@ public class OKPD2DictionaryPage extends BasePage {
 	   * Клик в поле Код
 	   */
 	  public void clickOnFieldCode(){
+		  waitForLoadJS();
 		  getDriver().findElement(By.xpath(codeFieldXpath)).click();
 	  }
 	  /**
@@ -175,6 +183,7 @@ public class OKPD2DictionaryPage extends BasePage {
 	   * @param text
 	   */
 	  public void setTextCode(String text){
+		  waitForLoadJS();
 		  codeInput.waitUntilClickable().clear();
 		  codeInput.waitUntilClickable().sendKeys(text);
 	  }
@@ -183,24 +192,28 @@ public class OKPD2DictionaryPage extends BasePage {
 	   * @return text
 	   */
 	  public String getValueCode(){
+		  waitForLoadJS();
 		  return codeInput.waitUntilClickable().getAttribute("value");
 	  }
 	  /**
 	   * Нажать кнопку Обновить
 	   */
 	  public void clickOnButtonRefresh(){
+		  waitForLoadJS();
 		  refreshButton.waitUntilClickable().click();
 	  }
 	  /**
 	   * Нажать кнопку OK
 	   */
 	  public void clickOnButtonOK(){
+		  waitForLoadJS();
 		  okButton.waitUntilClickable().click();
 	  }
 	  /**
 	   * Возвращает количество найденных элементов дереве
 	   */
 	  public int getCountOfElemetTree(String value){
+		  waitForLoadJS();
 		  String xPathLocator = String.format(elementLevelField, value);
 		  return getDriver().findElements(By.xpath(xPathLocator)).size();
 	  }
@@ -210,6 +223,7 @@ public class OKPD2DictionaryPage extends BasePage {
 	   * @param num
 	   */
 	  public void clickOnElementTree(String value, int num){
+		  waitForLoadJS();
 		  String xPathLocator = "("+String.format(elementLevelSpan, value)+")["+num+"]";
 		  waitFor(ExpectedConditions.elementToBeClickable(By.xpath(xPathLocator)));
 		  getDriver().findElement(By.xpath(xPathLocator)).click();
@@ -220,6 +234,7 @@ public class OKPD2DictionaryPage extends BasePage {
 	   * @param num
 	   */
 	  public void openListTree(String value, int num){
+		  waitForLoadJS();
 		  String xPathLocator = "("+String.format(elementLevelSpan, value)+")["+num+"]";
 		  waitFor(ExpectedConditions.elementToBeClickable(By.xpath(xPathLocator)));
 		  getDriver().findElement(By.xpath(xPathLocator)).click();
@@ -229,6 +244,7 @@ public class OKPD2DictionaryPage extends BasePage {
 	   * @return boolean
 	   */
 	  public boolean checkFilterOn(){
+		  waitForLoadJS();
 		  int count = getDriver().findElements(By.xpath(filterOn)).size();
 		  if(count>0){
 			  return true;
@@ -239,6 +255,7 @@ public class OKPD2DictionaryPage extends BasePage {
 	   * Нажать кнопку Видимость фильтров
 	   */
 	  public void clickFilter(){
+		  waitForLoadJS();
 		  getDriver().findElement(By.xpath(filterOn)).click();
 		  getDriver().findElement(By.xpath(filterOff));
 	  }

@@ -1,5 +1,9 @@
 package uz.test;
 
+import java.awt.AWTException;
+import java.io.File;
+import java.io.IOException;
+
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Title;
@@ -12,15 +16,17 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 
 	@Title("Создание ППЗ 200 обычная")
     @Test
-	public void create_PPZ_200_Regular(){
+	public void create_PPZ_200_Regular() throws AWTException{
 		
 		
 		Serenity.setSessionVariable("start_time").to(h.getFormattedCurrentDate("dd.MM.yyyy HH:mm:ss"));
 		Serenity.setSessionVariable("test_name").to("Создание ППЗ 200 обычная");
 
+		h.createNewFile("C:\\test.txt");
+		
 		menuSteps.waitingForAppletVisible();
 		if(!menuSteps.isPushedProcurementManagement()){
-			menuSteps.clickOnLinkProcurementManagement(); //ssss
+			menuSteps.clickOnLinkProcurementManagement();
 		}
 		
 		mainPageTabSteps.waitingForAppletVisible();
@@ -95,12 +101,23 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.setTextNameOfStateProgram("Книжки электронные записные и аналогичная компьютерная техника");
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnButtonAddAttachment();
 
+		addAttachmentPageSteps.waitingForAppletVisible(); 
+		addAttachmentPageSteps.loadFile("C:\\test.txt");
+		addAttachmentPageSteps.clickOnButtonSave();
 		
 		
-		
-		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnButtonFrequencyOfPurchase();
+		positionsPurchasePlanOfProductJobService200TabSteps.waitingForAppletVisible();
+		positionsPurchasePlanOfProductJobService200TabSteps.selectTabAmountOfFinancialSupport();
 
-
+		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.waitingForAppletVisible();
+		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.clickOnButtonСreateNewRecord();
+		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.clickOnFieldPublishYearInput();
+		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.selectFromDropDownList("2016");
+		
+		
+		
+		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.selectFromDropDownList("2016");
+		
 	}
 	
 }

@@ -457,4 +457,19 @@ public class Helpers {
 			}
 			return "test"+randomNum(6)+"@gmail.com";
 		}
+		/**
+		 * Создать файл
+		 * @param path
+		 */
+		public void createNewFile(String path){
+			File file = new File(path);
+			if(!file.exists()) {
+			   try {
+				file.createNewFile();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
 }

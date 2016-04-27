@@ -9,6 +9,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 
+import uz.steps.AddAttachmentPageSteps;
 import uz.steps.ApplicationFormsSteps;
 import uz.steps.AssertSteps;
 import uz.steps.CommonSteps;
@@ -20,6 +21,7 @@ import uz.steps.MenuSteps;
 import uz.steps.OKPD2DictionaryPageSteps;
 import uz.steps.PositionsPurchasePlan200Steps;
 import uz.steps.PositionsPurchasePlanApprovalSteps;
+import uz.steps.PositionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps;
 import uz.steps.PositionsPurchasePlanOfProductJobService200BasicInformationSteps;
 import uz.steps.PositionsPurchasePlanStatementSteps;
 import uz.steps.dialog.ApprovalPositionPurchase200DialogSteps;
@@ -71,6 +73,10 @@ public class TestCasesBase {
 	    protected StatementPositionPurchase200DialogSteps statementPositionPurchase200DialogSteps;
 	    @Steps
 	    protected FrequencyOfPurchasesDictionaryPageSteps frequencyOfPurchasesDictionaryPageSteps;
+	    @Steps
+	    protected AddAttachmentPageSteps addAttachmentPageSteps;
+	    @Steps 
+	    protected PositionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps;
 	    
 	    protected Helpers h = new Helpers();
 	    
