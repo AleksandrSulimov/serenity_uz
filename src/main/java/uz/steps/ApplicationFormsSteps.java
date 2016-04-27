@@ -47,4 +47,35 @@ public class ApplicationFormsSteps extends ScenarioSteps {
     public void clickOnLinkPositionPlanProcurement200(){
     	applet.clickOnLinkPositionPlanProcurement200();    	
     }
+
+    
+    @Step("Проверяем нажат ли линк \"Позиция 200\" в \"Формуляры\"")
+    public boolean isPushedLinkPosition200() {
+    	return applet.isPushedLinkPosition200();
+	}
+    @Step("Нажимаем линк \"Позиция 200\" в \"Формуляры\"")
+	public void clickOnLinkPosition200() {
+    	applet.clickOnLinkPosition200();
+	}
+    
+    
+    @Step("Проверяем нажат ли линк \"Мои документы\" в \"Формуляры\"")
+    public boolean isPushedLinkMyDocument() {
+    	return applet.isPushedLinkMyDocument();
+	}
+    @Step("Нажимаем линк \"Мои документы\" в \"Формуляры\"")
+	public void clickOnLinkMyDocument() {
+    	applet.clickOnLinkMyDocument();
+	}
+    
+    @Step("Нажимаем линк \"Позиции плана закупок на согласовании\" в \"Формуляры\"")
+  	public void clickOnLinkApproval() {
+      	applet.clickOnLinkApproval();
+  	}
+    
+    @Step("Нажимаем линк \"Позиции плана закупок на утверждении\" в \"Формуляры\"")
+  	public void clickOnLinkStatement() {
+      	applet.clickOnLinkStatement();
+  	}
+    
 }

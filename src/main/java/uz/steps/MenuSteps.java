@@ -34,4 +34,15 @@ public class MenuSteps extends ScenarioSteps {
     public void clickOnLinkProcurementManagement(){
     	applet.clickOnLinkProcurementManagement();    	
     }
+    
+
+    @Step("Проверяем нажат ли линк \"Все\" в \"Меню\"")
+    public Boolean isPushedAll() {
+    	return applet.isPushedAll();
+    }
+
+    @Step("Нажимаем линк \"Все\" в \"Меню\"")
+    public void clickOnLinkAll(){
+    	applet.clickOnLinkAll();    	
+    }
 }

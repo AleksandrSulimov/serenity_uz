@@ -28,7 +28,7 @@ public class ApplicationForms extends BasePage {
 	  
 
 	  //Управление закупками
-	  @FindBy(xpath=".//div[span/span[contains(.,'Управление закупками')]]/span[1]/a")
+	  @FindBy(xpath=".//div[span[2]/span[@style[contains(.,'font-weight')]][contains(.,'Управление закупками')]]/span[1]/a")//div[span/span[contains(.,'Управление закупками')]]/span[1]/a
 	  private WebElementFacade procurementManagementLink;
 	  //План закупок
 	  @FindBy(xpath=".//div[span/span[contains(.,'План закупок')]]/span[1]/a")
@@ -37,6 +37,24 @@ public class ApplicationForms extends BasePage {
 	  //Позиции плана закупок 200
 	  @FindBy(xpath=".//a[span[text()='Позиция плана закупок - 200']]")
 	  private WebElementFacade positionPlanProcurement200Link;
+	  
+	  //Позиция 200
+	  @FindBy(xpath=".//div[span/span[contains(.,'Позиция 200')]]/span[1]/a")
+	  private WebElementFacade position200Link;
+	  
+	  //Мои документы
+	  @FindBy(xpath=".//div[span/span[contains(.,'Мои документы')]]/span[1]/a")
+	  private WebElementFacade myDocLink;
+	  
+
+	  //Позиции плана закупок на согласовании
+	  @FindBy(xpath=".//a[span[text()='Позиции плана закупок на согласовании']]")
+	  private WebElementFacade approvalLink;
+	  
+
+	  //Позиция 200
+	  @FindBy(xpath=".//a[span[text()='Позиции плана закупок на утверждении']]")
+	  private WebElementFacade statementLink;
 	  
 	  /**
 	   * Клик по линку Управление закупками
@@ -85,5 +103,64 @@ public class ApplicationForms extends BasePage {
 	  public void clickOnLinkPositionPlanProcurement200(){
 		  waitForLoadJS();
 		  positionPlanProcurement200Link.waitUntilClickable().click();
+	  }
+	  
+	
+	  /**
+	   * Проверяем нажат ли линк Позиция 200
+	   * @return Boolean (true - если линк нажат)
+	   */
+	  public boolean isPushedLinkPosition200() {
+		  waitForLoadJS();
+		  String title = position200Link.waitUntilClickable().getAttribute("title");
+		  if(title.contains("Свернуть")){
+			  return true;
+		  }
+		  return false;
+	  }
+	  /**
+	   * Клик по линку Позиция 200
+	   */
+	  public void clickOnLinkPosition200() {
+		  waitForLoadJS();
+		  position200Link.waitUntilClickable().click();
+	  }
+	  
+
+	  /**
+	   * Проверяем нажат ли линк Мои документы
+	   * @return Boolean (true - если линк нажат)
+	   */
+	  public boolean isPushedLinkMyDocument() {
+		  waitForLoadJS();
+		  String title = myDocLink.waitUntilClickable().getAttribute("title");
+		  if(title.contains("Свернуть")){
+			  return true;
+		  }
+		  return false;
+	  }
+	  /**
+	   * Клик по линку Мои документы
+	   */
+	  public void clickOnLinkMyDocument() {
+		  waitForLoadJS();
+		  myDocLink.waitUntilClickable().click();
+	  }
+	  
+	  /**
+	   * Клик по линку Позиции плана закупок на согласовании
+	   */
+	  public void clickOnLinkApproval() {
+		  waitForLoadJS();
+		  approvalLink.waitUntilClickable().click();
+	  }
+	  
+
+	  /**
+	   * Клик по линку Позиции плана закупок на утверждении
+	   */
+	  public void clickOnLinkStatement() {
+		  waitForLoadJS();
+		  statementLink.waitUntilClickable().click();
 	  }
 }

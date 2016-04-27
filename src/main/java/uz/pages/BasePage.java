@@ -1,5 +1,7 @@
 package uz.pages;
 
+import java.util.concurrent.TimeUnit;
+
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -54,14 +56,15 @@ public  class BasePage extends PageObject { //abstract
 		this.appletXpath = appletXpath;
 	}
 	public void waitForLoadJS() {
+		getDriver().manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
 		waitFor(new ExpectedCondition<Boolean>() {
 		    public Boolean apply(final WebDriver dirver) {
 		    	try {
-		    		Thread.sleep(100);
+		    		Thread.sleep(300);
 		    		Object obj = evaluateJavascript("return !window.ajaxActive");
 		    		Object jQueryActive = evaluateJavascript("return jQuery.active;");
 		    		if(obj != null && obj.toString().equals("true") &&
-		    				jQueryActive.toString().equals("0") && (Boolean)evaluateJavascript("return window.jQuery != undefined && jQuery.active === 0 ")){
+		    				jQueryActive.toString().equals("0") && (Boolean)evaluateJavascript("return window.jQuery != undefined && jQuery.active === 0  && document.readyState == 'complete'")){
 		    			
 		    			return true;
 		    		}else{

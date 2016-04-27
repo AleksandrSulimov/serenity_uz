@@ -33,12 +33,19 @@ public class Menu extends BasePage {
 	  @FindBy(xpath=".//a[span[text()='Управление закупками']]/img")
 	  private WebElementFacade isPushedProcurementManagementImg;
 	  
+	  //Все
+	  @FindBy(xpath=".//a[span[text()='Все']]/span")
+	  private WebElementFacade allLink;
+	  @FindBy(xpath=".//a[span[text()='Все']]/img")
+	  private WebElementFacade isPushedAllImg;
+	  
 	  /**
 	   * Клик по линку Управление закупками
 	   */
 	  public void clickOnLinkProcurementManagement(){
 		  waitForLoadJS();
 		  procurementManagementLink.waitUntilClickable().click();
+		  
 	  }
 
 	  /**
@@ -54,5 +61,26 @@ public class Menu extends BasePage {
 		  return false;
 	  }
 	
+
+	  /**
+	   * Клик по линку Все
+	   */
+	  public void clickOnLinkAll(){
+		  waitForLoadJS();
+		  allLink.waitUntilClickable().click();
+
+	  }
+	  /**
+	   * Проверяем нажат ли линк Все
+	   * @return Boolean (true - если линк нажат)
+	   */
+	  public Boolean isPushedAll(){
+		  waitForLoadJS();
+		  String src = isPushedAllImg.waitUntilClickable().getAttribute("src");
+		  if(src.contains("all_on.png")){
+			  return true;
+		  }
+		  return false;
+	  }
 	  
 }

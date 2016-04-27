@@ -42,7 +42,7 @@ public class PositionsPurchasePlan200Steps extends ScenarioSteps {
     
     @Step("Нажимаем линк \"Фильтр\" на странице \"Позиции плана закупок 200\"")
     public void clickOnLinkFilter(){
-    	applet.clickOnLinkFilter();    	
+    	applet.clickOnLinkFilter();
     }
     
     @Step("Очищаем поле \"Номер позиции плана закупок\" в фильтре на странице \"Позиции плана закупок 200\"")
@@ -59,4 +59,15 @@ public class PositionsPurchasePlan200Steps extends ScenarioSteps {
     public void selectFirstRow(){
     	applet.selectFirstRow();    	
     }
+    
+    @Step("Возвращаем текст из поля \"Состояние\" в первой строке таблицы на странице \"Позиции плана закупок 200\"")
+    public String  getTextStatus(){
+    	return applet.getTextStatus();    	
+    }
+    
+    @Step("Закрыть вклвдку \"Позиции плана закупок 200\"")
+    public void clickOnLinkClosePPZ(){
+    	applet.clickOnLinkClosePPZ();    	
+    }
+    
 }

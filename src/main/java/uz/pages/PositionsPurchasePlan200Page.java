@@ -32,6 +32,10 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	  @FindBy(xpath=".//th[@title='Номер позиции плана закупок']")
 	  private WebElementFacade field;
 	  
+	  //Закрыть ППЗ
+	  @FindBy(xpath=".//div[button[@title[contains(.,'Позиция плана закупок')]]]/a[@title='Закрыть']")
+	  private WebElementFacade closePPZTabLink;
+	  
 	  //Кнопка Создать новый документ
 	  @FindBy(xpath=".//button[@title='Создать новый документ']")
 	  private WebElementFacade creteNewDocumentButton;
@@ -46,10 +50,14 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	  
 	  //Номер позиции плана закупок
 	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[position() = (count(//th[contains(.,'Номер позиции плана закупок')]/preceding-sibling::*)+1)]/div")
-	  private WebElementFacade numberPositionPlanPurshedInput;
+	  private WebElementFacade numberPositionPlanPurshedField;
 	  //Номер позиции плана закупок в фильтре
-	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[position() = (count(//th[contains(.,'Номер позиции плана закупок')]/preceding-sibling::*)+1)]/div")
+	  @FindBy(xpath=".//div/table/tbody/tr[2]/th[position() = (count(//th[contains(.,'Номер позиции плана закупок')]/preceding-sibling::*)+1)]/div/descendant::input")
 	  private WebElementFacade numberPositionPlanPurshedInFilterInput;
+	  
+	  //Состояние
+	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[position() = (count(//th[contains(.,'Состояние')]/preceding-sibling::*)+1)]/div")
+	  private WebElementFacade statusField;
 	  
 	  //Бокс выбрать первую позицию
 	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[1]/div/span")
@@ -84,6 +92,13 @@ public class PositionsPurchasePlan200Page extends BasePage {
 			//getDriver().switchTo().defaultContent();
 		}
 		
+		public void clickOnLinkClosePPZ(){
+			waitForLoadJS();
+			closePPZTabLink.waitUntilClickable().click();
+			getDriver().switchTo().defaultContent();
+		}
+	
+		
 	  /**
 	   * Клик по кнопке Создать новый документ
 	   */
@@ -106,7 +121,7 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	  public Boolean isPushedLinkFilter(){
 		  waitForLoadJS();
 		  String src = filterLink.waitUntilClickable().getAttribute("src");
-		  if(src.contains("filter_on")){
+		  if(!src.contains("filter_on.png")){
 			  return true;
 		  }
 		  return false;
@@ -117,6 +132,7 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	  public void clickOnLinkFilter(){
 		  waitForLoadJS();
 		  filterLink.waitUntilClickable().click();
+		  waitingForFieldVisible(numberPositionPlanPurshedInFilterInput);
 	  }
 	  /**
 	   * Очищаем Номер позиции плана закупок в фильтре
@@ -139,6 +155,15 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	   * Клик по чекбоксу выбора строки в первой строке
 	   */
 	  public void selectFirstRow(){
+		  waitForLoadJS();
 		  checkBoxOnFirstRow.waitUntilClickable().click();
+	  }
+	  /**
+	   * Возвращаем текст поля Состояние
+	   * @return String
+	   */
+	  public String getTextStatus(){
+		  waitForLoadJS();
+		  return statusField.waitUntilClickable().getText();
 	  }
 }
