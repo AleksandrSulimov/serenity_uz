@@ -11,8 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 /**
- * Позиции плана закупок 200
- * @author s.serov 26.04.2016
+ * План закупок
+ * @author s.serov 28.04.2016
  *
  */
 public class PlanPurchasePage extends BasePage {
@@ -54,17 +54,17 @@ public class PlanPurchasePage extends BasePage {
 	  protected String numberPlanPurshedXpath = ".//td[@title='%s']";
 	  
 	  //Номер позиции плана закупок
-	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[position() = (count(//th[contains(.,'Номер позиции плана закупок')]/preceding-sibling::*)+1)]/div")
+	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[position() = (count(//th[contains(.,'Номер плана закупок')]/preceding-sibling::*)+1)]/div")
 	  protected WebElementFacade numberPlanPurshedField;
 	  //Номер позиции плана закупок в фильтре
-	  @FindBy(xpath=".//div/table/tbody/tr[2]/th[position() = (count(//th[contains(.,'Номер позиции плана закупок')]/preceding-sibling::*)+1)]/div/descendant::input")
+	  @FindBy(xpath=".//div/table/tbody/tr[2]/th[position() = (count(//th[contains(.,'Номер плана закупок')]/preceding-sibling::*)+1)]/div/descendant::input")
 	  protected WebElementFacade numberPlanPurshedInFilterInput;
 	  //Сбросить фильтр
 	  @FindBy(xpath="(.//img[@src[contains(.,'funnel_delete.png')]]/..)[2]")
 	  protected WebElementFacade resetFilterButton;
 	  
-	  //Состояние
-	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[position() = (count(//th[contains(.,'Состояние')]/preceding-sibling::*)+1)]/div")
+	  //Статус
+	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[position() = (count((//th[contains(.,'Статус')])[1]/preceding-sibling::*)+1)]/div")
 	  protected WebElementFacade statusField;
 	  
 	  //Бокс выбрать первую позицию
