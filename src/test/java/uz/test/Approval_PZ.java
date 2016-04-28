@@ -10,6 +10,8 @@ import org.junit.runner.RunWith;
 
 import uz.steps.PlanPurchaseOnApprovalSteps;
 import uz.steps.PlanPurchaseStatementSteps;
+import uz.steps.dialog.ApprovalPlanPurchaseDialogSteps;
+import uz.steps.dialog.StatementPlanPurchaseDialogSteps;
 
 @RunWith(SerenityRunner.class)
 public class Approval_PZ extends TestCasesBase{
@@ -18,6 +20,11 @@ public class Approval_PZ extends TestCasesBase{
 	PlanPurchaseOnApprovalSteps planPurchaseOnApprovalSteps;
 	@Steps
 	PlanPurchaseStatementSteps planPurchaseStatementSteps;
+	@Steps
+	ApprovalPlanPurchaseDialogSteps approvalPlanPurchaseDialogSteps;
+	@Steps
+	StatementPlanPurchaseDialogSteps statementPlanPurchaseDialogSteps;
+	
 	@Title("Согласование/Утверждение ПЗ")
     @Test
 	public void approval_PZ(){
@@ -90,15 +97,14 @@ public class Approval_PZ extends TestCasesBase{
 			planPurchaseOnApprovalSteps.clickOnButtonResetFilter();
 		}
 		
-		//positionsPurchasePlanApprovalSteps.cleanPositionPlanPurshedInFilter();
 		planPurchaseOnApprovalSteps.setPlanPurshedInFilter(purshedNumber);
 		planPurchaseOnApprovalSteps.selectFirstRow();
 		planPurchaseOnApprovalSteps.clickOnButtonApproval();
 		
-		approvalPositionPurchase200DialogSteps.waitingForAppletVisible();
-		approvalPositionPurchase200DialogSteps.clickOnButtonApproval();
-		approvalPositionPurchase200DialogSteps.waitingForAppletVisible();
-		approvalPositionPurchase200DialogSteps.clickOnButtonOk();
+		approvalPlanPurchaseDialogSteps.waitingForAppletVisible();
+		approvalPlanPurchaseDialogSteps.clickOnButtonApproval();
+		approvalPlanPurchaseDialogSteps.waitingForAppletVisible();
+		approvalPlanPurchaseDialogSteps.clickOnButtonOk();
 		
 		status = "";
 		for(int i=0; i<6; i++){
@@ -136,15 +142,14 @@ public class Approval_PZ extends TestCasesBase{
 			planPurchaseStatementSteps.clickOnButtonResetFilter();
 		}
 		
-		//positionsPurchasePlanStatementSteps.cleanPositionPlanPurshedInFilter();
 		planPurchaseStatementSteps.setPlanPurshedInFilter(purshedNumber);
 		planPurchaseStatementSteps.selectFirstRow();
 		planPurchaseStatementSteps.clickOnButtonStatement();
 		
-		statementPositionPurchase200DialogSteps.waitingForAppletVisible();
-		statementPositionPurchase200DialogSteps.clickOnButtonStatement();
-		statementPositionPurchase200DialogSteps.waitingForAppletVisible();
-		statementPositionPurchase200DialogSteps.clickOnButtonOk();
+		statementPlanPurchaseDialogSteps.waitingForAppletVisible();
+		statementPlanPurchaseDialogSteps.clickOnButtonStatement();
+		statementPlanPurchaseDialogSteps.waitingForAppletVisible();
+		statementPlanPurchaseDialogSteps.clickOnButtonOk();
 		
 		status = "";
 		for(int i=0; i<6; i++){
