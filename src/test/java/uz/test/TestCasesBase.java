@@ -21,6 +21,7 @@ import uz.steps.HeaderSteps;
 import uz.steps.LoginPageSteps;
 import uz.steps.MenuSteps;
 import uz.steps.OKPD2DictionaryPageSteps;
+import uz.steps.PlanPurchaseSteps;
 import uz.steps.PositionsPurchasePlan200Steps;
 import uz.steps.PositionsPurchasePlanApprovalSteps;
 import uz.steps.PositionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps;
@@ -92,6 +93,8 @@ public class TestCasesBase {
 	    protected SelectUserDialogSteps selectUserDialogSteps;
 	    @Steps
 	    protected TestResultsDialogSteps testResultsDialogSteps;
+	    @Steps
+	    protected PlanPurchaseSteps planPurchaseSteps;
 	    
 	    protected Helpers h = new Helpers();
 	    

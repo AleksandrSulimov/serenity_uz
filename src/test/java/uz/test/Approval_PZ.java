@@ -32,32 +32,32 @@ public class Approval_PZ extends TestCasesBase{
 		//План закупок
 		applicationFormsSteps.clickOnLinkPlanPurchase();
 		
-		positionsPurchasePlan200Steps.waitingForAppletVisible();
+		planPurchaseSteps.waitingForAppletVisible();
 		
 		//Раскрыли фильтр
-		if(!positionsPurchasePlan200Steps.isPushedLinkFilter()){
-			positionsPurchasePlan200Steps.clickOnLinkFilter();
+		if(!planPurchaseSteps.isPushedLinkFilter()){
+			planPurchaseSteps.clickOnLinkFilter();
 		}
 		//Очистили фильтр
-		if(positionsPurchasePlan200Steps.isFilterExist()){
-			positionsPurchasePlan200Steps.clickOnButtonResetFilter();
+		if(planPurchaseSteps.isFilterExist()){
+			planPurchaseSteps.clickOnButtonResetFilter();
 		}
 		
-		positionsPurchasePlan200Steps.setPositionPlanPurshedInFilter(purshedNumber);
-		positionsPurchasePlan200Steps.selectFirstRow();
-		positionsPurchasePlan200Steps.clickOnButtonSendToMatching();
+		planPurchaseSteps.setPlanPurshedInFilter(purshedNumber);
+		planPurchaseSteps.selectFirstRow();
+		planPurchaseSteps.clickOnButtonSendToMatching();
 
 		String status = "";
 		for(int i=0; i<6; i++){
-			status = positionsPurchasePlan200Steps.getTextStatus();
+			status = planPurchaseSteps.getTextStatus();
 			if(status.equals("На согласовании")){
 				break;
 			}
 			h.sleep(3);
 		}
-		assertSteps.assertField("Состояние", "На согласовании", positionsPurchasePlan200Steps.getTextStatus());
+		assertSteps.assertField("Состояние", "На согласовании", planPurchaseSteps.getTextStatus());
 		
-		positionsPurchasePlan200Steps.clickOnLinkClosePPZ();
+		planPurchaseSteps.clickOnLinkClose();
 		
 		applicationFormsSteps.waitingForAppletVisible();
 		

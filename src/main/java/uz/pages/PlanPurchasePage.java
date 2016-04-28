@@ -50,13 +50,13 @@ public class PlanPurchasePage extends BasePage {
 	  @FindBy(xpath=".//img[@title='Видимость фильтров']")
 	  protected WebElementFacade filterLink;
 	  
-	  //Поле Номер позиции плана закупок с переданным значением
+	  //Поле Номер плана закупок с переданным значением
 	  protected String numberPlanPurshedXpath = ".//td[@title='%s']";
 	  
-	  //Номер позиции плана закупок
+	  //Номер плана закупок
 	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[position() = (count(//th[contains(.,'Номер плана закупок')]/preceding-sibling::*)+1)]/div")
 	  protected WebElementFacade numberPlanPurshedField;
-	  //Номер позиции плана закупок в фильтре
+	  //Номер плана закупок в фильтре
 	  @FindBy(xpath=".//div/table/tbody/tr[2]/th[position() = (count(//th[contains(.,'Номер плана закупок')]/preceding-sibling::*)+1)]/div/descendant::input")
 	  protected WebElementFacade numberPlanPurshedInFilterInput;
 	  //Сбросить фильтр
@@ -150,7 +150,7 @@ public class PlanPurchasePage extends BasePage {
 	  /**
 	   * Очищаем Номер позиции плана закупок в фильтре
 	   */
-	  public void cleanPositionPlanPurshedInFilter(){
+	  public void cleanPlanPurshedInFilter(){
 		  waitingForFieldVisible(numberPlanPurshedInFilterInput);
 		  numberPlanPurshedInFilterInput.waitUntilClickable().clear();
 		  numberPlanPurshedInFilterInput.waitUntilClickable().typeAndEnter("");
@@ -159,7 +159,7 @@ public class PlanPurchasePage extends BasePage {
 	   * Устанавливаем Номер позиции плана закупок в фильтре
 	   * @param string
 	   */
-	  public void setPositionPlanPurshedInFilter(String string){
+	  public void setPlanPurshedInFilter(String string){
 		  waitingForFieldVisible(numberPlanPurshedInFilterInput);
 		  numberPlanPurshedInFilterInput.waitUntilClickable().clear();
 		  numberPlanPurshedInFilterInput.waitUntilClickable().typeAndEnter(string);
@@ -227,7 +227,7 @@ public class PlanPurchasePage extends BasePage {
 	  /**
 	   * Проверить существование строки с переданным Номером плана закупок
 	   */
-	  public boolean checkNumberPositionPlanPurshedEists(String text) {
+	  public boolean checkNumberPlanPurshedEists(String text) {
 		  String xPathLocator = String.format(numberPlanPurshedXpath, text); 
 		  if(getDriver().findElements(By.xpath(xPathLocator)).size()>0){
 			  return true;

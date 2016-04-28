@@ -4,7 +4,6 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
 import uz.pages.PlanPurchasePage;
-import uz.pages.PositionsPurchasePlan200Page;
 
 /**
  * План закупок Steps
@@ -61,13 +60,13 @@ public class PlanPurchaseSteps extends ScenarioSteps {
     }
     
     @Step("Очищаем поле \"Номер плана закупок\" в фильтре на странице \"План закупок\"")
-    public void cleanPositionPlanPurshedInFilter() {
-    	applet.cleanPositionPlanPurshedInFilter();    	
+    public void cleanPlanPurshedInFilter() {
+    	applet.cleanPlanPurshedInFilter();    	
     }
     
     @Step("Вводим текст {0} в поле \"Номер плана закупок\" в фильтре на странице \"План закупок\"")
-    public void setPositionPlanPurshedInFilter(String string) {
-    	applet.setPositionPlanPurshedInFilter(string);    	
+    public void setPlanPurshedInFilter(String string) {
+    	applet.setPlanPurshedInFilter(string);    	
     }
     
     @Step("Нажимаем чекбоксу выбора строки в первой строке на странице \"План закупок\"")
@@ -86,8 +85,8 @@ public class PlanPurchaseSteps extends ScenarioSteps {
     }
     
     @Step("Проверить существование строки со значением {0} в поле \"Номер плана закупок\" на странице \"План закупок\"")
-    public boolean checkNumberPositionPlanPurshedEists(String text){
-    	return applet.checkNumberPositionPlanPurshedEists(text);    	
+    public boolean checkNumberPlanPurshedEists(String text){
+    	return applet.checkNumberPlanPurshedEists(text);    	
     }
     
 }
