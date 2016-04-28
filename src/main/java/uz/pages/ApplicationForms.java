@@ -62,10 +62,13 @@ public class ApplicationForms extends BasePage {
 	  //Раскрывающийся План закупок расположенный под раскрывшемся элементом План закупок
 	  @FindBy(xpath=".//div[span/span[contains(.,'План закупок')]]/following::div[span/span[contains(.,'План закупок')]]/span[1]/a")
 	  private WebElementFacade planPurchaseExpandLink;
+	  //Мои документы после Раскрывающийся План закупок
 	  @FindBy(xpath=".//div[span/span[contains(.,'План закупок')]]/following::div[span/span[contains(.,'Мои документы')]]/span[1]/a")
 	  private WebElementFacade myDocumentAfterPlanPurchaseLink;
+	  //План закупок на согласовании
 	  @FindBy(xpath=".//div[span/span[contains(.,'План закупок')]]/following::a[span[text()='План закупок на согласовании']]")
 	  private WebElementFacade approvalPlanPurchaseLink;
+	  //План закупок на утверждении
 	  @FindBy(xpath=".//div[span/span[contains(.,'План закупок')]]/following::a[span[text()='План закупок на утверждении']]")
 	  private WebElementFacade statementPlanPurchaseLink;
 	  
