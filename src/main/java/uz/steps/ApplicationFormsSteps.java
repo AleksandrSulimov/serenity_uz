@@ -77,5 +77,9 @@ public class ApplicationFormsSteps extends ScenarioSteps {
   	public void clickOnLinkStatement() {
       	applet.clickOnLinkStatement();
   	}
+    @Step("Нажимаем линк \"План закупок\" расположенный под раскрывшемся элементом \"План закупок\" в \"Формуляры\"")
+	public void clickOnLinkPlanPurchase() {
+    	applet.clickOnLinkPlanPurchase();
+	}
     
 }

@@ -56,6 +56,13 @@ public class ApplicationForms extends BasePage {
 	  @FindBy(xpath=".//a[span[text()='Позиции плана закупок на утверждении']]")
 	  private WebElementFacade statementLink;
 	  
+	  //План закупок расположенный под раскрывшемся элементом План закупок
+	  @FindBy(xpath=".//div[span/span[contains(.,'План закупок')]]/following::a[span[text()='План закупок']]")
+	  private WebElementFacade planPurchaseLink;
+	  //Раскрывающийся План закупок расположенный под раскрывшемся элементом План закупок
+	  @FindBy(xpath=".//div[span/span[contains(.,'План закупок')]]/following::div[span/span[contains(.,'План закупок')]]/span[1]/a")
+	  private WebElementFacade planPurchaseExpandLink;
+	  
 	  /**
 	   * Клик по линку Управление закупками
 	   */
@@ -162,5 +169,13 @@ public class ApplicationForms extends BasePage {
 	  public void clickOnLinkStatement() {
 		  waitingForFieldVisible(statementLink);
 		  statementLink.waitUntilClickable().click();
+	  }
+	
+	  /**
+	   * Клик по линку План закупок расположенный под раскрывшемся элементом План закупок
+	   */
+	  public void clickOnLinkPlanPurchase() {
+		  waitingForFieldVisible(planPurchaseLink);
+		  planPurchaseLink.waitUntilClickable().click();
 	  }
 }
