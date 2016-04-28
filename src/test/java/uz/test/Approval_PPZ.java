@@ -20,40 +20,32 @@ public class Approval_PPZ extends TestCasesBase{
 
 		String purshedNumber = "5406105211.540501001.2.16.00004.1601";
 		
-		menuSteps.waitingForAppletVisible();
+
+		selectPushedProcurementManagement();
+			
+		goToApplicationForms();
+
+		expandProcurementManagementOnApplicationForms();
 		
-		if(!menuSteps.isPushedProcurementManagement()){
-			menuSteps.clickOnLinkProcurementManagement();
-		}
-		
-		
-		mainPageTabSteps.waitingForAppletVisible();
-		mainPageTabSteps.clickOnTabApplicationForms();
-		
-		applicationFormsSteps.waitingForAppletVisible();
-		
-		if(!applicationFormsSteps.isPushedProcurementManagement()){
-			applicationFormsSteps.clickOnLinkProcurementManagement();
-		}
-		
-		if(!applicationFormsSteps.isPushedLinkPlanProcurement()){
-			applicationFormsSteps.clickOnLinkPlanProcurement();
-		}
+		expandPlanProcurementOnApplicationForms();
 		
 		applicationFormsSteps.clickOnLinkPositionPlanProcurement200();
 		
 		positionsPurchasePlan200Steps.waitingForAppletVisible();
+		
+		//Раскрыли фильтр
 		if(!positionsPurchasePlan200Steps.isPushedLinkFilter()){
 			positionsPurchasePlan200Steps.clickOnLinkFilter();
 		}
+		//Очистили фильтр
 		if(positionsPurchasePlan200Steps.isFilterExist()){
 			positionsPurchasePlan200Steps.clickOnButtonResetFilter();
 		}
-		//positionsPurchasePlan200Steps.cleanPositionPlanPurshedInFilter();
+		
 		positionsPurchasePlan200Steps.setPositionPlanPurshedInFilter(purshedNumber);
 		positionsPurchasePlan200Steps.selectFirstRow();
 		positionsPurchasePlan200Steps.clickOnButtonSendToMatching();
-		
+
 		String status = "";
 		for(int i=0; i<6; i++){
 			status = positionsPurchasePlan200Steps.getTextStatus();

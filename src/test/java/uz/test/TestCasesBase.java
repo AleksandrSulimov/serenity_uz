@@ -113,5 +113,43 @@ public class TestCasesBase {
 	    	headerSteps.clickOnButtonExit();
 	    		    	
 	    } 
-	    
+	    /**
+	     * Выбрать в меню Управление закупками
+	     */
+	    public void selectPushedProcurementManagement(){
+	    	menuSteps.waitingForAppletVisible();
+	    	if(!menuSteps.isPushedProcurementManagement()){
+				menuSteps.clickOnLinkProcurementManagement();
+			}
+	    }
+	    /**
+	     * Перейти на Формуляры
+	     */
+	    public void goToApplicationForms(){
+	    	mainPageTabSteps.waitingForAppletVisible();
+			mainPageTabSteps.clickOnTabApplicationForms();
+	    }
+	    /**
+	     * Раскрыть Управление закупками на Формулярах
+	     */
+	    public void expandProcurementManagementOnApplicationForms(){
+	    	applicationFormsSteps.waitingForAppletVisible();
+			if(!applicationFormsSteps.isPushedProcurementManagement()){
+				applicationFormsSteps.clickOnLinkProcurementManagement();
+			}
+	    }
+	    /**
+	     * Раскрыть План закупок на Формулярах
+	     */
+	    public void expandPlanProcurementOnApplicationForms(){
+	    	if(!applicationFormsSteps.isPushedLinkPlanProcurement()){
+				applicationFormsSteps.clickOnLinkPlanProcurement();
+			}
+	    }
+	    /**
+	     * Нажать на иконку фильтра для отображения полей фильтра на Позиции плана закупок 200
+	     */
+	    public void expandFilterOnPurchasePlan200(){
+	    	
+	    }
 }
