@@ -24,19 +24,19 @@ public class ApprovalPlanPurchaseDialog extends BasePage {
 	
 	  }
 	  
-	  @FindBy(xpath=".//div[div[contains(.,'Согласовать план закупок')]]")
+	  @FindBy(xpath=".//div[div[contains(.,'Согласовать План Закупок')]]")
 	  private WebElementFacade applet;
-	  private String appletXpath = ".//div[div[contains(.,'Согласовать план закупок')]]";
+	  private String appletXpath = ".//div[div[contains(.,'Согласовать План Закупок')]]";
 	  
-	  @FindBy(xpath=".//div[div[contains(.,'Согласовать план закупок')]]")
+	  @FindBy(xpath=".//div[div[contains(.,'Согласовать План Закупок')]]")
 	  private WebElementFacade field;
 	  
 	  //Кнопка Согласовать
-	  @FindBy(xpath=".//div[div[contains(.,'Согласовать план закупок')]]/descendant::button[contains(.,'Согласовать')]")
+	  @FindBy(xpath=".//div[div[contains(.,'Согласовать План Закупок')]]/descendant::button[contains(.,'Согласовать')]")
 	  private WebElementFacade approvalButton;
 	  
 	  //Кнопка ОК
-	  @FindBy(xpath=".//div[div[contains(.,'Согласовать план закупок')]]/descendant::button[contains(.,'ОК')]")
+	  @FindBy(xpath=".//div[div[contains(.,'Согласовать План Закупок')]]/descendant::button[contains(.,'ОК')]")
 	  private WebElementFacade okButton;
 	
 	  /**

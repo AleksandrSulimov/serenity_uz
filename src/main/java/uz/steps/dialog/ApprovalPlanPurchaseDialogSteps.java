@@ -3,7 +3,7 @@ package uz.steps.dialog;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
-import uz.pages.dialog.ApprovalPositionPurchase200Dialog;
+import uz.pages.dialog.ApprovalPlanPurchaseDialog;
 
 /**
  * Диалоговое окно Согласовать план закупок Steps
@@ -18,7 +18,7 @@ public class ApprovalPlanPurchaseDialogSteps extends ScenarioSteps {
         super(pages);
     }
 	
-	ApprovalPositionPurchase200Dialog applet;
+	ApprovalPlanPurchaseDialog applet;
 
 	@Step("Ожидаем загрузку диалоговое окно \"Согласовать план закупок\"")
 	public void waitingForAppletVisible() {

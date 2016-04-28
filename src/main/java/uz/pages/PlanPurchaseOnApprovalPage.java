@@ -22,11 +22,11 @@ public class PlanPurchaseOnApprovalPage extends PlanPurchasePage {
 	
 	  }
 	  
-	  @FindBy(xpath=".//th[@title='Номер документа']") 
+	  @FindBy(xpath=".//th[contains(.,'Номер плана закупок')]") //th[@title='Номер документа']
 	  private WebElementFacade applet; 
-	  private String appletXpath = ".//th[@title='Номер документа']";
+	  private String appletXpath = ".//th[contains(.,'Номер плана закупок')]";
 		    
-	  @FindBy(xpath=".//th[@title='Номер документа']")
+	  @FindBy(xpath=".//th[contains(.,'Номер плана закупок')]")
 	  private WebElementFacade field;
 	  
 	  //Закрыть
