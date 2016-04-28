@@ -2,14 +2,22 @@ package uz.test;
 
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.junit.runners.SerenityRunner;
+import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Title;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import uz.steps.PlanPurchaseOnApprovalSteps;
+import uz.steps.PlanPurchaseStatementSteps;
+
 @RunWith(SerenityRunner.class)
 public class Approval_PZ extends TestCasesBase{
 
+	@Steps
+	PlanPurchaseOnApprovalSteps planPurchaseOnApprovalSteps;
+	@Steps
+	PlanPurchaseStatementSteps planPurchaseStatementSteps;
 	@Title("Согласование/Утверждение ПЗ")
     @Test
 	public void approval_PZ(){
@@ -59,6 +67,7 @@ public class Approval_PZ extends TestCasesBase{
 		
 		planPurchaseSteps.clickOnLinkClose();
 		
+		//Согласование
 		applicationFormsSteps.waitingForAppletVisible();
 		
 		if(!applicationFormsSteps.isPushedExpandLinkPlanPurchaseAfterExpandLinkPlanPurchase()){
@@ -72,19 +81,19 @@ public class Approval_PZ extends TestCasesBase{
 		
 		applicationFormsSteps.clickOnLinkPlanPurchaseApproval();
 		
-		//На утверждение
-		positionsPurchasePlanApprovalSteps.waitingForAppletVisible();
-		if(!positionsPurchasePlanApprovalSteps.isPushedLinkFilter()){
-			positionsPurchasePlanApprovalSteps.clickOnLinkFilter();
+		
+		planPurchaseOnApprovalSteps.waitingForAppletVisible();
+		if(!planPurchaseOnApprovalSteps.isPushedLinkFilter()){
+			planPurchaseOnApprovalSteps.clickOnLinkFilter();
 		}
-		if(positionsPurchasePlanApprovalSteps.isFilterExist()){
-			positionsPurchasePlanApprovalSteps.clickOnButtonResetFilter();
+		if(planPurchaseOnApprovalSteps.isFilterExist()){
+			planPurchaseOnApprovalSteps.clickOnButtonResetFilter();
 		}
 		
 		//positionsPurchasePlanApprovalSteps.cleanPositionPlanPurshedInFilter();
-		positionsPurchasePlanApprovalSteps.setPositionPlanPurshedInFilter(purshedNumber);
-		positionsPurchasePlanApprovalSteps.selectFirstRow();
-		positionsPurchasePlanApprovalSteps.clickOnButtonApproval();
+		planPurchaseOnApprovalSteps.setPlanPurshedInFilter(purshedNumber);
+		planPurchaseOnApprovalSteps.selectFirstRow();
+		planPurchaseOnApprovalSteps.clickOnButtonApproval();
 		
 		approvalPositionPurchase200DialogSteps.waitingForAppletVisible();
 		approvalPositionPurchase200DialogSteps.clickOnButtonApproval();
@@ -93,44 +102,44 @@ public class Approval_PZ extends TestCasesBase{
 		
 		status = "";
 		for(int i=0; i<6; i++){
-			status = positionsPurchasePlanApprovalSteps.getTextStatus();
+			status = planPurchaseOnApprovalSteps.getTextStatus();
 			if(status.equals("Согласовано")){
 				break;
 			}
 			h.sleep(3);
 		}
-		assertSteps.assertField("Состояние", "Согласовано", positionsPurchasePlanApprovalSteps.getTextStatus());
+		assertSteps.assertField("Состояние", "Согласовано", planPurchaseOnApprovalSteps.getTextStatus());
 		
-		positionsPurchasePlanApprovalSteps.clickOnLinkClosePPZOnApproval();
+		planPurchaseOnApprovalSteps.clickOnLinkClose();
 		
-		
+		//Утверждение
 		applicationFormsSteps.waitingForAppletVisible();
 		
-		if(!applicationFormsSteps.isPushedLinkPosition200()){
-			applicationFormsSteps.clickOnLinkPosition200();
+		if(!applicationFormsSteps.isPushedExpandLinkPlanPurchaseAfterExpandLinkPlanPurchase()){
+			applicationFormsSteps.clickOnExpandLinkPlanPurchaseAfterExpandLinkPlanPurchase();
 		}
 		
 
-		if(!applicationFormsSteps.isPushedLinkMyDocument()){
-			applicationFormsSteps.clickOnLinkMyDocument();
+		if(!applicationFormsSteps.isPushedLinkMyDocumentAfterPlanPurchase()){
+			applicationFormsSteps.clickOnLinkMyDocumentAfterPlanPurchase();
 		}
 		
 		applicationFormsSteps.clickOnLinkPlanPurchaseStatement();
 
 		
 		
-		positionsPurchasePlanStatementSteps.waitingForAppletVisible();
-		if(!positionsPurchasePlanStatementSteps.isPushedLinkFilter()){
-			positionsPurchasePlanStatementSteps.clickOnLinkFilter();
+		planPurchaseStatementSteps.waitingForAppletVisible();
+		if(!planPurchaseStatementSteps.isPushedLinkFilter()){
+			planPurchaseStatementSteps.clickOnLinkFilter();
 		}
-		if(positionsPurchasePlanStatementSteps.isFilterExist()){
-			positionsPurchasePlanStatementSteps.clickOnButtonResetFilter();
+		if(planPurchaseStatementSteps.isFilterExist()){
+			planPurchaseStatementSteps.clickOnButtonResetFilter();
 		}
 		
 		//positionsPurchasePlanStatementSteps.cleanPositionPlanPurshedInFilter();
-		positionsPurchasePlanStatementSteps.setPositionPlanPurshedInFilter(purshedNumber);
-		positionsPurchasePlanStatementSteps.selectFirstRow();
-		positionsPurchasePlanStatementSteps.clickOnButtonStatement();
+		planPurchaseStatementSteps.setPlanPurshedInFilter(purshedNumber);
+		planPurchaseStatementSteps.selectFirstRow();
+		planPurchaseStatementSteps.clickOnButtonStatement();
 		
 		statementPositionPurchase200DialogSteps.waitingForAppletVisible();
 		statementPositionPurchase200DialogSteps.clickOnButtonStatement();
@@ -139,15 +148,15 @@ public class Approval_PZ extends TestCasesBase{
 		
 		status = "";
 		for(int i=0; i<6; i++){
-			status = positionsPurchasePlanStatementSteps.getTextStatus();
+			status = planPurchaseStatementSteps.getTextStatus();
 			if(status.equals("Утверждено")){
 				break;
 			}
 			h.sleep(3);
 		}
-		assertSteps.assertField("Состояние", "Утверждено", positionsPurchasePlanStatementSteps.getTextStatus());
+		assertSteps.assertField("Состояние", "Утверждено", planPurchaseStatementSteps.getTextStatus());
 		
-		positionsPurchasePlanStatementSteps.clickOnLinkClosePPZOnStatement();
+		planPurchaseStatementSteps.clickOnLinkClose();
 	}
 	
 }
