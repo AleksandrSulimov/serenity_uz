@@ -61,16 +61,16 @@ public class Approval_PZ extends TestCasesBase{
 		
 		applicationFormsSteps.waitingForAppletVisible();
 		
-		if(!applicationFormsSteps.isPushedLinkPosition200()){
-			applicationFormsSteps.clickOnLinkPosition200();
+		if(!applicationFormsSteps.isPushedExpandLinkPlanPurchaseAfterExpandLinkPlanPurchase()){
+			applicationFormsSteps.clickOnExpandLinkPlanPurchaseAfterExpandLinkPlanPurchase();
 		}
 		
 
-		if(!applicationFormsSteps.isPushedLinkMyDocument()){
-			applicationFormsSteps.clickOnLinkMyDocument();
+		if(!applicationFormsSteps.isPushedLinkMyDocumentAfterPlanPurchase()){
+			applicationFormsSteps.clickOnLinkMyDocumentAfterPlanPurchase();
 		}
 		
-		applicationFormsSteps.clickOnLinkApproval();
+		applicationFormsSteps.clickOnLinkPlanPurchaseApproval();
 		
 		//На утверждение
 		positionsPurchasePlanApprovalSteps.waitingForAppletVisible();
@@ -115,7 +115,7 @@ public class Approval_PZ extends TestCasesBase{
 			applicationFormsSteps.clickOnLinkMyDocument();
 		}
 		
-		applicationFormsSteps.clickOnLinkStatement();
+		applicationFormsSteps.clickOnLinkPlanPurchaseStatement();
 
 		
 		

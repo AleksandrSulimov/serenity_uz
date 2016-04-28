@@ -62,6 +62,8 @@ public class ApplicationForms extends BasePage {
 	  //Раскрывающийся План закупок расположенный под раскрывшемся элементом План закупок
 	  @FindBy(xpath=".//div[span/span[contains(.,'План закупок')]]/following::div[span/span[contains(.,'План закупок')]]/span[1]/a")
 	  private WebElementFacade planPurchaseExpandLink;
+	  @FindBy(xpath=".//div[span/span[contains(.,'План закупок')]]/following::div[span/span[contains(.,'Мои документы')]]/span[1]/a")
+	  private WebElementFacade myDocumentAfterPlanPurchaseLink;
 	  
 	  /**
 	   * Клик по линку Управление закупками
@@ -177,5 +179,55 @@ public class ApplicationForms extends BasePage {
 	  public void clickOnLinkPlanPurchase() {
 		  waitingForFieldVisible(planPurchaseLink);
 		  planPurchaseLink.waitUntilClickable().click();
+	  }
+	  
+	
+	  /**
+	   * Клик по раскрывающийся линк План закупок расположенный под раскрывшемся элементом План закупок
+	   */
+	  public void clickOnExpandLinkPlanPurchaseAfterExpandLinkPlanPurchase() {
+		  waitingForFieldVisible(planPurchaseExpandLink);
+		  planPurchaseExpandLink.waitUntilClickable().click();
+	  }
+	
+	  /**
+	   * Проверяем нажат ли раскрывающийся линк План закупок расположенный под раскрывшемся элементом План закупок
+	   * @return Boolean (true - если линк нажат)
+	   */
+	  public boolean isPushedExpandLinkPlanPurchaseAfterExpandLinkPlanPurchase() {
+		  waitingForFieldVisible(planPurchaseExpandLink);
+		  String title = planPurchaseExpandLink.waitUntilClickable().getAttribute("title");
+		  if(title.contains("Свернуть")){
+			  return true;
+		  }
+		  return false;
+	  }
+	
+	  /**
+	   * Нажимаем линк \"Мои документы\" расположенный под раскрывшемся элементом \"План закупок\"
+	   */
+	  public void clickOnLinkMyDocumentAfterPlanPurchase() {
+		  waitingForFieldVisible(myDocumentAfterPlanPurchaseLink);
+		  myDocumentAfterPlanPurchaseLink.waitUntilClickable().click();
+	  }
+	  /**
+	   * Проверяем нажат ли линк \"Мои документы\" расположенный под раскрывшемся элементом \"План закупок\"
+	   * @return Boolean (true - если линк нажат)
+	   */
+	  public boolean isPushedLinkMyDocumentAfterPlanPurchase() {
+		  waitingForFieldVisible(myDocumentAfterPlanPurchaseLink);
+		  String title = myDocumentAfterPlanPurchaseLink.waitUntilClickable().getAttribute("title");
+		  if(title.contains("Свернуть")){
+			  return true;
+		  }
+		  return false;
+	  }
+	
+	  public void clickOnLinkPlanPurchaseApproval() {
+
+	  }
+	
+	  public void clickOnLinkPlanPurchaseStatement() {
+
 	  }
 }

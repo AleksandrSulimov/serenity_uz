@@ -73,13 +73,38 @@ public class ApplicationFormsSteps extends ScenarioSteps {
       	applet.clickOnLinkApproval();
   	}
     
-    @Step("Нажимаем линк \"Позиции плана закупок на утверждении\" в \"Формуляры\"")
+    @Step("Нажимаем раскрывающийся линк \"Позиции плана закупок на утверждении\" в \"Формуляры\"")
   	public void clickOnLinkStatement() {
       	applet.clickOnLinkStatement();
   	}
     @Step("Нажимаем линк \"План закупок\" расположенный под раскрывшемся элементом \"План закупок\" в \"Формуляры\"")
 	public void clickOnLinkPlanPurchase() {
     	applet.clickOnLinkPlanPurchase();
+	}
+    @Step("Нажимаем раскрывающийся линк \"План закупок\" расположенный под раскрывшемся элементом \"План закупок\" в \"Формуляры\"")
+	public void clickOnExpandLinkPlanPurchaseAfterExpandLinkPlanPurchase() {
+    	applet.clickOnExpandLinkPlanPurchaseAfterExpandLinkPlanPurchase();
+	}
+    @Step("Проверяем нажат ли раскрывающийся линк \"План закупок\" расположенный под раскрывшемся элементом \"План закупок\" в \"Формуляры\"")
+	public boolean isPushedExpandLinkPlanPurchaseAfterExpandLinkPlanPurchase() {
+		return applet.isPushedExpandLinkPlanPurchaseAfterExpandLinkPlanPurchase();
+	}
+
+    @Step("Нажимаем линк \"Мои документы\" расположенный под раскрывшемся элементом \"План закупок\" в \"Формуляры\"")
+	public void clickOnLinkMyDocumentAfterPlanPurchase() {
+    	applet.clickOnLinkMyDocumentAfterPlanPurchase();
+	}
+	@Step("Проверяем нажат ли линк \"Мои документы\" расположенный под раскрывшемся элементом \"План закупок\" в \"Формуляры\"")
+	public boolean isPushedLinkMyDocumentAfterPlanPurchase() {
+		return applet.isPushedLinkMyDocumentAfterPlanPurchase();
+	}
+	@Step("Нажимаем линк \"План закупок на согласовании\" в \"Формуляры\"")
+	public void clickOnLinkPlanPurchaseApproval() {
+		applet.clickOnLinkPlanPurchaseApproval();
+	}
+	@Step("Нажимаем раскрывающийся линк \"План закупок на утверждении\" в \"Формуляры\"")
+	public void clickOnLinkPlanPurchaseStatement() {
+		applet.clickOnLinkPlanPurchaseStatement();
 	}
     
 }
