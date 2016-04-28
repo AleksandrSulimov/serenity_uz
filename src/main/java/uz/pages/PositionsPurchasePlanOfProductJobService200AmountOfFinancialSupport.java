@@ -43,7 +43,20 @@ public class PositionsPurchasePlanOfProductJobService200AmountOfFinancialSupport
 	  private WebElementFacade publishYearInput;
 	  //Выпадающий список в поле  Планируемый год размещения извещения
 	  private String publishListXpath = ".//li[span='%s']";
+
+	  //Кнопка Открыть справочник в поле КД
+	  @FindBy(xpath="((.//td[div/span/input[contains(@name, 'publishyear')]])[1]/following-sibling::td/div/button[img[contains(@src, 'selecting_from_directory')]])[1]")
+	  private WebElementFacade openDictionaryKDButton;
+
+	  //Кнопка Открыть справочник в поле Дополнительный аналитический признак
+	  @FindBy(xpath="((.//td[div/span/input[contains(@name, 'publishyear')]])[1]/following-sibling::td/div/button[img[contains(@src, 'selecting_from_directory')]])[2]")
+	  private WebElementFacade openDictionaryAdditionalAnalyticalSignButton;
 	  
+	  //Поле 2016
+	  @FindBy(xpath="(.//div[input[contains(@name, 'sumnext')]])[1]")
+	  private WebElementFacade year2016Field;
+	  @FindBy(xpath="(.//input[contains(@name, 'sumnext')])[1]")
+	  private WebElementFacade year2016Input;
 	  /**
 	   * Нажать кнопку Добавить новую строку
 	   */
@@ -71,4 +84,37 @@ public class PositionsPurchasePlanOfProductJobService200AmountOfFinancialSupport
 			getDriver().findElement(By.xpath(xPathLocator)).click();
 
 		}
+	  
+
+	  /**
+	   * Открыть справочник в поле КД
+	   */
+	  public void clickOnButtonOpenDictionaryKD(){
+		  waitForLoadJS();
+		  openDictionaryKDButton.waitUntilClickable().click();
+	  }
+
+	  /**
+	   * Открыть справочник в поле Дополнительный аналитический признак
+	   */
+	  public void clickOnButtonOpenDictionaryAdditionalAnalyticalSig(){
+		  waitForLoadJS();
+		  openDictionaryAdditionalAnalyticalSignButton.waitUntilClickable().click();
+	  }
+	  
+	  /**
+	   * Клик в поле 2016
+	   */
+	  public void clickOnFieldYear2016(){
+		  waitForLoadJS();
+		  year2016Field.waitUntilClickable().click();
+	  }
+	  /**
+	   * Ввести текст в поле 2016
+	   * @param text
+	   */
+	  public void setTextYear2016(String text){
+		  waitForLoadJS();
+		  year2016Input.waitUntilClickable().sendKeys(text);
+	  }
 }

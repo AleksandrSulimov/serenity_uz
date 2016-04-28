@@ -84,4 +84,9 @@ public class PositionsPurchasePlan200Steps extends ScenarioSteps {
     	applet.clickOnLinkClosePPZ();    	
     }
     
+    @Step("Проверить существование строки со значением {0} в поле \"Номер позиции плана закупок\" на странице \"Позиции плана закупок 200\"")
+    public boolean checkNumberPositionPlanPurshedEists(String text){
+    	return applet.checkNumberPositionPlanPurshedEists(text);    	
+    }
+    
 }

@@ -49,6 +49,9 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	  @FindBy(xpath=".//img[@title='Видимость фильтров']")
 	  private WebElementFacade filterLink;
 	  
+	  //Поле Номер позиции плана закупок с переданным значением
+	  private String numberPositionPlanPurshedXpath = ".//td[@title='%s']";
+	  
 	  //Номер позиции плана закупок
 	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[position() = (count(//th[contains(.,'Номер позиции плана закупок')]/preceding-sibling::*)+1)]/div")
 	  private WebElementFacade numberPositionPlanPurshedField;
@@ -218,5 +221,16 @@ public class PositionsPurchasePlan200Page extends BasePage {
 		  waitingForFieldVisible(resetFilterButton);
 		  resetFilterButton.waitUntilClickable().click();
 
+	  }
+	  
+	  /**
+	   * Проверить существование строки с переданным Номером позиции плана закупок
+	   */
+	  public boolean checkNumberPositionPlanPurshedEists(String text) {
+		  String xPathLocator = String.format(numberPositionPlanPurshedXpath, text); 
+		  if(getDriver().findElements(By.xpath(xPathLocator)).size()>0){
+			  return true;
+		  }
+		  return false;
 	  }
 }

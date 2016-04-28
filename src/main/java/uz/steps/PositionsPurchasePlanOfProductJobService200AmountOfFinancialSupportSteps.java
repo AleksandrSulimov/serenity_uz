@@ -38,5 +38,20 @@ public class PositionsPurchasePlanOfProductJobService200AmountOfFinancialSupport
 	public void selectFromDropDownList(String linkText) {
 		applet.selectFromDropDownList(linkText);
 	}
-	
+	@Step("Открыть справочник в поле \"КД\" на вкладке \"Объем финансового обеспечения\"")
+	public void clickOnButtonOpenDictionaryKD() {
+		applet.clickOnButtonOpenDictionaryKD();
+	}
+	@Step("Открыть справочник в поле \"Дополнительный аналитический признак\" на вкладке \"Объем финансового обеспечения\"")
+	public void clickOnButtonOpenDictionaryAdditionalAnalyticalSig() {
+		applet.clickOnButtonOpenDictionaryAdditionalAnalyticalSig();
+	}
+	@Step("Клик в поле \"2016\" на вкладке \"Объем финансового обеспечения\"")
+	public void clickOnFieldYear2016() {
+		applet.clickOnFieldYear2016();
+	}
+	@Step("Ввести текст в поле \"2016\" на вкладке \"Объем финансового обеспечения\"")
+	public void setTextYear2016(String text) {
+		applet.setTextYear2016(text);
+	}
 }

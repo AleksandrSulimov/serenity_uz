@@ -113,11 +113,96 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.clickOnButtonСreateNewRecord();
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.clickOnFieldPublishYearInput();
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.selectFromDropDownList("2016");
+		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.clickOnButtonOpenDictionaryKD();
 		
+		chainsOfKBKDiictionaryPageSteps.waitingForAppletVisible();
+		if(chainsOfKBKDiictionaryPageSteps.checkFilterOn()){
+			chainsOfKBKDiictionaryPageSteps.clickFilter();
+		}
+		chainsOfKBKDiictionaryPageSteps.clickOnFieldChainsOfKBK();
+		chainsOfKBKDiictionaryPageSteps.setTextChainsOfKBK("100.10.06.39.7.05.00190.242 14");
+		chainsOfKBKDiictionaryPageSteps.clickOnButtonRefresh();
+		if(!chainsOfKBKDiictionaryPageSteps.getValueChainsOfKBK().equals("100.10.06.39.7.05.00190.242 14")){
+			assertSteps.assertFalse("Поиск значения \"100.10.06.39.7.05.00190.242 14\" в справочнике", "Значение \"100.10.06.39.7.05.00190.242 14\" не найдено в справочнике");
+		}
+		chainsOfKBKDiictionaryPageSteps.clickOnFieldChainsOfKBK("100.10.06.39.7.05.00190.242 14");
+		chainsOfKBKDiictionaryPageSteps.clickOnButtonOK();
 		
+		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.waitingForAppletVisible();
+		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.clickOnButtonOpenDictionaryAdditionalAnalyticalSig();
 		
-		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.selectFromDropDownList("2016");
+		additionalAnalyticalSignDictionaryPageSteps.waitingForAppletVisible();
+		if(additionalAnalyticalSignDictionaryPageSteps.checkFilterOn()){
+			additionalAnalyticalSignDictionaryPageSteps.clickFilter();
+		}
+		additionalAnalyticalSignDictionaryPageSteps.clickOnFieldAdditionalAnalyticalSign();
+		additionalAnalyticalSignDictionaryPageSteps.setTextAdditionalAnalyticalSign("Оплата работ, услуг");
+		additionalAnalyticalSignDictionaryPageSteps.clickOnButtonRefresh();
+		if(!additionalAnalyticalSignDictionaryPageSteps.getValueAdditionalAnalyticalSign().equals("Оплата работ, услуг")){
+			assertSteps.assertFalse("Поиск значения \"Оплата работ, услуг\" в справочнике", "Значение \"Оплата работ, услуг\" не найдено в справочнике");
+		}
+		additionalAnalyticalSignDictionaryPageSteps.clickOnRadioButtonAdditionalAnalyticalSign();
+		additionalAnalyticalSignDictionaryPageSteps.clickOnButtonOK();
 		
+		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.waitingForAppletVisible();
+		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.clickOnFieldYear2016();
+		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.setTextYear2016("25");
+		
+		positionsPurchasePlanOfProductJobService200TabSteps.waitingForAppletVisible();
+		positionsPurchasePlanOfProductJobService200TabSteps.selectTabCoordinationSheet();
+		
+		positionsPurchasePlanOfProductJobService200CoordinationSheetSteps.waitingForAppletVisible();
+		positionsPurchasePlanOfProductJobService200CoordinationSheetSteps.clickOnCheckBoxNeedCoordination();
+		
+		positionsPurchasePlanOfProductJobService200CoordinationSheetSteps.clickOnButtonAddNewRecordCoordinators();
+		positionsPurchasePlanOfProductJobService200CoordinationSheetSteps.clickOnButtonChooseCoordinator();
+		
+		selectUserDialogSteps.waitingForAppletVisible();
+		selectUserDialogSteps.clickOnFieldUserFIO("Сафронов");
+		selectUserDialogSteps.clickOnButtonOk();
+		
+		positionsPurchasePlanOfProductJobService200CoordinationSheetSteps.waitingForAppletVisible();
+		positionsPurchasePlanOfProductJobService200CoordinationSheetSteps.clickOnButtonChooseValidator();
+
+		selectUserDialogSteps.waitingForAppletVisible();
+		selectUserDialogSteps.clickOnFieldUserFIO("Сафронов");
+		selectUserDialogSteps.clickOnButtonOk();
+		
+		positionsPurchasePlanOfProductJobService200TabSteps.waitingForAppletVisible();
+		positionsPurchasePlanOfProductJobService200TabSteps.clickOnButttonCheckDocument();
+		
+		testResultsDialogSteps.waitingForAppletVisible();
+		if(!testResultsDialogSteps.checkSaveButtonEists()){
+			assertSteps.assertFalse("Проверка существования кнопки Сохранить", "Кнопка Сохранить не найдена!");
+		}
+		testResultsDialogSteps.clickOnButtonSave();
+		
+		positionsPurchasePlanOfProductJobService200TabSteps.waitingForAppletVisible();
+		positionsPurchasePlanOfProductJobService200TabSteps.selectTabBasicInformation();
+		
+		positionsPurchasePlanOfProductJobService200BasicInformationSteps.waitingForAppletVisible();
+		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnFieldProcurementPlanPositionNumber();
+		String procurementPlanPositionNumber = positionsPurchasePlanOfProductJobService200BasicInformationSteps.getValueProcurementPlanPositionNumber();
+		commonSteps.log("Номер позиции плана закупок = "+procurementPlanPositionNumber);
+		System.out.println(procurementPlanPositionNumber);
+		
+		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnButtonClose();
+		
+		positionsPurchasePlan200Steps.waitingForAppletVisible();
+		if(!positionsPurchasePlan200Steps.isPushedLinkFilter()){
+			positionsPurchasePlan200Steps.clickOnLinkFilter();
+		}
+		if(positionsPurchasePlan200Steps.isFilterExist()){
+			positionsPurchasePlan200Steps.clickOnButtonResetFilter();
+		}
+		positionsPurchasePlan200Steps.setPositionPlanPurshedInFilter(procurementPlanPositionNumber);
+		if(!positionsPurchasePlan200Steps.checkNumberPositionPlanPurshedEists(procurementPlanPositionNumber)){
+			assertSteps.assertFalse("Проверка существования записи в ППЗ", "Запись с номером "+procurementPlanPositionNumber+" не найдена!");
+		}
+		assertSteps.assertField("Статус записи в ППЗ", "Черновик", positionsPurchasePlan200Steps.getTextStatus());
+		
+		positionsPurchasePlan200Steps.clickOnLinkClosePPZ();
+	
 	}
 	
 }

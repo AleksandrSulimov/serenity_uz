@@ -25,7 +25,21 @@ public class PositionsPurchasePlanOfProductJobService200BasicInformationSteps ex
 	public void waitingForAppletVisible() {
 		applet.waitingForAppletVisibleInFrame();
 	}
-	 
+	
+	@Step("Нажать кнопку \"Завершить\" на вкладке \"Основные сведения\"")
+	public void clickOnButtonClose() {
+		applet.clickOnButtonClose();
+	}
+	
+	@Step("Клик по полю \"Номер позиции плана закупок\" на вкладке \"Основные сведения\"")
+	public void clickOnFieldProcurementPlanPositionNumber() {
+		applet.clickOnFieldProcurementPlanPositionNumber();
+	}
+	@Step("Забрать значение из поля \"Номер позиции плана закупок\" на вкладке \"Основные сведения\"")
+	public String getValueProcurementPlanPositionNumber(){
+		return applet.getValueProcurementPlanPositionNumber();    	
+	}
+	
 	@Step("Клик по полю \"Тип закупки\" на вкладке \"Основные сведения\"")
 	public void clickOnFieldPurchaseType() {
 		applet.clickOnFieldPurchaseType();

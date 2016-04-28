@@ -33,7 +33,10 @@ public class PositionsPurchasePlanOfProductJobService200Tab extends BasePage {
 	  @FindBy(xpath=".//span[text()='Основные сведения']")
 	  private WebElementFacade field;
 	  
-
+	  //Кнопка Проверить документ
+	  @FindBy(xpath=".//button[@title='Проверить документ']")
+	  private WebElementFacade checkDocumentButton;
+	  
 	  //Вкладка Основные сведения
 	  @FindBy(xpath=".//span[text()='Основные сведения']")
 	  private WebElementFacade basicInformation;
@@ -73,6 +76,14 @@ public class PositionsPurchasePlanOfProductJobService200Tab extends BasePage {
 			//getDriver().switchTo().defaultContent();
 		}
 		
+		/**
+	   * Нажать кнопку Проверить документ
+	   */
+	  public void clickOnButttonCheckDocument(){
+		  waitForLoadJS();
+		  checkDocumentButton.waitUntilClickable().click();
+	  }
+	  
 	  /**
 	   * Выбрать вкладку Основные сведения
 	   */

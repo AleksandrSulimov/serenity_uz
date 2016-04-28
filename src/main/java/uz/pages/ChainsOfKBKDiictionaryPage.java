@@ -4,10 +4,7 @@ import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 /**
@@ -25,25 +22,24 @@ public class ChainsOfKBKDiictionaryPage extends BasePage {
 	
 	  }
 	  
-	  @FindBy(xpath=".//div[div='Цепочка КБК']")
+	  @FindBy(xpath=".//div[text()='Цепочка КБК']")
 	  private WebElementFacade applet;
 	  
-	  @FindBy(xpath=".//div[div='Выбор записи из справочника \"Цепочки КБК\"']")
+	  @FindBy(xpath="..//div[text()='Цепочка КБК']")
 	  private WebElementFacade field;
 	  
 	  //Поле Цепочка КБК 
 	  @FindBy(xpath=".//tr[th/div='Цепочка КБК']/following-sibling::tr/th[3]/descendant::td[input]")
-	  private WebElementFacade frequencyField;
-	  private static String frequencyFieldXpath = "(.//tr[th/div[text()='Периодичность']]/following-sibling::tr/descendant::td[input])[1]";
+	  private WebElementFacade сhainsOfKBKField;
 	  @FindBy(xpath=".//tr[th/div='Цепочка КБК']/following-sibling::tr/th[3]/descendant::input")
-	  private WebElementFacade frequencyInput;
+	  private WebElementFacade сhainsOfKBKInput;
 
-	  //Радиокнопка в поле Периодичность
-	  @FindBy(xpath="(.//span[contains(@class,'radio')])[1]")
-	  private WebElementFacade frequencyRadioButton;
-
+	  //Поле Цепочка КБК с найденным значением
+	  private static String сhainsOfKBKXpath = ".//div[text()='%s']";
+	  
+	  
 	  //Кнопка Обновить
-	  @FindBy(xpath=".//div/div[text()='Периодичность осуществления закупки']/following-sibling::div//td/button[@title='Обновить список документов' and img[contains(@src,'refresh')]]")
+	  @FindBy(xpath="(.//div//td/button[@title='Обновить список документов' and img[contains(@src,'refresh')]])[2]")
 	  private WebElementFacade refreshButton;
 
 	  //Кнопка OK
@@ -51,35 +47,35 @@ public class ChainsOfKBKDiictionaryPage extends BasePage {
 	  private WebElementFacade okButton;
 
 	  //Значок Видимость фильтров ON
-	  private static String filterOn = ".//table[tbody/tr/th//div='Периодичность']/descendant::img[@title='Видимость фильтров' and contains(@src, 'filter_on')]";
+	  private static String filterOn = ".//table[tbody/tr/th//div='Цепочка КБК']/descendant::img[@title='Видимость фильтров' and contains(@src, 'filter_on')]";
 	  //Значок Видимость фильтров OFF
-	  private static String filterOff = ".//table[tbody/tr/th//div='Периодичность']/descendant::img[@title='Видимость фильтров' and contains(@src, 'filter_off')]";
+	  private static String filterOff = ".//table[tbody/tr/th//div='Цепочка КБК']/descendant::img[@title='Видимость фильтров' and contains(@src, 'filter_off')]";
 	 
 	 
 		
 	  /**
-	   * Клик в поле Периодичность
+	   * Клик в поле Цепочка КБК 
 	   */
-	  public void clickOnFieldFrequency(){
+	  public void clickOnFieldChainsOfKBK(){
 		  waitForLoadJS();
-		  getDriver().findElement(By.xpath(frequencyFieldXpath)).click();
+		  сhainsOfKBKField.waitUntilClickable().click();
 	  }
 	  /**
-	   * Ввести текст в поле Периодичность
+	   * Ввести текст в поле Цепочка КБК 
 	   * @param text
 	   */
-	  public void setTextFrequency(String text){
+	  public void setTextChainsOfKBK(String text){
 		  waitForLoadJS();
-		  frequencyInput.waitUntilClickable().clear();
-		  frequencyInput.waitUntilClickable().sendKeys(text);
+		  сhainsOfKBKInput.waitUntilClickable().clear();
+		  сhainsOfKBKInput.waitUntilClickable().sendKeys(text);
 	  }
 	  /**
-	   * Забрать значение из поля Код
+	   * Забрать значение из поля Цепочка КБК 
 	   * @return text
 	   */
-	  public String getValueFrequency(){
+	  public String getValueChainsOfKBK(){
 		  waitForLoadJS();
-		  return frequencyInput.waitUntilClickable().getAttribute("value");
+		  return сhainsOfKBKInput.waitUntilClickable().getAttribute("value");
 	  }
 	  /**
 	   * Нажать кнопку Обновить
@@ -94,13 +90,6 @@ public class ChainsOfKBKDiictionaryPage extends BasePage {
 	  public void clickOnButtonOK(){
 		  waitForLoadJS();
 		  okButton.waitUntilClickable().click();
-	  }
-	  /**
-	   * Нажать радиокнопку в поле Периодичность
-	   */
-	  public void clickOnRadioButtonFrequency(){
-		  waitForLoadJS();
-		  frequencyRadioButton.waitUntilClickable().click();
 	  }
 	  /**
 	   * Проверить нажата ли кнопка Видимость фильтров
@@ -122,5 +111,12 @@ public class ChainsOfKBKDiictionaryPage extends BasePage {
 		  getDriver().findElement(By.xpath(filterOn)).click();
 		  getDriver().findElement(By.xpath(filterOff));
 	  }
-	  
+	  /**
+	   * Клик в поле Цепочка КБК с переданным значением
+	   */
+	  public void clickOnFieldChainsOfKBK(String text){
+		  waitForLoadJS();
+		  String xPathLocator = String.format(сhainsOfKBKXpath, text); 
+		  getDriver().findElement(By.xpath(xPathLocator)).click();
+	  }
 }

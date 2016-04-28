@@ -35,5 +35,8 @@ public class PositionsPurchasePlanOfProductJobService200TabSteps extends Scenari
 	public void selectTabCoordinationSheet(){
 		applet.selectTabCoordinationSheet();    	
 	}
-		
+	@Step("Нажать кнопку \"Проверить документ\" на странице \"Позиция плана закупок товаров, работ, услуг 200	\"")
+	public void clickOnButttonCheckDocument(){
+		applet.clickOnButttonCheckDocument();    	
+	}	
 }

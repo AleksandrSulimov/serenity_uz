@@ -10,8 +10,10 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 
 import uz.steps.AddAttachmentPageSteps;
+import uz.steps.AdditionalAnalyticalSignDictionaryPageSteps;
 import uz.steps.ApplicationFormsSteps;
 import uz.steps.AssertSteps;
+import uz.steps.ChainsOfKBKDiictionaryPageSteps;
 import uz.steps.CommonSteps;
 import uz.steps.DictionaryPageSteps;
 import uz.steps.FrequencyOfPurchasesDictionaryPageSteps;
@@ -23,9 +25,12 @@ import uz.steps.PositionsPurchasePlan200Steps;
 import uz.steps.PositionsPurchasePlanApprovalSteps;
 import uz.steps.PositionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps;
 import uz.steps.PositionsPurchasePlanOfProductJobService200BasicInformationSteps;
+import uz.steps.PositionsPurchasePlanOfProductJobService200CoordinationSheetSteps;
 import uz.steps.PositionsPurchasePlanStatementSteps;
 import uz.steps.dialog.ApprovalPositionPurchase200DialogSteps;
+import uz.steps.dialog.SelectUserDialogSteps;
 import uz.steps.dialog.StatementPositionPurchase200DialogSteps;
+import uz.steps.dialog.TestResultsDialogSteps;
 import uz.steps.tabs.MainPageTabSteps;
 import uz.steps.tabs.PositionsPurchasePlanOfProductJobService200TabSteps;
 import uz.utils.Helpers;
@@ -77,6 +82,16 @@ public class TestCasesBase {
 	    protected AddAttachmentPageSteps addAttachmentPageSteps;
 	    @Steps 
 	    protected PositionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps;
+	    @Steps 
+	    protected ChainsOfKBKDiictionaryPageSteps chainsOfKBKDiictionaryPageSteps;
+	    @Steps 
+	    protected AdditionalAnalyticalSignDictionaryPageSteps additionalAnalyticalSignDictionaryPageSteps;
+	    @Steps 
+	    protected PositionsPurchasePlanOfProductJobService200CoordinationSheetSteps positionsPurchasePlanOfProductJobService200CoordinationSheetSteps;
+	    @Steps 
+	    protected SelectUserDialogSteps selectUserDialogSteps;
+	    @Steps
+	    protected TestResultsDialogSteps testResultsDialogSteps;
 	    
 	    protected Helpers h = new Helpers();
 	    

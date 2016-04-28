@@ -29,7 +29,17 @@ public class PositionsPurchasePlanOfProductJobService200BasicInformation extends
 	  
 	  @FindBy(xpath=".//span[text()='Общая информация о закупке']")
 	  private WebElementFacade field;
+
+	  //Кнопка Закрыть
+	  @FindBy(xpath=".//span[text()='Позиция плана закупок товаров, работ, услуг 200']/ancestor::table[3]/descendant::button[@title='Закрыть окно']")
+	  private WebElementFacade closeButton;
 	  
+	  //Поле Номер позиции плана закупок
+	  @FindBy(xpath=".//td[div/span='Номер позиции плана закупок']/following-sibling::td[1]/div")
+	  private WebElementFacade procurementPlanPositionNumberField;
+	  @FindBy(xpath=".//td[div/span='Номер позиции плана закупок']/following-sibling::td[1]/div/input")
+	  private WebElementFacade procurementPlanPositionNumberInput;
+
 	  //Поле Тип закупки
 	  @FindBy(xpath=".//td[div[span='Тип закупки']]/following-sibling::td/descendant::div[1]")
 	  private WebElementFacade purchaseTypeField;
@@ -92,6 +102,29 @@ public class PositionsPurchasePlanOfProductJobService200BasicInformation extends
 	  @FindBy(xpath=".//button[@title='Добавить вложение']")
 	  private WebElementFacade addAttachmentButton;
 	  
+	  /**
+	   * Нажать кнопку Завершить
+	   */
+	  public void clickOnButtonClose(){
+		  waitForLoadJS();
+		  closeButton.waitUntilClickable().click();
+		  closeButton.waitUntilNotVisible();
+	  }
+	  
+	  /**
+	   * Клик по полю Номер позиции плана закупок
+	   */
+	  public void clickOnFieldProcurementPlanPositionNumber(){
+		  waitForLoadJS();
+		  procurementPlanPositionNumberField.waitUntilClickable().click();
+	  }
+	  /**
+	   * Забрать значение из поля Номер позиции плана закупок
+	   */
+	  public String getValueProcurementPlanPositionNumber(){
+		  waitForLoadJS();
+		  return procurementPlanPositionNumberInput.getAttribute("value");
+	  }
 	  
 	  /**
 	   * Клик по полю Тип закупки
