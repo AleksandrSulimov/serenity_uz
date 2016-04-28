@@ -27,52 +27,52 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	  }
 	  
 	  @FindBy(xpath=".//th[@title='Номер позиции плана закупок']")
-	  private WebElementFacade applet;
-	  private String appletXpath = ".//th[@title='Номер позиции плана закупок']";
+	  protected WebElementFacade applet;
+	  protected String appletXpath = ".//th[@title='Номер позиции плана закупок']";
 	  
 	  @FindBy(xpath=".//th[@title='Номер позиции плана закупок']")
-	  private WebElementFacade field;
+	  protected WebElementFacade field;
 	  
 	  //Закрыть ППЗ
 	  @FindBy(xpath=".//div[button[@title[contains(.,'Позиция плана закупок')]]]/a[@title='Закрыть']")
-	  private WebElementFacade closePPZTabLink;
+	  protected WebElementFacade closeLink;
 	  
 	  //Кнопка Создать новый документ
 	  @FindBy(xpath=".//button[@title='Создать новый документ']")
-	  private WebElementFacade creteNewDocumentButton;
+	  protected WebElementFacade creteNewDocumentButton;
 
 	  //Отправить на согласование
 	  @FindBy(xpath=".//img[contains(@src,'ico_dollar.png')]/..")
-	  private WebElementFacade sendToMatchingButton;
+	  protected WebElementFacade sendToMatchingButton;
 	  
 	  //Фильтр
 	  @FindBy(xpath=".//img[@title='Видимость фильтров']")
-	  private WebElementFacade filterLink;
+	  protected WebElementFacade filterLink;
 	  
 	  //Поле Номер позиции плана закупок с переданным значением
-	  private String numberPositionPlanPurshedXpath = ".//td[@title='%s']";
+	  protected String numberPositionPlanPurshedXpath = ".//td[@title='%s']";
 	  
 	  //Номер позиции плана закупок
 	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[position() = (count(//th[contains(.,'Номер позиции плана закупок')]/preceding-sibling::*)+1)]/div")
-	  private WebElementFacade numberPositionPlanPurshedField;
+	  protected WebElementFacade numberPositionPlanPurshedField;
 	  //Номер позиции плана закупок в фильтре
 	  @FindBy(xpath=".//div/table/tbody/tr[2]/th[position() = (count(//th[contains(.,'Номер позиции плана закупок')]/preceding-sibling::*)+1)]/div/descendant::input")
-	  private WebElementFacade numberPositionPlanPurshedInFilterInput;
+	  protected WebElementFacade numberPositionPlanPurshedInFilterInput;
 	  //Сбросить фильтр
 	  @FindBy(xpath="(.//img[@src[contains(.,'funnel_delete.png')]]/..)[2]")
-	  private WebElementFacade resetFilterButton;
+	  protected WebElementFacade resetFilterButton;
 	  
 	  //Состояние
 	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[position() = (count(//th[contains(.,'Состояние')]/preceding-sibling::*)+1)]/div")
-	  private WebElementFacade statusField;
+	  protected WebElementFacade statusField;
 	  
 	  //Бокс выбрать первую позицию
 	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[1]/div/span")
-	  private WebElementFacade checkBoxOnFirstRow;
+	  protected WebElementFacade checkBoxOnFirstRow;
 	  
 	  //Кнопка Создать новый документ
 	  @FindBy(xpath=".//button[@title='Обновить список документов']")
-	  private WebElementFacade refreshListOfDocumentButton;
+	  protected WebElementFacade refreshListOfDocumentButton;
 	 
 		
 	  /**
@@ -106,7 +106,7 @@ public class PositionsPurchasePlan200Page extends BasePage {
 		public void clickOnLinkClosePPZ(){
 			waitForLoadJS();
 			getDriver().switchTo().defaultContent();
-			closePPZTabLink.waitUntilClickable().click();
+			closeLink.waitUntilClickable().click();
 			
 		}
 	
