@@ -20,51 +20,51 @@ public class PlanPurchaseOnApprovalSteps extends ScenarioSteps {
 	
 	PlanPurchaseOnApprovalPage applet;
 
-	@Step("Ожидаем загрузку страницы \"План закупок\"")
+	@Step("Ожидаем загрузку страницы \"План закупок на согласовании\"")
 	public void waitingForAppletVisible() {
 		applet.waitingForAppletVisibleInFrame();
 	}
 	
-	@Step("Нажимаем кнопку \"Обновить список документов\" на странице \"План закупок\"")
+	@Step("Нажимаем кнопку \"Обновить список документов\" на странице \"План закупок на согласовании\"")
 	public void clickOnButtonRefreshListOfDocument(){
 		applet.clickOnButtonRefreshListOfDocument();    	
 	}
 		
-	@Step("Проверяем задан ли \"фильтр\" на странице \"План закупок\"")
+	@Step("Проверяем задан ли \"фильтр\" на странице \"План закупок на согласовании\"")
 	public Boolean isFilterExist(){
 		return applet.isFilterExist();   	
 	}
-	@Step("Нажимаем кнопку \"Сбросить фильтр\" на странице \"План закупок\"")
+	@Step("Нажимаем кнопку \"Сбросить фильтр\" на странице \"План закупок на согласовании\"")
 	public void clickOnButtonResetFilter(){
 		applet.clickOnButtonResetFilter();    	
 	}
 	
-    @Step("Проверяем нажат ли линк \"Фильтр\" на странице \"План закупок\"")
+    @Step("Проверяем нажат ли линк \"Фильтр\" на странице \"План закупок на согласовании\"")
     public Boolean isPushedLinkFilter() {
     	return applet.isPushedLinkFilter();
     }
     
-    @Step("Нажимаем линк \"Фильтр\" на странице \"План закупок\"")
+    @Step("Нажимаем линк \"Фильтр\" на странице \"План закупок на согласовании\"")
     public void clickOnLinkFilter(){
     	applet.clickOnLinkFilter();
     }
     
-    @Step("Очищаем поле \"Номер плана закупок\" в фильтре на странице \"План закупок\"")
+    @Step("Очищаем поле \"Номер плана закупок\" в фильтре на странице \"План закупок на согласовании\"")
     public void cleanPlanPurshedInFilter() {
     	applet.cleanPlanPurshedInFilter();    	
     }
     
-    @Step("Вводим текст {0} в поле \"Номер плана закупок\" в фильтре на странице \"План закупок\"")
+    @Step("Вводим текст {0} в поле \"Номер плана закупок\" в фильтре на странице \"План закупок на согласовании\"")
     public void setPlanPurshedInFilter(String string) {
     	applet.setPlanPurshedInFilter(string);    	
     }
     
-    @Step("Нажимаем чекбоксу выбора строки в первой строке на странице \"План закупок\"")
+    @Step("Нажимаем чекбоксу выбора строки в первой строке на странице \"План закупок на согласовании\"")
     public void selectFirstRow(){
     	applet.selectFirstRow();    	
     }
     
-    @Step("Возвращаем текст из поля \"Статус\" в первой строке таблицы на странице \"План закупок\"")
+    @Step("Возвращаем текст из поля \"Статус\" в первой строке таблицы на странице \"План закупок на согласовании\"")
     public String  getTextStatus(){
     	return applet.getTextStatus();    	
     }
@@ -74,7 +74,7 @@ public class PlanPurchaseOnApprovalSteps extends ScenarioSteps {
     	applet.clickOnLinkClose();  	
     }
     
-    @Step("Нажимаем кнопку \"Согласовать закупку\" на странице \"План закупок\"")
+    @Step("Нажимаем кнопку \"Согласовать закупку\" на странице \"План закупок на согласовании\"")
 	public void clickOnButtonApproval() {
     	applet.clickOnButtonApproval();  	
 	}
