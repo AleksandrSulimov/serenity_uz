@@ -38,6 +38,38 @@
     </pluginRepositories>
 
     <dependencies>
+    	<dependency>
+		  <groupId>autoitx4java</groupId>
+		  <artifactId>autoitx4java</artifactId>
+		  <version>1</version>
+		  <scope>system</scope>
+		  <systemPath>${basedir}/lib/AutoItX4Java.jar</systemPath>
+		</dependency>
+		<dependency>
+		  <groupId>net.sf.jacob-project</groupId>
+		  <artifactId>jacob</artifactId>
+		  <version>1.18</version>
+		  <scope>system</scope>
+		  <systemPath>${basedir}/lib/jacob.jar</systemPath>
+		</dependency>
+		<dependency>
+		  <groupId>net.sf.jacob-project</groupId>
+		  <artifactId>jacob</artifactId>
+		  <version>1.18</version>
+		  <classifier>x86</classifier>
+		  <type>dll</type>
+		  <scope>system</scope>
+		  <systemPath>${basedir}/lib/jacob-1.18-x86.dll</systemPath>
+		</dependency>
+		<dependency>
+		  <groupId>net.sf.jacob-project</groupId>
+		  <artifactId>jacob</artifactId>
+		  <version>1.18</version>
+		  <classifier>x64</classifier>
+		  <type>dll</type>
+		  <scope>system</scope>
+		  <systemPath>${basedir}/lib/jacob-1.18-x64.dll</systemPath>
+		</dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>

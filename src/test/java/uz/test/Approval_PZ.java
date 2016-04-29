@@ -8,6 +8,7 @@ import net.thucydides.core.annotations.Title;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import uz.steps.AutoItSteps;
 import uz.steps.PlanPurchaseOnApprovalSteps;
 import uz.steps.PlanPurchaseStatementSteps;
 import uz.steps.dialog.ApprovalPlanPurchaseDialogSteps;
@@ -24,7 +25,8 @@ public class Approval_PZ extends TestCasesBase{
 	ApprovalPlanPurchaseDialogSteps approvalPlanPurchaseDialogSteps;
 	@Steps
 	StatementPlanPurchaseDialogSteps statementPlanPurchaseDialogSteps;
-	
+	@Steps
+	AutoItSteps autoItSteps;
 	@Title("Согласование/Утверждение ПЗ")
     @Test
 	public void approval_PZ(){
@@ -148,6 +150,8 @@ public class Approval_PZ extends TestCasesBase{
 		
 		statementPlanPurchaseDialogSteps.waitingForAppletVisible();
 		statementPlanPurchaseDialogSteps.clickOnButtonStatement();
+		autoItSteps.signInJinnClient();
+		autoItSteps.selectFirstCertificateInJinnClient();
 		statementPlanPurchaseDialogSteps.waitingForAppletVisible();
 		statementPlanPurchaseDialogSteps.clickOnButtonOk();
 		
