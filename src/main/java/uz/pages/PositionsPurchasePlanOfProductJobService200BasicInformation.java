@@ -3,7 +3,9 @@ package uz.pages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 /**
@@ -30,6 +32,8 @@ public class PositionsPurchasePlanOfProductJobService200BasicInformation extends
 	  @FindBy(xpath=".//span[text()='Общая информация о закупке']")
 	  private WebElementFacade field;
 
+	  private String linkXpath = ".//span[contains(.,'%s')]";
+	  
 	  //Кнопка Закрыть
 	  @FindBy(xpath=".//span[text()='Позиция плана закупок товаров, работ, услуг 200']/ancestor::table[3]/descendant::button[@title='Закрыть окно']")
 	  private WebElementFacade closeButton;
@@ -45,6 +49,8 @@ public class PositionsPurchasePlanOfProductJobService200BasicInformation extends
 	  private WebElementFacade purchaseTypeField;
 	  @FindBy(xpath=".//td[div[span='Тип закупки']]/following-sibling::td[1]/div/span/input")
 	  private WebElementFacade purchaseTypeInput;
+	  @FindBy(xpath=".//td[div[span='Тип закупки']]/following-sibling::td[1]/div/span/a")
+	  private WebElementFacade purchaseTypeLink;
 
 	  //Поле ОКПД
 	  @FindBy(xpath=".//td[div[span='ОКПД *']]/following-sibling::td[1]")
@@ -102,6 +108,17 @@ public class PositionsPurchasePlanOfProductJobService200BasicInformation extends
 	  @FindBy(xpath=".//button[@title='Добавить вложение']")
 	  private WebElementFacade addAttachmentButton;
 	  
+	  	/**
+		 * Клик по линку выпадающего списка, текст линка передается параметром
+		 * @param linkText(String) - видимый текст линка
+		 */
+		public void selectFromDropDownList(String linkText){ 
+			waitForLoadJS();
+			String xPathLocator = String.format(linkXpath, linkText); 
+			waitFor(ExpectedConditions.elementToBeClickable(By.xpath(xPathLocator)));
+			getDriver().findElement(By.xpath(xPathLocator)).click();
+		}
+		
 	  /**
 	   * Нажать кнопку Завершить
 	   */
@@ -132,6 +149,13 @@ public class PositionsPurchasePlanOfProductJobService200BasicInformation extends
 	  public void clickOnFieldPurchaseType(){
 		  waitForLoadJS();
 		  purchaseTypeField.waitUntilClickable().click();
+	  }
+	  /**
+	   * Раскрыть список в поле Тип закупки
+	   */
+	  public void openListPurchaseType(){
+		  waitForLoadJS();
+		  purchaseTypeLink.waitUntilClickable().click();
 	  }
 	  /**
 	   * Забрать значение из поля Тип закупки

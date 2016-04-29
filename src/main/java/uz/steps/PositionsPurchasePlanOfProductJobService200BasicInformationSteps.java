@@ -25,7 +25,10 @@ public class PositionsPurchasePlanOfProductJobService200BasicInformationSteps ex
 	public void waitingForAppletVisible() {
 		applet.waitingForAppletVisibleInFrame();
 	}
-	
+	@Step("Выбрать {0} из раскрывшегося выпадающего списка")
+	public void selectFromDropDownList(String val){
+		applet.selectFromDropDownList(val);
+	}
 	@Step("Нажать кнопку \"Завершить\" на вкладке \"Основные сведения\"")
 	public void clickOnButtonClose() {
 		applet.clickOnButtonClose();
@@ -43,6 +46,10 @@ public class PositionsPurchasePlanOfProductJobService200BasicInformationSteps ex
 	@Step("Клик по полю \"Тип закупки\" на вкладке \"Основные сведения\"")
 	public void clickOnFieldPurchaseType() {
 		applet.clickOnFieldPurchaseType();
+	}
+	@Step("Раскрыть список в поле \"Тип закупки\" на вкладке \"Основные сведения\"")
+	public void openListPurchaseType() {
+		applet.openListPurchaseType();
 	}
 	@Step("Забрать значение из поля \"Тип закупки\" на вкладке \"Основные сведения\"")
 	public String getValuePurchaseType(){

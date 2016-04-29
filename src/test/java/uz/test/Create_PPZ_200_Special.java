@@ -10,15 +10,15 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(SerenityRunner.class)
-public class Create_PPZ_200_Regular extends TestCasesBase{
+public class Create_PPZ_200_Special extends TestCasesBase{
 
-	@Title("Создание ППЗ 200 обычная")
+	@Title("Создание ППЗ 200 Особая")
     @Test
-	public void create_PPZ_200_Regular() throws AWTException{
+	public void create_PPZ_200_Special() throws AWTException{
 		
 		
 		Serenity.setSessionVariable("start_time").to(h.getFormattedCurrentDate("dd.MM.yyyy HH:mm:ss"));
-		Serenity.setSessionVariable("test_name").to("Создание ППЗ 200 обычная");
+		Serenity.setSessionVariable("test_name").to("Создание ППЗ 200 Особая");
 
 		h.createNewFile("C:\\test.txt");
 		
@@ -37,40 +37,35 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 		
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.waitingForAppletVisible();
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnFieldPurchaseType();
-		assertSteps.assertField("Тип закупки", "Закупка", positionsPurchasePlanOfProductJobService200BasicInformationSteps.getValuePurchaseType());
+		positionsPurchasePlanOfProductJobService200BasicInformationSteps.openListPurchaseType();
+		positionsPurchasePlanOfProductJobService200BasicInformationSteps.selectFromDropDownList("Товары");
+		assertSteps.assertField("Тип закупки", "Товары, работы, услуги, не превышающие 100 тыс. руб. (п.4 ч.1 ст.93 44-ФЗ)", positionsPurchasePlanOfProductJobService200BasicInformationSteps.getValuePurchaseType());
+				
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnButtonOkpdOpenDictionary();
 		okpd2DictionaryPageSteps.waitingForAppletVisible();
 		okpd2DictionaryPageSteps.openListFirstLevel("26", 2);
 		okpd2DictionaryPageSteps.openListSecondLevel("26.2");
 		okpd2DictionaryPageSteps.openListSecondLevel("26.20");
-		okpd2DictionaryPageSteps.openListSecondLevel("26.20.1");
-		okpd2DictionaryPageSteps.clickOnElementSecondLevel("26.20.11");
+		okpd2DictionaryPageSteps.openListSecondLevel("26.20.2");
+		okpd2DictionaryPageSteps.clickOnElementSecondLevel("26.20.22");
 		if(okpd2DictionaryPageSteps.checkFilterOn()){
 			okpd2DictionaryPageSteps.clickFilter();
 		}
 		okpd2DictionaryPageSteps.clickOnFieldCode();
-		okpd2DictionaryPageSteps.setTextCode("26.20.11.120");
+		okpd2DictionaryPageSteps.setTextCode("26.20.22.000");
 		okpd2DictionaryPageSteps.clickOnButtonRefresh();
-		if(!okpd2DictionaryPageSteps.getValueCode().equals("26.20.11.120")){
-			assertSteps.assertFalse("Поиск значения \"26.20.11.120\" в справочнике", "Значение \"26.20.11.120\" не найдено в справочнике");
+		if(!okpd2DictionaryPageSteps.getValueCode().equals("26.20.22.000")){
+			assertSteps.assertFalse("Поиск значения \"26.20.22.000\" в справочнике", "Значение \"26.20.22.000\" не найдено в справочнике");
 		}
 		okpd2DictionaryPageSteps.clickOnButtonOK();
 		
-		assertSteps.assertField("ОКПД *", "26.20.11.120", positionsPurchasePlanOfProductJobService200BasicInformationSteps.getValueOKPD());
+		assertSteps.assertField("ОКПД *", "26.20.22.000", positionsPurchasePlanOfProductJobService200BasicInformationSteps.getValueOKPD());
 		assertSteps.assertFieldEmpty("Наименование кода товара (работы, услуги) по ОКПД", positionsPurchasePlanOfProductJobService200BasicInformationSteps.getValueCodeProductName());
 		assertSteps.assertFieldEmpty("Наименование объекта закупки", positionsPurchasePlanOfProductJobService200BasicInformationSteps.getValueObjectOfTenderName());
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnFieldDescOfProcurementPlanPosition();
-		positionsPurchasePlanOfProductJobService200BasicInformationSteps.setTextDescOfProcurementPlanPosition("Услуги по ремонту электронных книг");
-		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnFieldTermOfPurchase();
-		positionsPurchasePlanOfProductJobService200BasicInformationSteps.setTextTermOfPurchase("12.2016");
-		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnButtonFrequencyOfPurchase();
-		
-		selectValueInFrequencyOfPurchasesDictionary("Ежемесячно");
-		
+		positionsPurchasePlanOfProductJobService200BasicInformationSteps.setTextDescOfProcurementPlanPosition("Услуги по ремонту компьютеров");
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnFieldJustificationPurchases();
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.setTextJustificationPurchases("Производственная необходимость");
-		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnFieldNameOfStateProgram();
-		positionsPurchasePlanOfProductJobService200BasicInformationSteps.setTextNameOfStateProgram("Книжки электронные записные и аналогичная компьютерная техника");
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnButtonAddAttachment();
 
 		addAttachment("C:\\test.txt");
@@ -84,16 +79,15 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.selectFromDropDownList("2016");
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.clickOnButtonOpenDictionaryKD();
 		
-		selectValueInChainsOfKBKDiictionary("100.10.06.39.7.05.00190.242 14");
+		selectValueInChainsOfKBKDiictionary("100.01.06.39.2.04.00590.244 14");
 		
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.waitingForAppletVisible();
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.clickOnButtonOpenDictionaryAdditionalAnalyticalSig();
-		
-		selectValueInAdditionalAnalyticalSignDictionary("Оплата работ, услуг");
+		selectValueInAdditionalAnalyticalSignDictionary("Иное");
 		
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.waitingForAppletVisible();
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.clickOnFieldYear2016();
-		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.setTextYear2016("25");
+		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.setTextYear2016("15");
 		
 		positionsPurchasePlanOfProductJobService200TabSteps.waitingForAppletVisible();
 		positionsPurchasePlanOfProductJobService200TabSteps.selectTabCoordinationSheet();
@@ -141,7 +135,6 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 		}
 		assertSteps.assertField("Статус записи в ППЗ", "Черновик", positionsPurchasePlan200Steps.getTextStatus());
 		
-		purchasePlanTabSteps.waitingForAppletVisible();
 		purchasePlanTabSteps.selectTabAttributes();
 		
 		attributesPageSteps.waitingForAppletVisible();

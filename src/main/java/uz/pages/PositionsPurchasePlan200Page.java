@@ -58,6 +58,7 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	  //Номер позиции плана закупок в фильтре
 	  @FindBy(xpath=".//div/table/tbody/tr[2]/th[position() = (count(//th[contains(.,'Номер позиции плана закупок')]/preceding-sibling::*)+1)]/div/descendant::input")
 	  protected WebElementFacade numberPositionPlanPurshedInFilterInput;
+	  protected String numberPositionPlanPurshedInFilterXpath;
 	  //Сбросить фильтр
 	  @FindBy(xpath="(.//img[@src[contains(.,'funnel_delete.png')]]/..)[2]")
 	  protected WebElementFacade resetFilterButton;
@@ -159,6 +160,8 @@ public class PositionsPurchasePlan200Page extends BasePage {
 	   * @param string
 	   */
 	  public void setPositionPlanPurshedInFilter(String string){
+		  //waitForLoadJS();
+		  //getDriver().findElement(By.xpath(numberPositionPlanPurshedInFilterXpath).clear();
 		  waitingForFieldVisible(numberPositionPlanPurshedInFilterInput);
 		  numberPositionPlanPurshedInFilterInput.waitUntilClickable().clear();
 		  numberPositionPlanPurshedInFilterInput.waitUntilClickable().typeAndEnter(string);
