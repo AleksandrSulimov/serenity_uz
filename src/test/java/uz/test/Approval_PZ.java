@@ -5,10 +5,8 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Title;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.firefox.FirefoxProfile;
 
 import uz.steps.AutoItSteps;
 import uz.steps.PlanPurchaseOnApprovalSteps;
@@ -40,7 +38,7 @@ public class Approval_PZ extends TestCasesBase{
 		Serenity.setSessionVariable("start_time").to(h.getFormattedCurrentDate("dd.MM.yyyy HH:mm:ss"));
 		Serenity.setSessionVariable("test_name").to("Согласование/Утверждение ПЗ");
 
-		String purshedNumber = "5406105211.540501001.2016-2018.01";//5406105211.540501001.2016-2018.01
+		String purshedNumber = "5406105211.540501001.2016-2018.03";//5406105211.540501001.2016-2018.01
 		
 
 		selectPushedProcurementManagement();
@@ -154,7 +152,7 @@ public class Approval_PZ extends TestCasesBase{
 		planPurchaseStatementSteps.clickOnButtonStatement();
 		
 		statementPlanPurchaseDialogSteps.waitingForAppletVisible();
-		statementPlanPurchaseDialogSteps.clickOnButtonStatement();
+		statementPlanPurchaseDialogSteps.clickOnButtonStatementBeforeJinnClient();
 		autoItSteps.signInJinnClient();
 		autoItSteps.selectFirstCertificateInJinnClient();
 		statementPlanPurchaseDialogSteps.waitingForAppletVisible();

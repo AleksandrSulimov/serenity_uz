@@ -30,6 +30,10 @@ public class StatementPlanPurchaseDialogSteps extends ScenarioSteps {
 		applet.clickOnButtonStatement();  	
 	}
 	
+	@Step("Нажимаем кнопку \"Утвердить\" на странице \"Утвердить план закупок\"")
+	public void clickOnButtonStatementBeforeJinnClient(){
+		applet.clickOnButtonStatementBeforeJinnClient();  	
+	}
 	@Step("Нажимаем кнопку \"ОК\" на странице \"Утвердить план закупок\"")
 	public void clickOnButtonOk() {
 		applet.clickOnButtonOk();

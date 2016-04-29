@@ -40,10 +40,9 @@ public class AutoIt {
 				e.printStackTrace();
 			}
 			*/
-			control.controlClick("", "", "1000");
-			control.controlSend("","","1000","12345678");
-			control.controlSend("","","",PropertyLoader.loadProperty("ntml_user"));
-			control.controlClick("OK", "", "");
+			control.controlClick("Jinn-Client", "", "1000");
+			control.controlSend("Jinn-Client","","1000","12345678");
+			control.controlClick("Jinn-Client", "OK", "1");
 			Boolean isClose = control.winWaitClose("Jinn-Client", "", 5);
 			if(!isClose){
 				MatcherAssert.assertThat("Окно Jinn-Clien не закрылось", false);
@@ -58,7 +57,7 @@ public class AutoIt {
 		 control.winWait("Jinn-Client. Просмотр документа перед формированием подписи", "", 5); //[Title:Jinn-Client]
 		if(control.winExists("Jinn-Client. Просмотр документа перед формированием подписи")){
 			control.winActivate("JJinn-Client. Просмотр документа перед формированием подписи");
-			control.controlClick("Подписать", "", "");
+			control.controlClick("Jinn-Client. Просмотр документа перед формированием подписи", "Подписать", "1");
 			
 			Boolean isClose = control.winWaitClose("Jinn-Client. Просмотр документа перед формированием подписи", "", 5);
 			if(!isClose){

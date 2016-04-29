@@ -48,7 +48,14 @@ public class StatementPlanPurchaseDialog extends BasePage {
 		  statementlButton.waitUntilClickable().click();
 		  waitingForFieldUnVisible(statementlButton);
 	  }
-	  
+	  /**
+	   * Клик по кнопке Согласовать
+	   */
+	  public void clickOnButtonStatementBeforeJinnClient(){
+		  waitingForFieldVisible(statementlButton);
+		  statementlButton.waitUntilClickable().click();
+		  //waitingForFieldUnVisible(statementlButton);
+	  }
 
 	  /**
 	   * Клик по кнопке ОК
