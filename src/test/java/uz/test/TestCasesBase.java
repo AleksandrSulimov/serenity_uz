@@ -1,5 +1,6 @@
 package uz.test;
 
+import net.serenitybdd.core.Serenity;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
@@ -8,6 +9,7 @@ import net.thucydides.core.pages.Pages;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 
 import uz.steps.AddAttachmentPageSteps;
 import uz.steps.AdditionalAnalyticalSignDictionaryPageSteps;
@@ -28,7 +30,6 @@ import uz.steps.PositionsPurchasePlanOfProductJobService200AmountOfFinancialSupp
 import uz.steps.PositionsPurchasePlanOfProductJobService200BasicInformationSteps;
 import uz.steps.PositionsPurchasePlanOfProductJobService200CoordinationSheetSteps;
 import uz.steps.PositionsPurchasePlanStatementSteps;
-import uz.steps.PurchasePlanSteps;
 import uz.steps.dialog.ApprovalPositionPurchase200DialogSteps;
 import uz.steps.dialog.SelectUserDialogSteps;
 import uz.steps.dialog.StatementPositionPurchase200DialogSteps;
@@ -96,13 +97,20 @@ public class TestCasesBase {
 	    protected TestResultsDialogSteps testResultsDialogSteps;
 	    @Steps
 	    protected PlanPurchaseSteps planPurchaseSteps;
-	    @Steps
-	    protected PurchasePlanSteps purchasePlanSteps;
 	    
 	    protected Helpers h = new Helpers();
-	    
+
 	    @Before
 	    public void init(){
+	   
+	    	FirefoxProfile myProfile = new FirefoxProfile();
+	    	myProfile.setAcceptUntrustedCertificates(true);
+	    	myProfile.setPreference("plugin.state.npjinnbrowserplugin",2);
+	    	myProfile.setPreference("plugin.state.java",2);
+			  //myProfile.setPreference("network.proxy.socks_port",9999);
+			  //myProfile.setAlwaysLoadNoFocusLib(true);
+			  //myProfile.setEnableNativeEvents(true);
+	    	Serenity.useFirefoxProfile(myProfile);
 			dictionarySteps.open();
 			dictionarySteps.maximizeWindow();
 			loginSteps.waitingForAppletVisible();

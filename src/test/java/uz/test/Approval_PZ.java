@@ -5,8 +5,10 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Title;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.firefox.FirefoxProfile;
 
 import uz.steps.AutoItSteps;
 import uz.steps.PlanPurchaseOnApprovalSteps;
@@ -27,6 +29,9 @@ public class Approval_PZ extends TestCasesBase{
 	StatementPlanPurchaseDialogSteps statementPlanPurchaseDialogSteps;
 	@Steps
 	AutoItSteps autoItSteps;
+	
+	
+	
 	@Title("Согласование/Утверждение ПЗ")
     @Test
 	public void approval_PZ(){

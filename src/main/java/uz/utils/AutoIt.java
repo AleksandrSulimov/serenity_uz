@@ -49,7 +49,7 @@ public class AutoIt {
 				MatcherAssert.assertThat("Окно Jinn-Clien не закрылось", false);
 			}
 		}else{
-			System.out.println("Окно Jinn-Client. Просмотр документа перед формированием подписи не появилось");
+			System.out.println("Окно Jinn-Client для выбора сертификата не появилось");
 			//MatcherAssert.assertThat("Окно Jinn-Client. Просмотр документа перед формированием подписи не появилось", false);
 		}
 	 }
