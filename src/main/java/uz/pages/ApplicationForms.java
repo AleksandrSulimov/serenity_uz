@@ -3,6 +3,7 @@ package uz.pages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
@@ -33,6 +34,11 @@ public class ApplicationForms extends BasePage {
 	  //План закупок
 	  @FindBy(xpath=".//div[span/span[contains(.,'План закупок')]]/span[1]/a")
 	  private WebElementFacade planProcurementLink;
+	  
+	  //План закупок --> План закупок
+	  @FindBy(xpath=".//span[text()='План закупок']/ancestor::tr/descendant::a[span[text()='План закупок']]")
+	  private WebElementFacade planProcurementInPlanProcurementLink;
+	  
 	  
 	  //Позиции плана закупок 200
 	  @FindBy(xpath=".//a[span[text()='Позиция плана закупок - 200']]")
@@ -99,6 +105,14 @@ public class ApplicationForms extends BasePage {
 	  public void clickOnLinkPlanProcurement(){
 		  waitingForFieldVisible(planProcurementLink);
 		  planProcurementLink.waitUntilClickable().click();
+	  }
+	  /**
+	   * Клик по линку План закупок --> План закупок
+	   */
+	  public void clickOnLinkPlanProcurementInPlanProcurement(){
+		 waitingForFieldVisible(planProcurementInPlanProcurementLink);
+		 planProcurementInPlanProcurementLink.waitUntilClickable().click();
+		// getDriver().findElement(By.xpath(".//span[text()='План закупок']/ancestor::tr/descendant::a[span[text()='План закупок']]")).click();
 	  }
 	  /**
 	   * Проверяем нажат ли линк План закупок

@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(SerenityRunner.class)
-public class Create_PPZ_200_Regular extends TestCasesBase{
+public class Create_PZ extends TestCasesBase{
 
 	@Title("Создание ППЗ 200 обычная")
     @Test
@@ -41,7 +41,15 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 			applicationFormsSteps.clickOnLinkPlanProcurement();
 		}
 		
-		applicationFormsSteps.clickOnLinkPositionPlanProcurement200();
+		applicationFormsSteps.clickOnLinkPlanProcurementInPlanProcurement();
+		
+		purchasePlanSteps.waitingForAppletVisible();
+		purchasePlanSteps.clickOnButtonCreteNewDocument();
+		
+		
+		
+		
+		
 		
 		positionsPurchasePlan200Steps.waitingForAppletVisible();
 		positionsPurchasePlan200Steps.clickOnButtonCreteNewDocument();
