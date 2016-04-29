@@ -68,7 +68,6 @@ public class PurchasePlanSteps extends ScenarioSteps {
     public void setPlanPurshedInFilter(String string) {
     	applet.setPlanPurshedInFilter(string);    	
     }
-    
     @Step("Нажимаем чекбоксу выбора строки в первой строке на странице \"План закупок\"")
     public void selectFirstRow(){
     	applet.selectFirstRow();    	
@@ -77,6 +76,10 @@ public class PurchasePlanSteps extends ScenarioSteps {
     @Step("Возвращаем текст из поля \"Статус\" в первой строке таблицы на странице \"План закупок\"")
     public String  getTextStatus(){
     	return applet.getTextStatus();    	
+    }
+    @Step("Возвращаем текст из поля \"Номер плана закупок\" в первой строке таблицы на странице \"План закупок\"")
+    public String  getTextNumberPlanPurshed(){
+    	return applet.getTextNumberPlanPurshed();    	
     }
     
     @Step("Закрыть вкладку \"План закупок\"")

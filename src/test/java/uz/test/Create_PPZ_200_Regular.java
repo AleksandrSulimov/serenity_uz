@@ -1,6 +1,7 @@
 package uz.test;
 
 import java.awt.AWTException;
+
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Title;
@@ -21,25 +22,10 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 
 		h.createNewFile("C:\\test.txt");
 		
-		menuSteps.waitingForAppletVisible();
-		if(!menuSteps.isPushedProcurementManagement()){
-			menuSteps.clickOnLinkProcurementManagement();
-		}
-		
-		mainPageTabSteps.waitingForAppletVisible();
-		mainPageTabSteps.clickOnTabApplicationForms();
-		
-		applicationFormsSteps.waitingForAppletVisible();
-		
-		if(!applicationFormsSteps.isPushedProcurementManagement()){
-			applicationFormsSteps.clickOnLinkProcurementManagement();
-		}
-		
-		applicationFormsSteps.waitingForAppletVisible();
-		
-		if(!applicationFormsSteps.isPushedLinkPlanProcurement()){
-			applicationFormsSteps.clickOnLinkPlanProcurement();
-		}
+		selectPushedProcurementManagement();
+		goToApplicationForms();
+		expandProcurementManagementOnApplicationForms();
+		expandPlanProcurementOnApplicationForms();	
 		
 		applicationFormsSteps.clickOnLinkPositionPlanProcurement200();
 		
@@ -79,18 +65,7 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.setTextTermOfPurchase("12.2016");
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnButtonFrequencyOfPurchase();
 		
-		frequencyOfPurchasesDictionaryPageSteps.waitingForAppletVisible();
-		if(frequencyOfPurchasesDictionaryPageSteps.checkFilterOn()){
-			frequencyOfPurchasesDictionaryPageSteps.clickFilter();
-		}
-		frequencyOfPurchasesDictionaryPageSteps.clickOnFieldFrequency();
-		frequencyOfPurchasesDictionaryPageSteps.setTextFrequency("Ежемесячно");
-		frequencyOfPurchasesDictionaryPageSteps.clickOnButtonRefresh();
-		if(!frequencyOfPurchasesDictionaryPageSteps.getValueFrequency().equals("Ежемесячно")){
-			assertSteps.assertFalse("Поиск значения \"Ежемесячно\" в справочнике", "Значение \"Ежемесячно\" не найдено в справочнике");
-		}
-		frequencyOfPurchasesDictionaryPageSteps.clickOnRadioButtonFrequency();
-		frequencyOfPurchasesDictionaryPageSteps.clickOnButtonOK();
+		selectValueInFrequencyOfPurchasesDictionary("Ежемесячно");
 		
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnFieldJustificationPurchases();
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.setTextJustificationPurchases("Производственная необходимость");
@@ -98,10 +73,7 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.setTextNameOfStateProgram("Книжки электронные записные и аналогичная компьютерная техника");
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnButtonAddAttachment();
 
-		addAttachmentPageSteps.waitingForAppletVisible(); 
-		addAttachmentPageSteps.loadFile("C:\\test.txt");
-		addAttachmentPageSteps.clickOnButtonSave();
-		
+		addAttachment("C:\\test.txt");
 		
 		positionsPurchasePlanOfProductJobService200TabSteps.waitingForAppletVisible();
 		positionsPurchasePlanOfProductJobService200TabSteps.selectTabAmountOfFinancialSupport();
@@ -112,34 +84,12 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.selectFromDropDownList("2016");
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.clickOnButtonOpenDictionaryKD();
 		
-		chainsOfKBKDiictionaryPageSteps.waitingForAppletVisible();
-		if(chainsOfKBKDiictionaryPageSteps.checkFilterOn()){
-			chainsOfKBKDiictionaryPageSteps.clickFilter();
-		}
-		chainsOfKBKDiictionaryPageSteps.clickOnFieldChainsOfKBK();
-		chainsOfKBKDiictionaryPageSteps.setTextChainsOfKBK("100.10.06.39.7.05.00190.242 14");
-		chainsOfKBKDiictionaryPageSteps.clickOnButtonRefresh();
-		if(!chainsOfKBKDiictionaryPageSteps.getValueChainsOfKBK().equals("100.10.06.39.7.05.00190.242 14")){
-			assertSteps.assertFalse("Поиск значения \"100.10.06.39.7.05.00190.242 14\" в справочнике", "Значение \"100.10.06.39.7.05.00190.242 14\" не найдено в справочнике");
-		}
-		chainsOfKBKDiictionaryPageSteps.clickOnFieldChainsOfKBK("100.10.06.39.7.05.00190.242 14");
-		chainsOfKBKDiictionaryPageSteps.clickOnButtonOK();
+		selectValueInChainsOfKBKDiictionary("100.10.06.39.7.05.00190.242 14");
 		
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.waitingForAppletVisible();
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.clickOnButtonOpenDictionaryAdditionalAnalyticalSig();
 		
-		additionalAnalyticalSignDictionaryPageSteps.waitingForAppletVisible();
-		if(additionalAnalyticalSignDictionaryPageSteps.checkFilterOn()){
-			additionalAnalyticalSignDictionaryPageSteps.clickFilter();
-		}
-		additionalAnalyticalSignDictionaryPageSteps.clickOnFieldAdditionalAnalyticalSign();
-		additionalAnalyticalSignDictionaryPageSteps.setTextAdditionalAnalyticalSign("Оплата работ, услуг");
-		additionalAnalyticalSignDictionaryPageSteps.clickOnButtonRefresh();
-		if(!additionalAnalyticalSignDictionaryPageSteps.getValueAdditionalAnalyticalSign().equals("Оплата работ, услуг")){
-			assertSteps.assertFalse("Поиск значения \"Оплата работ, услуг\" в справочнике", "Значение \"Оплата работ, услуг\" не найдено в справочнике");
-		}
-		additionalAnalyticalSignDictionaryPageSteps.clickOnRadioButtonAdditionalAnalyticalSign();
-		additionalAnalyticalSignDictionaryPageSteps.clickOnButtonOK();
+		selectValueInAdditionalAnalyticalSignDictionary("Оплата работ, услуг");
 		
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.waitingForAppletVisible();
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.clickOnFieldYear2016();
@@ -154,34 +104,26 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 		positionsPurchasePlanOfProductJobService200CoordinationSheetSteps.clickOnButtonAddNewRecordCoordinators();
 		positionsPurchasePlanOfProductJobService200CoordinationSheetSteps.clickOnButtonChooseCoordinator();
 		
-		selectUserDialogSteps.waitingForAppletVisible();
-		selectUserDialogSteps.clickOnFieldUserFIO("Сафронов");
-		selectUserDialogSteps.clickOnButtonOk();
+		selectUser("Сафронов");
 		
 		positionsPurchasePlanOfProductJobService200CoordinationSheetSteps.waitingForAppletVisible();
 		positionsPurchasePlanOfProductJobService200CoordinationSheetSteps.clickOnButtonChooseValidator();
 
-		selectUserDialogSteps.waitingForAppletVisible();
-		selectUserDialogSteps.clickOnFieldUserFIO("Сафронов");
-		selectUserDialogSteps.clickOnButtonOk();
+		selectUser("Сафронов");
 		
 		positionsPurchasePlanOfProductJobService200TabSteps.waitingForAppletVisible();
 		positionsPurchasePlanOfProductJobService200TabSteps.clickOnButttonCheckDocument();
 		
-		testResultsDialogSteps.waitingForAppletVisible();
-		if(!testResultsDialogSteps.checkSaveButtonEists()){
-			assertSteps.assertFalse("Проверка существования кнопки Сохранить", "Кнопка Сохранить не найдена!");
-		}
-		testResultsDialogSteps.clickOnButtonSave();
+		saveTestResults();
 		
 		positionsPurchasePlanOfProductJobService200TabSteps.waitingForAppletVisible();
 		positionsPurchasePlanOfProductJobService200TabSteps.selectTabBasicInformation();
 		
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.waitingForAppletVisible();
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnFieldProcurementPlanPositionNumber();
-		String procurementPlanPositionNumber = positionsPurchasePlanOfProductJobService200BasicInformationSteps.getValueProcurementPlanPositionNumber();
-		commonSteps.log("Номер позиции плана закупок = "+procurementPlanPositionNumber);
-		System.out.println(procurementPlanPositionNumber);
+		String ppzNumber = positionsPurchasePlanOfProductJobService200BasicInformationSteps.getValueProcurementPlanPositionNumber();
+		commonSteps.log("Номер позиции плана закупок = "+ppzNumber);
+		System.out.println("Номер позиции плана закупок = "+ppzNumber);
 		
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnButtonClose();
 		
@@ -192,11 +134,19 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 		if(positionsPurchasePlan200Steps.isFilterExist()){
 			positionsPurchasePlan200Steps.clickOnButtonResetFilter();
 		}
-		positionsPurchasePlan200Steps.setPositionPlanPurshedInFilter(procurementPlanPositionNumber);
-		if(!positionsPurchasePlan200Steps.checkNumberPositionPlanPurshedEists(procurementPlanPositionNumber)){
-			assertSteps.assertFalse("Проверка существования записи в ППЗ", "Запись с номером "+procurementPlanPositionNumber+" не найдена!");
+		positionsPurchasePlan200Steps.setPositionPlanPurshedInFilter(ppzNumber);
+		if(!positionsPurchasePlan200Steps.checkNumberPositionPlanPurshedEists(ppzNumber)){
+			assertSteps.assertFalse("Проверка существования записи в ППЗ", "Запись с номером "+ppzNumber+" не найдена!");
 		}
 		assertSteps.assertField("Статус записи в ППЗ", "Черновик", positionsPurchasePlan200Steps.getTextStatus());
+		
+		purchasePlanTabSteps.waitingForAppletVisible();
+		purchasePlanTabSteps.selectTabAttributes();
+		
+		attributesPageSteps.waitingForAppletVisible();
+		String ppzId = attributesPageSteps.getTextId();
+		commonSteps.log("Идентификатор позиции плана закупок = "+ppzId);
+		System.out.println("Идентификатор позиции плана закупок = "+ppzId);
 		
 		positionsPurchasePlan200Steps.clickOnLinkClosePPZ();
 	

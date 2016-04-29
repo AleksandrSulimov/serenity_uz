@@ -6,7 +6,6 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -49,7 +48,7 @@ public class PurchasePlanPage extends BasePage {
 	  protected String numberPlanPurshedXpath = ".//td[@title='%s']";
 	  
 	  //Номер плана закупок
-	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[position() = (count(//th[contains(.,'Номер плана закупок')]/preceding-sibling::*)+1)]/div")
+	  @FindBy(xpath=".//div[text()='Номер плана закупок']/ancestor::table[1]/ancestor::div[1]/following-sibling::div[2]/descendant::td[4]/div")
 	  protected WebElementFacade numberPlanPurshedField;
 	  //Номер плана закупок в фильтре
 	  @FindBy(xpath=".//div/table/tbody/tr[2]/th[position() = (count(//th[contains(.,'Номер плана закупок')]/preceding-sibling::*)+1)]/div/descendant::input")
@@ -61,7 +60,10 @@ public class PurchasePlanPage extends BasePage {
 	  //Статус
 	  @FindBy(xpath=".//div[text()='Статус']//ancestor::div[table][1]/following-sibling::div/table/descendant::td[3]/div")
 	  protected WebElementFacade statusField;
-
+	  //Статус в фильтре
+	  @FindBy(xpath=".//div/table/tbody/tr[2]/th[position() = (count(//th[contains(.,'Статус')]/preceding-sibling::*)+1)]/div/descendant::input")
+	  protected WebElementFacade statusInFilterInput;
+	  
 	  //Кнопка Обновить список документов
 	  @FindBy(xpath=".//button[@title='Обновить список документов']")
 	  protected WebElementFacade refreshListOfDocumentButton;
@@ -77,34 +79,6 @@ public class PurchasePlanPage extends BasePage {
 	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[1]/div/span")
 	  protected WebElementFacade checkBoxOnFirstRow;
 	  
-		
-	  /**
-		 * Ожидаем, когда аплет будет visible
-		 */
-		public void waitingForAppletVisible(){
-			waitForLoadJS();
-			waitFor(new ExpectedCondition<Boolean>() {
-			    public Boolean apply(final WebDriver dirver) {
-			    	getDriver().switchTo().defaultContent();
-			    	try {
-			    		int countFrame = getDriver().findElements(By.xpath(".//iframe")).size();
-			    		for(int i=1; i<=countFrame; i++){
-			    			getDriver().switchTo().defaultContent();
-			    			getDriver().switchTo().frame(getDriver().findElement(By.xpath("(.//iframe)["+i+"]")));
-			    			if(getDriver().findElements(By.xpath(appletXpath)).size() > 0){
-				    			return true;
-				    		}
-			    		}
-			    		return false;
-			    		
-					} catch (Exception e) {
-						 return false;
-					}
-			    }
-			});
-			waitFor(ExpectedConditions.elementToBeClickable(applet));
-			//getDriver().switchTo().defaultContent();
-		}
 		
 		public void clickOnLinkClosePZ(){
 			waitForLoadJS();
@@ -166,6 +140,7 @@ public class PurchasePlanPage extends BasePage {
 		  numberPlanPurshedInFilterInput.waitUntilClickable().clear();
 		  numberPlanPurshedInFilterInput.waitUntilClickable().typeAndEnter(string);
 	  }
+	 
 	  /**
 	   * Клик по чекбоксу выбора строки в первой строке
 	   */
@@ -181,7 +156,14 @@ public class PurchasePlanPage extends BasePage {
 		  waitForLoadJS();
 		  return statusField.waitUntilClickable().getText();
 	  }
-
+	  /**
+	   * Возвращаем текст поля Номер плана закупок
+	   * @return String
+	   */
+	  public String getTextNumberPlanPurshed(){
+		  waitForLoadJS();
+		  return numberPlanPurshedField.waitUntilClickable().getText();
+	  }
 	  /**
 	   * Нажать кнопку обновить список документов
 	   */

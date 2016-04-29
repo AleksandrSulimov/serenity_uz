@@ -15,7 +15,9 @@ import uz.steps.AddAttachmentPageSteps;
 import uz.steps.AdditionalAnalyticalSignDictionaryPageSteps;
 import uz.steps.ApplicationFormsSteps;
 import uz.steps.AssertSteps;
+import uz.steps.AttributesPageSteps;
 import uz.steps.ChainsOfKBKDiictionaryPageSteps;
+import uz.steps.ChoosePpzForIncludeInPZDiictionaryPageSteps;
 import uz.steps.CommonSteps;
 import uz.steps.DictionaryPageSteps;
 import uz.steps.FrequencyOfPurchasesDictionaryPageSteps;
@@ -30,12 +32,20 @@ import uz.steps.PositionsPurchasePlanOfProductJobService200AmountOfFinancialSupp
 import uz.steps.PositionsPurchasePlanOfProductJobService200BasicInformationSteps;
 import uz.steps.PositionsPurchasePlanOfProductJobService200CoordinationSheetSteps;
 import uz.steps.PositionsPurchasePlanStatementSteps;
+import uz.steps.PurchasePlanOfProductJobServiceBasicInformationSteps;
+import uz.steps.PurchasePlanOfProductJobServiceCoordinationSheetSteps;
+import uz.steps.PurchasePlanOfProductJobServicePositionPurchasePlanSteps;
+import uz.steps.PurchasePlanOfProductJobServiceResultsOfKBKSteps;
+import uz.steps.PurchasePlanOfProductJobServiceSpecialPurchasesSteps;
+import uz.steps.PurchasePlanSteps;
 import uz.steps.dialog.ApprovalPositionPurchase200DialogSteps;
 import uz.steps.dialog.SelectUserDialogSteps;
 import uz.steps.dialog.StatementPositionPurchase200DialogSteps;
 import uz.steps.dialog.TestResultsDialogSteps;
 import uz.steps.tabs.MainPageTabSteps;
 import uz.steps.tabs.PositionsPurchasePlanOfProductJobService200TabSteps;
+import uz.steps.tabs.PurchasePlanOfProductJobServiceTabSteps;
+import uz.steps.tabs.PurchasePlanTabSteps;
 import uz.utils.Helpers;
 import uz.utils.PropertyLoader;
 
@@ -97,7 +107,27 @@ public class TestCasesBase {
 	    protected TestResultsDialogSteps testResultsDialogSteps;
 	    @Steps
 	    protected PlanPurchaseSteps planPurchaseSteps;
-	    
+	    @Steps
+	    protected PurchasePlanTabSteps purchasePlanTabSteps;
+	    @Steps
+	    protected AttributesPageSteps attributesPageSteps;
+	    @Steps
+	    protected PurchasePlanSteps purchasePlanSteps;
+	    @Steps
+	    protected PurchasePlanOfProductJobServiceTabSteps purchasePlanOfProductJobServiceTabSteps;
+	    @Steps
+	    protected PurchasePlanOfProductJobServiceBasicInformationSteps purchasePlanOfProductJobServiceBasicInformationSteps;
+	    @Steps
+	    protected PurchasePlanOfProductJobServicePositionPurchasePlanSteps purchasePlanOfProductJobServicePositionPurchasePlanSteps;
+	    @Steps
+	    protected ChoosePpzForIncludeInPZDiictionaryPageSteps choosePpzForIncludeInPZDiictionaryPageSteps;
+	    @Steps
+	    protected PurchasePlanOfProductJobServiceSpecialPurchasesSteps purchasePlanOfProductJobServiceSpecialPurchasesSteps;
+	    @Steps
+	    protected PurchasePlanOfProductJobServiceResultsOfKBKSteps purchasePlanOfProductJobServiceResultsOfKBKSteps;
+	    @Steps
+	    protected PurchasePlanOfProductJobServiceCoordinationSheetSteps purchasePlanOfProductJobServiceCoordinationSheetSteps;
+	   
 	    protected Helpers h = new Helpers();
 
 	    @Before
@@ -165,5 +195,89 @@ public class TestCasesBase {
 	     */
 	    public void expandFilterOnPurchasePlan200(){
 	    	
+	    }
+	    /**
+	     * Выбрать значение в справочнике 'Периодичность осуществления закупки'
+	     * @param value
+	     */
+	    public void selectValueInFrequencyOfPurchasesDictionary(String value){
+	    	frequencyOfPurchasesDictionaryPageSteps.waitingForAppletVisible();
+			if(frequencyOfPurchasesDictionaryPageSteps.checkFilterOn()){
+				frequencyOfPurchasesDictionaryPageSteps.clickFilter();
+			}
+			frequencyOfPurchasesDictionaryPageSteps.clickOnFieldFrequency();
+			frequencyOfPurchasesDictionaryPageSteps.setTextFrequency(value);
+			frequencyOfPurchasesDictionaryPageSteps.clickOnButtonRefresh();
+			if(!frequencyOfPurchasesDictionaryPageSteps.getValueFrequency().equals(value)){
+				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
+			}
+			frequencyOfPurchasesDictionaryPageSteps.clickOnRadioButtonFrequency();
+			frequencyOfPurchasesDictionaryPageSteps.clickOnButtonOK();
+	    }
+	    /**
+	     * Выбрать значение в справочнике 'Цепочки КБК '
+	     * @param value
+	     */
+	    public void selectValueInChainsOfKBKDiictionary(String value){
+	    	chainsOfKBKDiictionaryPageSteps.waitingForAppletVisible();
+			if(chainsOfKBKDiictionaryPageSteps.checkFilterOn()){
+				chainsOfKBKDiictionaryPageSteps.clickFilter();
+			}
+			chainsOfKBKDiictionaryPageSteps.clickOnFieldChainsOfKBK();
+			chainsOfKBKDiictionaryPageSteps.setTextChainsOfKBK(value);
+			chainsOfKBKDiictionaryPageSteps.clickOnButtonRefresh();
+			if(!chainsOfKBKDiictionaryPageSteps.getValueChainsOfKBK().equals(value)){
+				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение\""+value+"\" не найдено в справочнике");
+			}
+			chainsOfKBKDiictionaryPageSteps.clickOnFieldChainsOfKBK(value);
+			chainsOfKBKDiictionaryPageSteps.clickOnButtonOK();
+	    }
+	    /**
+	     * Выбрать значение в справочнике 'Дополнительный аналитический признак'
+	     * @param value
+	     */
+	    public void selectValueInAdditionalAnalyticalSignDictionary(String value){
+	    	additionalAnalyticalSignDictionaryPageSteps.waitingForAppletVisible();
+			if(additionalAnalyticalSignDictionaryPageSteps.checkFilterOn()){
+				additionalAnalyticalSignDictionaryPageSteps.clickFilter();
+			}
+			additionalAnalyticalSignDictionaryPageSteps.clickOnFieldAdditionalAnalyticalSign();
+			additionalAnalyticalSignDictionaryPageSteps.setTextAdditionalAnalyticalSign(value);
+			additionalAnalyticalSignDictionaryPageSteps.clickOnButtonRefresh();
+			if(!additionalAnalyticalSignDictionaryPageSteps.getValueAdditionalAnalyticalSign().equals(value)){
+				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
+			}
+			additionalAnalyticalSignDictionaryPageSteps.clickOnRadioButtonAdditionalAnalyticalSign();
+			additionalAnalyticalSignDictionaryPageSteps.clickOnButtonOK();
+	    }
+	    
+	    /**
+	     * Загрузить файл в диалоговом окне 'Добавление вложения'
+	     * @param filePath
+	     */
+	    public void addAttachment(String filePath){
+	    	addAttachmentPageSteps.waitingForAppletVisible(); 
+			addAttachmentPageSteps.loadFile(filePath);
+			addAttachmentPageSteps.clickOnButtonSave();
+	    }
+	    /**
+	     * Выбрать пользователя в диалоговом окне 'Выбрать пользователя'
+	     * @param fio
+	     */
+	    public void selectUser(String fio){
+	    	selectUserDialogSteps.waitingForAppletVisible();
+			selectUserDialogSteps.clickOnFieldUserFIO(fio);
+			selectUserDialogSteps.clickOnButtonOk();
+	    }
+	    
+	    /**
+	     * Нажать кнопку сохранить в диалоговом окне 'Результаты проверки'
+	     */
+	    public void saveTestResults(){
+	    	testResultsDialogSteps.waitingForAppletVisible();
+			if(!testResultsDialogSteps.checkSaveButtonEists()){
+				assertSteps.assertFalse("Проверка существования кнопки Сохранить", "Кнопка Сохранить не найдена!");
+			}
+			testResultsDialogSteps.clickOnButtonSave();
 	    }
 }

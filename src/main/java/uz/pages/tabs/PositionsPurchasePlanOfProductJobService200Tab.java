@@ -1,13 +1,9 @@
 package uz.pages.tabs;
 
-import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import uz.pages.BasePage;
 
 /**
@@ -47,34 +43,6 @@ public class PositionsPurchasePlanOfProductJobService200Tab extends BasePage {
 	  @FindBy(xpath=".//span[text()='Лист согласования']")
 	  private WebElementFacade coordinationSheet;
 
-		
-	  /**
-		 * Ожидаем, когда аплет будет visible
-		 */
-		public void waitingForAppletVisible(){
-			waitForLoadJS();
-			waitFor(new ExpectedCondition<Boolean>() {
-			    public Boolean apply(final WebDriver dirver) {
-			    	getDriver().switchTo().defaultContent();
-			    	try {
-			    		int countFrame = getDriver().findElements(By.xpath(".//iframe")).size();
-			    		for(int i=1; i<=countFrame; i++){
-			    			getDriver().switchTo().defaultContent();
-			    			getDriver().switchTo().frame(getDriver().findElement(By.xpath("(.//iframe)["+i+"]")));
-			    			if(getDriver().findElements(By.xpath(appletXpath)).size() > 0){
-				    			return true;
-				    		}
-			    		}
-			    		return false;
-			    		
-					} catch (Exception e) {
-						 return false;
-					}
-			    }
-			});
-			waitFor(ExpectedConditions.elementToBeClickable(applet));
-			//getDriver().switchTo().defaultContent();
-		}
 		
 		/**
 	   * Нажать кнопку Проверить документ
