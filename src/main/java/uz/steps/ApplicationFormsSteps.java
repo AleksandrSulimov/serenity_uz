@@ -42,7 +42,10 @@ public class ApplicationFormsSteps extends ScenarioSteps {
     public void clickOnLinkPlanProcurement(){
     	applet.clickOnLinkPlanProcurement();    	
     }
-    
+    @Step("Нажимаем линк \"План закупок\" --> \"План закупок\" в \"Формуляры\"")
+    public void clickOnLinkPlanProcurementInPlanProcurement(){
+    	applet.clickOnLinkPlanProcurementInPlanProcurement();    	
+    }
     @Step("Нажимаем линк \"Позиции плана закупок - 200\" в \"Формуляры\"")
     public void clickOnLinkPositionPlanProcurement200(){
     	applet.clickOnLinkPositionPlanProcurement200();    	
