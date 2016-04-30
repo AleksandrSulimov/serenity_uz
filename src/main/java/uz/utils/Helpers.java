@@ -5,10 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.text.DateFormat;
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -121,33 +118,6 @@ public class Helpers {
 		}
 		//logger.info(num);
 		return num;
-	}
-	/**
-	 * Заносит в сессионную переменную tbe время нажатия кнопки выполнить в формате #.###
-	 * @param startTime (long) - штамп временной перед нажатием кнопки выполнить
-	 * @param stopTime (long) - штамп временной после нажатием кнопки выполнить
-	 */
-	public void setTimeExecuteSr(long startTime, long stopTime){
-		DecimalFormat df = new DecimalFormat("#.###");
-		double res = (double)(stopTime - startTime)/1000000000;
-		res = new BigDecimal(res).setScale(3, RoundingMode.UP).doubleValue();
-		/*
-		String tbe = df.format(res);
-		logger.info("Время нажатия кнопки Выполнить: "+tbe);
-		*/
-		Serenity.setSessionVariable("tbe").to(res);//.toString()
-	}
-	/**
-	 * Возвращает разность в формате #.###
-	 * @param startTime long
-	 * @param stopTime long
-	 * @return double
-	 */
-	public double getDifferenceBetweenTwoTime(long startTime, long stopTime){
-		DecimalFormat df = new DecimalFormat("#.###");
-		double res = (double)(stopTime - startTime)/1000000000;
-		res = new BigDecimal(res).setScale(3, RoundingMode.UP).doubleValue();
-		return res;
 	}
 	
 	/**

@@ -105,9 +105,72 @@ public class ApplicationFormsSteps extends ScenarioSteps {
 	public void clickOnLinkPlanPurchaseApproval() {
 		applet.clickOnLinkPlanPurchaseApproval();
 	}
-	@Step("Нажимаем раскрывающийся линк \"План закупок на утверждении\" в \"Формуляры\"")
+	@Step("Нажимаем линк \"План закупок на утверждении\" в \"Формуляры\"")
 	public void clickOnLinkPlanPurchaseStatement() {
 		applet.clickOnLinkPlanPurchaseStatement();
 	}
-    
+	
+	//==================
+	//    	ППГ
+	//==================
+    @Step("Проверяем нажат ли линк \"Позиции плана-графика\" в \"Формуляры\"")
+    public Boolean isPushedLinkPositionPlanGraphics() {
+    	return applet.isPushedLinkPositionPlanGraphics();
+    }
+    @Step("Нажимаем раскрывающийся линк \"Позиции плана-графика\" в \"Формуляры\"")	
+	public void clickOnLinkPositionPlanGraphics() {      	
+    	applet.clickOnLinkPositionPlanGraphics();	
+	}
+    @Step("Нажимаем линк \"Позиции плана-графика закупок\" расположенный под раскрывшемся элементом \"Позиции плана-графика\" в \"Формуляры\"")	
+	public void clickOnLinkPositionPlanGraphicsPurches() {      	
+    	applet.clickOnLinkPositionPlanGraphicsPurches();	
+	} 
+    @Step("Проверяем нажат ли линк \"Мои документы\" расположенный под раскрывшемся элементом \"Позиции плана-графика\" в \"Формуляры\"")
+	public boolean isPushedLinkMyDocumentAfterPositionPlanGraphics() {
+		return applet.isPushedLinkMyDocumentAfterPositionPlanGraphics();
+	}
+    @Step("Нажимаем линк \"Мои документы\" расположенный под раскрывшемся элементом \"Позиции плана-графика\" в \"Формуляры\"")
+   	public void clickOnLinkMyDocumentAfterPositionPlanGraphics() {
+       	applet.clickOnLinkMyDocumentAfterPositionPlanGraphics();
+   	}
+    @Step("Нажимаем линк \"Позиции плана-графика закупок на согласовании\" в \"Формуляры\"")
+	public void clickOnLinkPositionPlanGraphicsPurchesApproval() {
+		applet.clickOnLinkPositionPlanGraphicsPurchesApproval();
+	}
+	@Step("Нажимаем линк \"Позиции плана-графика закупок на утверждении\" в \"Формуляры\"")
+	public void clickOnLinkPositionPlanGraphicsPurchesStatement() {
+		applet.clickOnLinkPositionPlanGraphicsPurchesStatement();
+	}
+	
+	//==================
+	//    	ПГ
+	//==================
+    @Step("Проверяем нажат ли линк \"План-график\" в \"Формуляры\"")
+    public Boolean isPushedLinkPlanGraphics() {
+    	return applet.isPushedLinkPlanGraphics();
+    }
+    @Step("Нажимаем раскрывающийся линк \"План-график\" в \"Формуляры\"")	
+	public void clickOnLinkPlanGraphics() {      	
+    	applet.clickOnLinkPlanGraphics();	
+	}
+    @Step("Нажимаем линк \"План-график\" расположенный под раскрывшемся элементом \"План-график\" в \"Формуляры\"")	
+	public void clickOnLinkPlanGraphicsAfterPlanGraphicsExpandLink() {      	
+    	applet.clickOnLinkPlanGraphicsAfterPlanGraphicsExpandLink();	
+	} 
+    @Step("Проверяем нажат ли линк \"Мои документы\" расположенный под раскрывшемся элементом \"План-график\" в \"Формуляры\"")
+	public boolean isPushedLinkMyDocumentAfterPlanGraphicsLink() {
+		return applet.isPushedLinkMyDocumentAfterPlanGraphicsLink();
+	}
+    @Step("Нажимаем линк \"Мои документы\" расположенный под раскрывшемся элементом \"План-график\" в \"Формуляры\"")
+   	public void clickOnLinkMyDocumentAfterPlanGraphicsLink() {
+       	applet.clickOnLinkMyDocumentAfterPlanGraphicsLink();
+   	}
+    @Step("Нажимаем линк \"Планы-графики на согласовании\" в \"Формуляры\"")
+	public void clickOnLinkPlanGraphicsApproval() {
+		applet.clickOnLinkPlanGraphicsApproval();
+	}
+	@Step("Нажимаем линк \"Планы-графики на утверждении\" в \"Формуляры\"")
+	public void clickOnLinkPlanGraphicsStatement() {
+		applet.clickOnLinkPlanGraphicsStatement();
+	}
 }

@@ -26,6 +26,9 @@ import uz.steps.LoginPageSteps;
 import uz.steps.MenuSteps;
 import uz.steps.OKPD2DictionaryPageSteps;
 import uz.steps.PlanPurchaseSteps;
+import uz.steps.PositionsPlanGraphicsPurchesOnApprovalSteps;
+import uz.steps.PositionsPlanGraphicsPurchesStatementSteps;
+import uz.steps.PositionsPlanGraphicsPurchesSteps;
 import uz.steps.PositionsPurchasePlan200Steps;
 import uz.steps.PositionsPurchasePlanApprovalSteps;
 import uz.steps.PositionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps;
@@ -39,8 +42,10 @@ import uz.steps.PurchasePlanOfProductJobServiceResultsOfKBKSteps;
 import uz.steps.PurchasePlanOfProductJobServiceSpecialPurchasesSteps;
 import uz.steps.PurchasePlanSteps;
 import uz.steps.dialog.ApprovalPositionPurchase200DialogSteps;
+import uz.steps.dialog.ApprovalPositionsPlanGraphicsPurchesDialogSteps;
 import uz.steps.dialog.SelectUserDialogSteps;
 import uz.steps.dialog.StatementPositionPurchase200DialogSteps;
+import uz.steps.dialog.StatementPositionsPlanGraphicsPurchesDialogSteps;
 import uz.steps.dialog.TestResultsDialogSteps;
 import uz.steps.tabs.MainPageTabSteps;
 import uz.steps.tabs.PositionsPurchasePlanOfProductJobService200TabSteps;
@@ -127,7 +132,16 @@ public class TestCasesBase {
 	    protected PurchasePlanOfProductJobServiceResultsOfKBKSteps purchasePlanOfProductJobServiceResultsOfKBKSteps;
 	    @Steps
 	    protected PurchasePlanOfProductJobServiceCoordinationSheetSteps purchasePlanOfProductJobServiceCoordinationSheetSteps;
-	   
+	    @Steps
+	    protected PositionsPlanGraphicsPurchesSteps positionsPlanGraphicsPurchesSteps;
+	    @Steps
+	    protected PositionsPlanGraphicsPurchesOnApprovalSteps positionsPlanGraphicsPurchesOnApprovalSteps;
+	    @Steps
+	    protected PositionsPlanGraphicsPurchesStatementSteps positionsPlanGraphicsPurchesStatementSteps;
+	    @Steps
+	    protected ApprovalPositionsPlanGraphicsPurchesDialogSteps approvalPositionsPlanGraphicsPurchesDialogSteps;
+	    @Steps
+	    protected StatementPositionsPlanGraphicsPurchesDialogSteps statementPositionsPlanGraphicsPurchesDialogSteps;
 	    protected Helpers h = new Helpers();
 
 	    @Before
@@ -188,6 +202,14 @@ public class TestCasesBase {
 	    public void expandPlanProcurementOnApplicationForms(){
 	    	if(!applicationFormsSteps.isPushedLinkPlanProcurement()){
 				applicationFormsSteps.clickOnLinkPlanProcurement();
+			}
+	    }
+	    /**
+	     * Раскрыть Позиции плана-графика на Формулярах
+	     */
+	    public void expandPositionPlanGraphicsOnApplicationForms(){
+	    	if(!applicationFormsSteps.isPushedLinkPositionPlanGraphics()){
+				applicationFormsSteps.clickOnLinkPositionPlanGraphics();
 			}
 	    }
 	    /**

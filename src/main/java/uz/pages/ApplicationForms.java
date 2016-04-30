@@ -77,6 +77,40 @@ public class ApplicationForms extends BasePage {
 	  @FindBy(xpath=".//div[span/span[contains(.,'План закупок')]]/following::a[span[text()='План закупок на утверждении']]")
 	  private WebElementFacade statementPlanPurchaseLink;
 	  
+	  //ППГ
+	  //Раскрывающийся линк Позиции плана-графика под управление закупками
+	  @FindBy(xpath=".//div[span/span[contains(.,'Позиции плана-графика')]]/span[1]/a")
+	  private WebElementFacade positionPlanGraphicFirstLevelExpandLink;
+	  //Позиции плана-графика закупок
+	  @FindBy(xpath=".//div[span/span[contains(.,'Позиции плана-графика')]]/following::a[span[text()='Позиции плана-графика закупок']]")
+	  private WebElementFacade positionPlanGraphicPurchesLink;
+	  //Мои документы после Раскрывающийся План закупок
+	  @FindBy(xpath=".//div[span/span[contains(.,'Позиции плана-графика')]]/following::div[span/span[contains(.,'Мои документы')]]/span[1]/a")
+	  private WebElementFacade myDocumentAfterPositionPlanGraphicLink;
+	  //Позиции плана-графика закупок на согласовании
+	  @FindBy(xpath=".//div[span/span[contains(.,'Позиции плана-графика')]]/following::a[span[text()='Позиции плана-графика закупок на согласовании']]")
+	  private WebElementFacade approvalPositonPlanGraphicPurchaseLink;
+	  //Позиции плана-графика закупок на утверждении
+	  @FindBy(xpath=".//div[span/span[contains(.,'Позиции плана-графика')]]/following::a[span[text()='Позиции плана-графика закупок на утверждении']]")
+	  private WebElementFacade statementPositonPlanGraphicPurchaseLink;
+	  
+	  //ПГ
+	  //Раскрывающийся линк План-график под управление закупками
+	  @FindBy(xpath=".//div[span/span[contains(.,'План-график')]]/span[1]/a")
+	  private WebElementFacade planGraphicsFirstLevelExpandLink;
+	  //План-график под Раскрывающийся линк План-график
+	  @FindBy(xpath=".//div[span/span[contains(.,'План-график')]]/following::a[span[text()='План-график']]")
+	  private WebElementFacade planGraphicsAfterPlanGraphicsExpandLink;
+	  //Мои документы после Раскрывающийся План-график
+	  @FindBy(xpath=".//div[span/span[contains(.,'План-график')]]/following::div[span/span[contains(.,'Мои документы')]]/span[1]/a")
+	  private WebElementFacade myDocumentAfterPlanGraphicsLink;
+	  //Планы-графики на согласовании
+	  @FindBy(xpath=".//div[span/span[contains(.,'План-график')]]/following::a[span[text()='Планы-графики на согласовании']]")
+	  private WebElementFacade approvalPlanGraphicsLink;
+	  //Планы-графики на утверждении
+	  @FindBy(xpath=".//div[span/span[contains(.,'План-график')]]/following::a[span[text()='Планы-графики на утверждении']]")
+	  private WebElementFacade statementPlanGraphicsLink;
+	  
 	  /**
 	   * Клик по линку Управление закупками
 	   */
@@ -200,8 +234,6 @@ public class ApplicationForms extends BasePage {
 		  waitingForFieldVisible(planPurchaseLink);
 		  planPurchaseLink.waitUntilClickable().click();
 	  }
-	  
-	
 	  /**
 	   * Клик по раскрывающийся линк План закупок расположенный под раскрывшемся элементом План закупок
 	   */
@@ -222,7 +254,6 @@ public class ApplicationForms extends BasePage {
 		  }
 		  return false;
 	  }
-	
 	  /**
 	   * Нажимаем линк \"Мои документы\" расположенный под раскрывшемся элементом \"План закупок\"
 	   */
@@ -242,7 +273,6 @@ public class ApplicationForms extends BasePage {
 		  }
 		  return false;
 	  }
-	
 	  /**
 	   * Клик по линку План закупок на согласовании
 	   */
@@ -250,12 +280,139 @@ public class ApplicationForms extends BasePage {
 		  waitingForFieldVisible(approvalPlanPurchaseLink);
 		  approvalPlanPurchaseLink.waitUntilClickable().click();
 	  }
-	
 	  /**
 	   *  Клик по линку План закупок на утверждении
 	   */
 	  public void clickOnLinkPlanPurchaseStatement() {
 		  waitingForFieldVisible(statementPlanPurchaseLink);
 		  statementPlanPurchaseLink.waitUntilClickable().click();
+	  }
+	  
+	  
+	  //==================
+	  //    	ППГ
+	  //==================
+	  /**
+	   * Проверяем нажат ли линк Позиции плана-графика
+	   * @return Boolean (true - если линк нажат)
+	   */
+	  public Boolean isPushedLinkPositionPlanGraphics(){
+		  waitingForFieldVisible(positionPlanGraphicFirstLevelExpandLink);
+		  String title = positionPlanGraphicFirstLevelExpandLink.waitUntilClickable().getAttribute("title");
+		  if(title.contains("Свернуть")){
+			  return true;
+		  }
+		  return false;
+	  }
+	  /**
+	   * Клик по линку Позиции плана-графика
+	   */
+	  public void clickOnLinkPositionPlanGraphics() {
+		  waitingForFieldVisible(positionPlanGraphicFirstLevelExpandLink);
+		  positionPlanGraphicFirstLevelExpandLink.waitUntilClickable().click();
+	  }
+	  /**
+	   * Клик по линку Позиции плана-графика закупок расположенный под раскрывшемся элементом Позиции плана-графика
+	   */
+	  public void clickOnLinkPositionPlanGraphicsPurches() {
+		  waitingForFieldVisible(positionPlanGraphicPurchesLink);
+		  positionPlanGraphicPurchesLink.waitUntilClickable().click();
+	  }
+	  /**
+	   * Нажимаем линк Мои документы расположенный под раскрывшемся элементом Позиции плана-графика
+	   */
+	  public void clickOnLinkMyDocumentAfterPositionPlanGraphics() {
+		  waitingForFieldVisible(myDocumentAfterPositionPlanGraphicLink);
+		  myDocumentAfterPositionPlanGraphicLink.waitUntilClickable().click();
+	  }
+	  /**
+	   * Проверяем нажат ли линк \"Мои документы\" расположенный под раскрывшемся элементом \"План закупок\"
+	   * @return Boolean (true - если линк нажат)
+	   */
+	  public boolean isPushedLinkMyDocumentAfterPositionPlanGraphics() {
+		  waitingForFieldVisible(myDocumentAfterPositionPlanGraphicLink);
+		  String title = myDocumentAfterPositionPlanGraphicLink.waitUntilClickable().getAttribute("title");
+		  if(title.contains("Свернуть")){
+			  return true;
+		  }
+		  return false;
+	  }
+	  /**
+	   * Клик по линку Позиции плана-графика закупок на согласовании
+	   */
+	  public void clickOnLinkPositionPlanGraphicsPurchesApproval() {
+		  waitingForFieldVisible(approvalPositonPlanGraphicPurchaseLink);
+		  approvalPositonPlanGraphicPurchaseLink.waitUntilClickable().click();
+	  }
+	  /**
+	   *  Клик по линку Позиции плана-графика закупок на утверждении
+	   */
+	  public void clickOnLinkPositionPlanGraphicsPurchesStatement() {
+		  waitingForFieldVisible(statementPositonPlanGraphicPurchaseLink);
+		  statementPositonPlanGraphicPurchaseLink.waitUntilClickable().click();
+	  }
+	  
+
+	  //==================
+	  //    	ПГ
+	  //==================
+	  /**
+	   * Проверяем нажат ли линк План-график
+	   * @return Boolean (true - если линк нажат)
+	   */
+	  public Boolean isPushedLinkPlanGraphics(){
+		  waitingForFieldVisible(planGraphicsFirstLevelExpandLink);
+		  String title = planGraphicsFirstLevelExpandLink.waitUntilClickable().getAttribute("title");
+		  if(title.contains("Свернуть")){
+			  return true;
+		  }
+		  return false;
+	  }
+	  /**
+	   * Клик по линку План-график
+	   */
+	  public void clickOnLinkPlanGraphics() {
+		  waitingForFieldVisible(planGraphicsFirstLevelExpandLink);
+		  planGraphicsFirstLevelExpandLink.waitUntilClickable().click();
+	  }
+	  /**
+	   * Клик по линку План-график закупок расположенный под раскрывшемся элементом План-график
+	   */
+	  public void clickOnLinkPlanGraphicsAfterPlanGraphicsExpandLink() {
+		  waitingForFieldVisible(planGraphicsAfterPlanGraphicsExpandLink);
+		  planGraphicsAfterPlanGraphicsExpandLink.waitUntilClickable().click();
+	  }
+	  /**
+	   * Нажимаем линк Мои документы расположенный под раскрывшемся элементом План-график
+	   */
+	  public void clickOnLinkMyDocumentAfterPlanGraphicsLink() {
+		  waitingForFieldVisible(myDocumentAfterPlanGraphicsLink);
+		  myDocumentAfterPlanGraphicsLink.waitUntilClickable().click();
+	  }
+	  /**
+	   * Проверяем нажат ли линк Мои документы расположенный под раскрывшемся элементом План-график
+	   * @return Boolean (true - если линк нажат)
+	   */
+	  public boolean isPushedLinkMyDocumentAfterPlanGraphicsLink() {
+		  waitingForFieldVisible(myDocumentAfterPlanGraphicsLink);
+		  String title = myDocumentAfterPlanGraphicsLink.waitUntilClickable().getAttribute("title");
+		  if(title.contains("Свернуть")){
+			  return true;
+		  }
+		  return false;
+	  }
+	  /**
+	   * Клик по линку Планы-графики на согласовании на согласовании
+	   */
+	  public void clickOnLinkPlanGraphicsApproval() {
+		  waitingForFieldVisible(approvalPlanGraphicsLink);
+		  approvalPlanGraphicsLink.waitUntilClickable().click();
+	  }
+	  /**
+	   *  Клик по линку Планы-графики на согласованиик на утверждении
+	   */
+	  public void clickOnLinkPlanGraphicsStatement() {
+		  waitingForFieldVisible(statementPlanGraphicsLink);
+		  statementPlanGraphicsLink.waitUntilClickable().click();
 	  }
 }
