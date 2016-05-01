@@ -36,8 +36,13 @@ public class PositionsPlanGraphicsPurchesOnApprovalPage extends  PositionsPlanGr
 	  //Кнопка Согласовать закупку
 	  @FindBy(xpath=".//button[@title='Согласовать']")
 	  private WebElementFacade approvalButton;
+	 
 	  
-	  @FindBy(xpath=".//div/table/tbody/tr[2]/th[position() = (count(//th[contains(.,'Номер укрупненной закупки')]/preceding-sibling::*)+1)]/div/descendant::input")
+	  //Номер позиции плана закупок
+	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[position() = (count(//th[contains(.,'Номер закупки')]/preceding-sibling::*)+1)]/div")
+	  protected WebElementFacade numberPositionPlanGraphicField;
+	  //Номер позиции плана закупок в фильтре
+	  @FindBy(xpath=".//div/table/tbody/tr[2]/th[position() = (count(//th[contains(.,'Номер закупки')]/preceding-sibling::*)+1)]/div/descendant::input")
 	  protected WebElementFacade numberPositionPlanGraphicInFilterInput;
 	  
 	  /**
@@ -56,6 +61,7 @@ public class PositionsPlanGraphicsPurchesOnApprovalPage extends  PositionsPlanGr
 		  waitingForFieldVisible(approvalButton);
 		  approvalButton.waitUntilClickable().click();
 	  }
+	  
 	  /**
 	   * Очищаем Номер позиции плана закупок в фильтре
 	   */

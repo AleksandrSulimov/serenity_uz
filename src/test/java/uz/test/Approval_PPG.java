@@ -12,14 +12,14 @@ public class Approval_PPG extends TestCasesBase{
 
 	@Title("Согласование/Утверждение ППГ")
     @Test
-	public void approval_PPZ(){
+	public void approval_PPG(){
 		
 		
 		Serenity.setSessionVariable("start_time").to(h.getFormattedCurrentDate("dd.MM.yyyy HH:mm:ss"));
 		Serenity.setSessionVariable("test_name").to("Согласование/Утверждение ППГ");
 
-		String purshedNumber = "5406105211.540501001.2.16.00011.1601.003";
-		
+		String purshedNumber = "5406105211.540501001.2.16.00010.1601.003";
+		String status = "";
 
 		selectPushedProcurementManagement();
 			
@@ -46,7 +46,7 @@ public class Approval_PPG extends TestCasesBase{
 		positionsPlanGraphicsPurchesSteps.selectFirstRow();
 		positionsPlanGraphicsPurchesSteps.clickOnButtonSendToMatching();
 
-		String status = "";
+		status = "";
 		for(int i=0; i<6; i++){
 			status = positionsPlanGraphicsPurchesSteps.getTextStatus();
 			if(status.equals("На согласовании")){
@@ -127,10 +127,10 @@ public class Approval_PPG extends TestCasesBase{
 		positionsPlanGraphicsPurchesStatementSteps.selectFirstRow();
 		positionsPlanGraphicsPurchesStatementSteps.clickOnButtonStatement();
 		
-		statementPositionPurchase200DialogSteps.waitingForAppletVisible();
-		statementPositionPurchase200DialogSteps.clickOnButtonStatement();
-		statementPositionPurchase200DialogSteps.waitingForAppletVisible();
-		statementPositionPurchase200DialogSteps.clickOnButtonOk();
+		statementPositionsPlanGraphicsPurchesDialogSteps.waitingForAppletVisible();
+		statementPositionsPlanGraphicsPurchesDialogSteps.clickOnButtonStatement();
+		statementPositionsPlanGraphicsPurchesDialogSteps.waitingForAppletVisible();
+		statementPositionsPlanGraphicsPurchesDialogSteps.clickOnButtonOk();
 		
 		status = "";
 		for(int i=0; i<6; i++){
