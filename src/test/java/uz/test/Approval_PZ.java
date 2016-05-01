@@ -2,33 +2,14 @@ package uz.test;
 
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Title;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import uz.steps.AutoItSteps;
-import uz.steps.PlanPurchaseOnApprovalSteps;
-import uz.steps.PlanPurchaseStatementSteps;
-import uz.steps.dialog.ApprovalPlanPurchaseDialogSteps;
-import uz.steps.dialog.StatementPlanPurchaseDialogSteps;
-
 @RunWith(SerenityRunner.class)
 public class Approval_PZ extends TestCasesBase{
 
-	@Steps
-	PlanPurchaseOnApprovalSteps planPurchaseOnApprovalSteps;
-	@Steps
-	PlanPurchaseStatementSteps planPurchaseStatementSteps;
-	@Steps
-	ApprovalPlanPurchaseDialogSteps approvalPlanPurchaseDialogSteps;
-	@Steps
-	StatementPlanPurchaseDialogSteps statementPlanPurchaseDialogSteps;
-	@Steps
-	AutoItSteps autoItSteps;
-	
-	
 	
 	@Title("Согласование/Утверждение ПЗ")
     @Test

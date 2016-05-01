@@ -16,6 +16,7 @@ import uz.steps.AdditionalAnalyticalSignDictionaryPageSteps;
 import uz.steps.ApplicationFormsSteps;
 import uz.steps.AssertSteps;
 import uz.steps.AttributesPageSteps;
+import uz.steps.AutoItSteps;
 import uz.steps.ChainsOfKBKDiictionaryPageSteps;
 import uz.steps.ChoosePpzForIncludeInPZDiictionaryPageSteps;
 import uz.steps.CommonSteps;
@@ -25,6 +26,11 @@ import uz.steps.HeaderSteps;
 import uz.steps.LoginPageSteps;
 import uz.steps.MenuSteps;
 import uz.steps.OKPD2DictionaryPageSteps;
+import uz.steps.PlanGraphicsOnApprovalSteps;
+import uz.steps.PlanGraphicsStatementSteps;
+import uz.steps.PlanGraphicsSteps;
+import uz.steps.PlanPurchaseOnApprovalSteps;
+import uz.steps.PlanPurchaseStatementSteps;
 import uz.steps.PlanPurchaseSteps;
 import uz.steps.PositionsPlanGraphicsPurchesOnApprovalSteps;
 import uz.steps.PositionsPlanGraphicsPurchesStatementSteps;
@@ -41,9 +47,13 @@ import uz.steps.PurchasePlanOfProductJobServicePositionPurchasePlanSteps;
 import uz.steps.PurchasePlanOfProductJobServiceResultsOfKBKSteps;
 import uz.steps.PurchasePlanOfProductJobServiceSpecialPurchasesSteps;
 import uz.steps.PurchasePlanSteps;
+import uz.steps.dialog.ApprovalPlanGraphicsDialogSteps;
+import uz.steps.dialog.ApprovalPlanPurchaseDialogSteps;
 import uz.steps.dialog.ApprovalPositionPurchase200DialogSteps;
 import uz.steps.dialog.ApprovalPositionsPlanGraphicsPurchesDialogSteps;
 import uz.steps.dialog.SelectUserDialogSteps;
+import uz.steps.dialog.StatementPlanGraphicsDialogSteps;
+import uz.steps.dialog.StatementPlanPurchaseDialogSteps;
 import uz.steps.dialog.StatementPositionPurchase200DialogSteps;
 import uz.steps.dialog.StatementPositionsPlanGraphicsPurchesDialogSteps;
 import uz.steps.dialog.TestResultsDialogSteps;
@@ -142,6 +152,28 @@ public class TestCasesBase {
 	    protected ApprovalPositionsPlanGraphicsPurchesDialogSteps approvalPositionsPlanGraphicsPurchesDialogSteps;
 	    @Steps
 	    protected StatementPositionsPlanGraphicsPurchesDialogSteps statementPositionsPlanGraphicsPurchesDialogSteps;
+		@Steps
+		protected PlanPurchaseOnApprovalSteps planPurchaseOnApprovalSteps;
+		@Steps
+		protected PlanPurchaseStatementSteps planPurchaseStatementSteps;
+		@Steps
+		protected ApprovalPlanPurchaseDialogSteps approvalPlanPurchaseDialogSteps;
+		@Steps
+		protected StatementPlanPurchaseDialogSteps statementPlanPurchaseDialogSteps;
+		@Steps
+		protected AutoItSteps autoItSteps;
+		@Steps
+		protected PlanGraphicsSteps planGraphicsSteps;
+		@Steps
+		protected PlanGraphicsOnApprovalSteps planGraphicsOnApprovalSteps;
+		@Steps
+		protected ApprovalPlanGraphicsDialogSteps approvalPlanGraphicsDialogSteps;
+		@Steps
+		protected PlanGraphicsStatementSteps planGraphicsStatementSteps;
+		@Steps
+		protected StatementPlanGraphicsDialogSteps statementPlanGraphicsDialogSteps;
+		
+	    
 	    protected Helpers h = new Helpers();
 
 	    @Before
@@ -212,6 +244,14 @@ public class TestCasesBase {
 				applicationFormsSteps.clickOnLinkPositionPlanGraphics();
 			}
 	    }
+	    /**
+	     * Раскрыть План-график на Формулярах
+	     */
+	    protected void expandPlanGraphicsOnApplicationForms() {
+	    	if(!applicationFormsSteps.isPushedLinkPlanGraphics()){
+				applicationFormsSteps.clickOnLinkPlanGraphics();
+			}
+		}
 	    /**
 	     * Нажать на иконку фильтра для отображения полей фильтра на Позиции плана закупок 200
 	     */
