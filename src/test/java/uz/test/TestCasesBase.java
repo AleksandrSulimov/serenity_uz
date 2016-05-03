@@ -47,6 +47,10 @@ import uz.steps.PurchasePlanOfProductJobServicePositionPurchasePlanSteps;
 import uz.steps.PurchasePlanOfProductJobServiceResultsOfKBKSteps;
 import uz.steps.PurchasePlanOfProductJobServiceSpecialPurchasesSteps;
 import uz.steps.PurchasePlanSteps;
+import uz.steps.admin.AdminLeftMenuSteps;
+import uz.steps.admin.AdminLoginSteps;
+import uz.steps.admin.AutoprocedureSteps;
+import uz.steps.admin.ParametersRunTaskDialogSteps;
 import uz.steps.dialog.ApprovalPlanGraphicsDialogSteps;
 import uz.steps.dialog.ApprovalPlanPurchaseDialogSteps;
 import uz.steps.dialog.ApprovalPositionPurchase200DialogSteps;
@@ -173,6 +177,14 @@ public class TestCasesBase {
 		@Steps
 		protected StatementPlanGraphicsDialogSteps statementPlanGraphicsDialogSteps;
 		
+		@Steps
+		protected AdminLoginSteps adminLoginSteps;
+		@Steps
+		protected AdminLeftMenuSteps adminLeftMenuSteps;
+		@Steps
+		protected AutoprocedureSteps autoprocedureSteps;
+		@Steps
+		protected ParametersRunTaskDialogSteps parametersRunTaskDialogSteps;
 	    
 	    protected Helpers h = new Helpers();
 

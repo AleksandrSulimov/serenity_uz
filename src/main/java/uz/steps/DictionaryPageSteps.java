@@ -25,6 +25,11 @@ public class DictionaryPageSteps extends ScenarioSteps {
 		dictionaryPage.open(urlName, param);
 	}
 	
+	@Step("Перейти на страницу {0}")
+	public void goToUrl(String url){
+		dictionaryPage.goToUrl(url);
+	}
+	
 	@Step("Развернуть окно браузера на весь экран")
 	public void maximizeWindow(){
 		dictionaryPage.maximizeBrowserWindow();
