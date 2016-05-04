@@ -25,16 +25,24 @@ import uz.steps.FrequencyOfPurchasesDictionaryPageSteps;
 import uz.steps.HeaderSteps;
 import uz.steps.LoginPageSteps;
 import uz.steps.MenuSteps;
+import uz.steps.MethodForDeterminingSupplierDictionaryPageSteps;
+import uz.steps.NameOfMeasureDictionaryPageSteps;
 import uz.steps.OKPD2DictionaryPageSteps;
+import uz.steps.OkvedDictionaryPageSteps;
 import uz.steps.PlanGraphicsOnApprovalSteps;
 import uz.steps.PlanGraphicsStatementSteps;
 import uz.steps.PlanGraphicsSteps;
 import uz.steps.PlanPurchaseOnApprovalSteps;
 import uz.steps.PlanPurchaseStatementSteps;
 import uz.steps.PlanPurchaseSteps;
+import uz.steps.PositionsPlanGraphicsPurchesBasicInformationSteps;
+import uz.steps.PositionsPlanGraphicsPurchesCoordinationSheetSteps;
 import uz.steps.PositionsPlanGraphicsPurchesOnApprovalSteps;
+import uz.steps.PositionsPlanGraphicsPurchesSpecificationTRUSteps;
+import uz.steps.PositionsPlanGraphicsPurchesSpecificationTruEditingRecordSteps;
 import uz.steps.PositionsPlanGraphicsPurchesStatementSteps;
 import uz.steps.PositionsPlanGraphicsPurchesSteps;
+import uz.steps.PositionsPlanGraphicsPurchesTermsOfPurchaseSteps;
 import uz.steps.PositionsPurchasePlan200Steps;
 import uz.steps.PositionsPurchasePlanApprovalSteps;
 import uz.steps.PositionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps;
@@ -47,6 +55,7 @@ import uz.steps.PurchasePlanOfProductJobServicePositionPurchasePlanSteps;
 import uz.steps.PurchasePlanOfProductJobServiceResultsOfKBKSteps;
 import uz.steps.PurchasePlanOfProductJobServiceSpecialPurchasesSteps;
 import uz.steps.PurchasePlanSteps;
+import uz.steps.SelectPositionOfProcurementPlanDiictionaryPageSteps;
 import uz.steps.admin.AdminLeftMenuSteps;
 import uz.steps.admin.AdminLoginSteps;
 import uz.steps.admin.AutoprocedureSteps;
@@ -55,6 +64,7 @@ import uz.steps.dialog.ApprovalPlanGraphicsDialogSteps;
 import uz.steps.dialog.ApprovalPlanPurchaseDialogSteps;
 import uz.steps.dialog.ApprovalPositionPurchase200DialogSteps;
 import uz.steps.dialog.ApprovalPositionsPlanGraphicsPurchesDialogSteps;
+import uz.steps.dialog.SelectTypeOfProcurementAndProcurementPlanPPZDialogSteps;
 import uz.steps.dialog.SelectUserDialogSteps;
 import uz.steps.dialog.StatementPlanGraphicsDialogSteps;
 import uz.steps.dialog.StatementPlanPurchaseDialogSteps;
@@ -62,6 +72,7 @@ import uz.steps.dialog.StatementPositionPurchase200DialogSteps;
 import uz.steps.dialog.StatementPositionsPlanGraphicsPurchesDialogSteps;
 import uz.steps.dialog.TestResultsDialogSteps;
 import uz.steps.tabs.MainPageTabSteps;
+import uz.steps.tabs.PositionsPlanGraphicsPurchesTabSteps;
 import uz.steps.tabs.PositionsPurchasePlanOfProductJobService200TabSteps;
 import uz.steps.tabs.PurchasePlanOfProductJobServiceTabSteps;
 import uz.steps.tabs.PurchasePlanTabSteps;
@@ -185,7 +196,29 @@ public class TestCasesBase {
 		protected AutoprocedureSteps autoprocedureSteps;
 		@Steps
 		protected ParametersRunTaskDialogSteps parametersRunTaskDialogSteps;
-	    
+		@Steps
+		protected SelectTypeOfProcurementAndProcurementPlanPPZDialogSteps selectTypeOfProcurementAndProcurementPlanPPZDialogSteps;
+		@Steps
+		protected SelectPositionOfProcurementPlanDiictionaryPageSteps selectPositionOfProcurementPlanDiictionaryPageSteps;
+		@Steps
+		protected PositionsPlanGraphicsPurchesTabSteps positionsPlanGraphicsPurchesTabSteps;
+		@Steps
+		protected PositionsPlanGraphicsPurchesBasicInformationSteps positionsPlanGraphicsPurchesBasicInformationSteps;
+		@Steps
+		protected MethodForDeterminingSupplierDictionaryPageSteps methodForDeterminingSupplierDictionaryPageSteps;
+		@Steps
+		protected PositionsPlanGraphicsPurchesSpecificationTRUSteps positionsPlanGraphicsPurchesSpecificationTRUSteps;
+		@Steps
+		protected PositionsPlanGraphicsPurchesSpecificationTruEditingRecordSteps positionsPlanGraphicsPurchesSpecificationTruEditingRecordSteps;
+		@Steps
+		protected OkvedDictionaryPageSteps okvedDictionaryPageSteps;
+		@Steps
+		protected NameOfMeasureDictionaryPageSteps nameOfMeasureDictionaryPageSteps;
+		@Steps
+		protected PositionsPlanGraphicsPurchesTermsOfPurchaseSteps positionsPlanGraphicsPurchesTermsOfPurchaseSteps;
+		@Steps
+		protected PositionsPlanGraphicsPurchesCoordinationSheetSteps positionsPlanGraphicsPurchesCoordinationSheetSteps;
+		
 	    protected Helpers h = new Helpers();
 
 	    @Before
@@ -323,6 +356,77 @@ public class TestCasesBase {
 			}
 			additionalAnalyticalSignDictionaryPageSteps.clickOnRadioButtonAdditionalAnalyticalSign();
 			additionalAnalyticalSignDictionaryPageSteps.clickOnButtonOK();
+	    }
+	    /**
+	     * Выбрать значение в справочнике 'Способ определения поставщика'
+	     * @param value
+	     */
+	    public void selectValueInMethodForDeterminingSupplierDictionary(String value){
+	    	methodForDeterminingSupplierDictionaryPageSteps.waitingForAppletVisible();
+			if(methodForDeterminingSupplierDictionaryPageSteps.checkFilterOn()){
+				methodForDeterminingSupplierDictionaryPageSteps.clickFilter();
+			}
+			methodForDeterminingSupplierDictionaryPageSteps.clickOnFieldName();
+			methodForDeterminingSupplierDictionaryPageSteps.setTextName(value);
+			methodForDeterminingSupplierDictionaryPageSteps.clickOnButtonRefresh();
+			if(!methodForDeterminingSupplierDictionaryPageSteps.getValueName().equals(value)){
+				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
+			}
+			methodForDeterminingSupplierDictionaryPageSteps.clickOnRadioButtonName();
+			methodForDeterminingSupplierDictionaryPageSteps.clickOnButtonOK();
+	    }
+	    /**
+	     * Выбрать значение в справочнике 'Справочник ОКВЭД'
+	     * @param value
+	     */
+	    public void selectValueInOkvedDictionary(String value){
+	    	okvedDictionaryPageSteps.waitingForAppletVisible();
+			if(okvedDictionaryPageSteps.checkFilterOn()){
+				okvedDictionaryPageSteps.clickFilter();
+			}
+			okvedDictionaryPageSteps.clickOnFieldCode();
+			okvedDictionaryPageSteps.setTextCode(value);
+			okvedDictionaryPageSteps.clickOnButtonRefresh();
+			if(!okvedDictionaryPageSteps.getValueCode().equals(value)){
+				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
+			}
+			okvedDictionaryPageSteps.clickOnRadioButtonCode();
+			okvedDictionaryPageSteps.clickOnButtonOK();
+	    }
+	    /**
+	     * Выбрать значение в справочнике 'Наименование единицы измерения'
+	     * @param value
+	     */
+	    public void selectValueInNameOfMeasureDictionary(String value){
+	    	nameOfMeasureDictionaryPageSteps.waitingForAppletVisible();
+			if(nameOfMeasureDictionaryPageSteps.checkFilterOn()){
+				nameOfMeasureDictionaryPageSteps.clickFilter();
+			}
+			nameOfMeasureDictionaryPageSteps.clickOnFieldName();
+			nameOfMeasureDictionaryPageSteps.setTextName(value);
+			nameOfMeasureDictionaryPageSteps.clickOnButtonRefresh();
+			if(!nameOfMeasureDictionaryPageSteps.getValueName().equals(value)){
+				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
+			}
+			nameOfMeasureDictionaryPageSteps.clickOnRadioButtonName();
+			nameOfMeasureDictionaryPageSteps.clickOnButtonOK();
+	    }
+	    /**
+	     * Выбрать значение в справочнике 'Выбрать позицию плана закупок'
+	     * @param value
+	     */
+	    public void selectValueInSelectPositionOfProcurementPlanDiictionary(String value){
+	    	selectPositionOfProcurementPlanDiictionaryPageSteps.waitingForAppletVisible();
+			if(selectPositionOfProcurementPlanDiictionaryPageSteps.checkFilterOn()){
+				selectPositionOfProcurementPlanDiictionaryPageSteps.clickFilter();
+			}
+			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnFieldObjectOfTenderName();
+			selectPositionOfProcurementPlanDiictionaryPageSteps.setTextObjectOfTenderName(value);
+			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnButtonRefresh();
+			if(!selectPositionOfProcurementPlanDiictionaryPageSteps.getValueObjectOfTenderName().equals(value)){
+				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
+			}
+			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnButtonOK();
 	    }
 	    
 	    /**

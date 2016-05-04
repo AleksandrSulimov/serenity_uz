@@ -71,7 +71,7 @@ public class FrequencyOfPurchasesDictionaryPage extends BasePage {
 		  frequencyInput.waitUntilClickable().sendKeys(text);
 	  }
 	  /**
-	   * Забрать значение из поля Код
+	   * Забрать значение из поля Периодичность
 	   * @return text
 	   */
 	  public String getValueFrequency(){

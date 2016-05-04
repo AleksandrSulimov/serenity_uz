@@ -54,7 +54,7 @@ public class Autoprocedure_RemoveDocument {
 		Serenity.setSessionVariable("start_time").to(h.getFormattedCurrentDate("dd.MM.yyyy HH:mm:ss"));
 		Serenity.setSessionVariable("test_name").to("Удаление документов через автопроцедуры");
 
-		String guid = "3bbbb573-d338-4d3d-82e8-661496786b80";
+		String guid = "8defea83-2290-40f2-824b-55f45f2bdbf0";
 		
     	//dictionarySteps.open();
 		dictionarySteps.open("adm");
