@@ -7,8 +7,6 @@ import net.thucydides.core.annotations.Title;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import uz.utils.JSON;
-
 @RunWith(SerenityRunner.class)
 public class Test1 extends TestCasesBase{
 

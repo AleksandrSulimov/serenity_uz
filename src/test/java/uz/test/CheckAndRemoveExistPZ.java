@@ -12,13 +12,13 @@ import uz.utils.PropertyLoader;
 @RunWith(SerenityRunner.class)
 public class CheckAndRemoveExistPZ extends TestCasesBase{
 
-	@Title("Проверка наличия ранее созданного ПГ и его удаление")
+	@Title("Проверка наличия ранее созданного ПЗ и его удаление")
     @Test
 	public void checkAndRemoveExistPZ(){
 		
 		
 		Serenity.setSessionVariable("start_time").to(h.getFormattedCurrentDate("dd.MM.yyyy HH:mm:ss"));
-		Serenity.setSessionVariable("test_name").to("Проверка наличия ранее созданного ПГ и его удаление");
+		Serenity.setSessionVariable("test_name").to("Проверка наличия ранее созданного ПЗ и его удаление");
 		Boolean flag = false;
 		selectPushedProcurementManagement();
 		selectPushedProcurementManagement();
