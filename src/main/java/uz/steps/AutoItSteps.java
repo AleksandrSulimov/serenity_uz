@@ -1,7 +1,6 @@
 package uz.steps;
 
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
 import uz.utils.AutoIt;
 /**
@@ -13,22 +12,31 @@ import uz.utils.AutoIt;
 public class AutoItSteps extends ScenarioSteps {
 
 
+	/*
 	public AutoItSteps(Pages pages) {
         super(pages);
     }
+	*/
+	AutoIt it = new AutoIt();
 	
 	@Step("В Jinn-Client нажать \"Подписать\"")
 	public void signInJinnClient() {
-		new AutoIt().signInJinnClient();
+		it.signInJinnClient();
 	}
 	
 	@Step("В Jinn-Client выбрать первый сертификат")
 	public void selectFirstCertificateInJinnClient() {
-		new AutoIt().selectCertInJinnClient();
+		it.selectCertInJinnClient();
 	}
-
+	
+	@Step("В Jinn-Client нажать \"Подписать\" и выбрать первый сертификат")
+	public void signInJinnClientAndSelectFirstCertificateInJinnClient() {
+		it.signInJinnClientAndSelectFirstCertificateInJinnClient();
+	}
+	
+	
 	@Step("В окне \"Выгрузка файла\" FireFox указать файл")
 	public void selectFileInFireFox() {
-		new AutoIt().selectFileInFireFox();
+		it.selectFileInFireFox();
 	}
 }

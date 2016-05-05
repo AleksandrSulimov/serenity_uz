@@ -130,8 +130,9 @@ public class Approval_PG extends TestCasesBase{
 		
 		statementPlanGraphicsDialogSteps.waitingForAppletVisible();
 		statementPlanGraphicsDialogSteps.clickOnButtonStatementBeforeJinnClient();
-		autoItSteps.signInJinnClient();
-		autoItSteps.selectFirstCertificateInJinnClient();
+		//autoItSteps.signInJinnClient();
+		//autoItSteps.selectFirstCertificateInJinnClient();
+		autoItSteps.signInJinnClientAndSelectFirstCertificateInJinnClient();
 		statementPlanGraphicsDialogSteps.waitingForAppletVisible();
 		statementPlanGraphicsDialogSteps.clickOnButtonOk();
 		

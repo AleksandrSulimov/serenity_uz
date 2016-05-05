@@ -136,8 +136,9 @@ public class Approval_PZ extends TestCasesBase{
 		
 		statementPlanPurchaseDialogSteps.waitingForAppletVisible();
 		statementPlanPurchaseDialogSteps.clickOnButtonStatementBeforeJinnClient();
-		autoItSteps.signInJinnClient();
-		autoItSteps.selectFirstCertificateInJinnClient();
+		//autoItSteps.signInJinnClient();
+		//autoItSteps.selectFirstCertificateInJinnClient();
+		autoItSteps.signInJinnClientAndSelectFirstCertificateInJinnClient();
 		statementPlanPurchaseDialogSteps.waitingForAppletVisible();
 		statementPlanPurchaseDialogSteps.clickOnButtonOk();
 		
