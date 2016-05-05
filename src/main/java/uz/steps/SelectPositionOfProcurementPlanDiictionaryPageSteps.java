@@ -37,6 +37,19 @@ public class SelectPositionOfProcurementPlanDiictionaryPageSteps extends Scenari
 	public String getValueObjectOfTenderName(){
 		return applet.getValueObjectOfTenderName();    	
 	}
+
+	@Step("Клик в поле \"ОКПД 2\" в справочнике \"Выбрать позицию плана закупок\"")
+	public void clickOnFieldOKPD2(){
+		applet.clickOnFieldOKPD2();    	
+	}
+	@Step("Ввести текст {0} в поле \"ОКПД 2\" в справочнике \"Выбрать позицию плана закупок\"")
+	public void setTextOKPD2(String text){
+		applet.setTextOKPD2(text);    	
+	}
+	@Step("Забрать значение из поля \"ОКПД 2\" в справочнике \"Выбрать позицию плана закупок\"")
+	public String getValueOKPD2(){
+		return applet.getValueOKPD2();    	
+	}
 	@Step("Клик в поле \"Номер позиции плана закупок\" в справочнике \"Выбрать позицию плана закупок\"")
 	public void clickOnFieldProcurementPlanPositionNumber(){
 		applet.clickOnFieldProcurementPlanPositionNumber();    	

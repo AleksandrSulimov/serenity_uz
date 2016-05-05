@@ -32,4 +32,9 @@ public class AddAttachmentPageSteps extends ScenarioSteps {
     public void clickOnButtonSave() {
     	page.clickOnButtonSave();
     }
+
+    @Step("Выбрать тип вложения {0}")
+    public void clickOnFieldAttachmentType(String type) {
+    	page.clickOnFieldAttachmentType(type);
+    }
 }

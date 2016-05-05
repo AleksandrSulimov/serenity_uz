@@ -18,6 +18,7 @@ import uz.steps.AssertSteps;
 import uz.steps.AttributesPageSteps;
 import uz.steps.AutoItSteps;
 import uz.steps.ChainsOfKBKDiictionaryPageSteps;
+import uz.steps.ChoosePpgForIncludeInPGDiictionaryPageSteps;
 import uz.steps.ChoosePpzForIncludeInPZDiictionaryPageSteps;
 import uz.steps.CommonSteps;
 import uz.steps.DictionaryPageSteps;
@@ -29,9 +30,15 @@ import uz.steps.MethodForDeterminingSupplierDictionaryPageSteps;
 import uz.steps.NameOfMeasureDictionaryPageSteps;
 import uz.steps.OKPD2DictionaryPageSteps;
 import uz.steps.OkvedDictionaryPageSteps;
+import uz.steps.PlanGraphicsBasicInformationSteps;
+import uz.steps.PlanGraphicsCoordinationSheetSteps;
 import uz.steps.PlanGraphicsOnApprovalSteps;
+import uz.steps.PlanGraphicsPositionsPlanGraficsSteps;
+import uz.steps.PlanGraphicsResultsOfKBKSteps;
+import uz.steps.PlanGraphicsSpecialPurchasesSteps;
 import uz.steps.PlanGraphicsStatementSteps;
 import uz.steps.PlanGraphicsSteps;
+import uz.steps.PlanGraphicsTotalIndicatorsPlanGraficsSteps;
 import uz.steps.PlanPurchaseOnApprovalSteps;
 import uz.steps.PlanPurchaseStatementSteps;
 import uz.steps.PlanPurchaseSteps;
@@ -56,6 +63,7 @@ import uz.steps.PurchasePlanOfProductJobServiceResultsOfKBKSteps;
 import uz.steps.PurchasePlanOfProductJobServiceSpecialPurchasesSteps;
 import uz.steps.PurchasePlanSteps;
 import uz.steps.SelectPositionOfProcurementPlanDiictionaryPageSteps;
+import uz.steps.SelectYearOfPlanGraficsPageSteps;
 import uz.steps.admin.AdminLeftMenuSteps;
 import uz.steps.admin.AdminLoginSteps;
 import uz.steps.admin.AutoprocedureSteps;
@@ -72,6 +80,7 @@ import uz.steps.dialog.StatementPositionPurchase200DialogSteps;
 import uz.steps.dialog.StatementPositionsPlanGraphicsPurchesDialogSteps;
 import uz.steps.dialog.TestResultsDialogSteps;
 import uz.steps.tabs.MainPageTabSteps;
+import uz.steps.tabs.PlanGraphicsTabSteps;
 import uz.steps.tabs.PositionsPlanGraphicsPurchesTabSteps;
 import uz.steps.tabs.PositionsPurchasePlanOfProductJobService200TabSteps;
 import uz.steps.tabs.PurchasePlanOfProductJobServiceTabSteps;
@@ -218,6 +227,24 @@ public class TestCasesBase {
 		protected PositionsPlanGraphicsPurchesTermsOfPurchaseSteps positionsPlanGraphicsPurchesTermsOfPurchaseSteps;
 		@Steps
 		protected PositionsPlanGraphicsPurchesCoordinationSheetSteps positionsPlanGraphicsPurchesCoordinationSheetSteps;
+		@Steps
+		protected SelectYearOfPlanGraficsPageSteps selectYearOfPlanGraficsPageSteps;
+		@Steps
+		protected PlanGraphicsTabSteps planGraphicsTabSteps;
+		@Steps
+		protected PlanGraphicsBasicInformationSteps planGraphicsBasicInformationSteps;
+		@Steps
+		protected PlanGraphicsPositionsPlanGraficsSteps planGraphicsPositionsPlanGraficsSteps;
+		@Steps
+		protected ChoosePpgForIncludeInPGDiictionaryPageSteps choosePpgForIncludeInPGDiictionaryPageSteps;
+		@Steps
+		protected PlanGraphicsSpecialPurchasesSteps planGraphicsSpecialPurchasesSteps;
+		@Steps
+		protected PlanGraphicsTotalIndicatorsPlanGraficsSteps planGraphicsTotalIndicatorsPlanGraficsSteps;
+		@Steps
+		protected PlanGraphicsResultsOfKBKSteps planGraphicsResultsOfKBKSteps;
+		@Steps
+		protected PlanGraphicsCoordinationSheetSteps planGraphicsCoordinationSheetSteps;
 		
 	    protected Helpers h = new Helpers();
 
@@ -415,7 +442,7 @@ public class TestCasesBase {
 	     * Выбрать значение в справочнике 'Выбрать позицию плана закупок'
 	     * @param value
 	     */
-	    public void selectValueInSelectPositionOfProcurementPlanDiictionary(String value){
+	    public void selectValueInSelectPositionOfProcurementPlanDiictionaryByName(String value){
 	    	selectPositionOfProcurementPlanDiictionaryPageSteps.waitingForAppletVisible();
 			if(selectPositionOfProcurementPlanDiictionaryPageSteps.checkFilterOn()){
 				selectPositionOfProcurementPlanDiictionaryPageSteps.clickFilter();
@@ -428,13 +455,40 @@ public class TestCasesBase {
 			}
 			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnButtonOK();
 	    }
-	    
+	    /**
+	     * Выбрать значение в справочнике 'Выбрать позицию плана закупок'
+	     * @param value
+	     */
+	    public void selectValueInSelectPositionOfProcurementPlanDiictionaryByOKPD2(String value){
+	    	selectPositionOfProcurementPlanDiictionaryPageSteps.waitingForAppletVisible();
+			if(selectPositionOfProcurementPlanDiictionaryPageSteps.checkFilterOn()){
+				selectPositionOfProcurementPlanDiictionaryPageSteps.clickFilter();
+			}
+			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnFieldOKPD2();
+			selectPositionOfProcurementPlanDiictionaryPageSteps.setTextOKPD2(value);
+			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnButtonRefresh();
+			if(!selectPositionOfProcurementPlanDiictionaryPageSteps.getValueOKPD2().equals(value)){
+				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
+			}
+			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnButtonOK();
+	    }
 	    /**
 	     * Загрузить файл в диалоговом окне 'Добавление вложения'
 	     * @param filePath
 	     */
 	    public void addAttachment(String filePath){
 	    	addAttachmentPageSteps.waitingForAppletVisible(); 
+			addAttachmentPageSteps.loadFile(filePath);
+			addAttachmentPageSteps.clickOnButtonSave();
+	    }
+	    /**
+	     * Загрузить файл в диалоговом окне 'Добавление вложения'
+	     * @param filePath
+	     * @param attachmentType
+	     */
+	    public void addAttachmentWithType(String filePath, String attachmentType){
+	    	addAttachmentPageSteps.waitingForAppletVisible(); 
+	    	addAttachmentPageSteps.clickOnFieldAttachmentType(attachmentType);
 			addAttachmentPageSteps.loadFile(filePath);
 			addAttachmentPageSteps.clickOnButtonSave();
 	    }

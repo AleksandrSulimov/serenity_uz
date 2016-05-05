@@ -56,9 +56,13 @@ public class SelectPositionOfProcurementPlanDiictionaryPage extends BasePage {
 	  @FindBy(xpath=".//tr[th/div[text()='ОКПД 2']]/following-sibling::tr/descendant::th[6]/descendant::input")
 	  private WebElementFacade objectOfTenderNameInput;
 
-	  //Поле Наименование объекта закупки (предмет контракта) с найденным значением
-	  private static String objectOfTenderNameXpath = ".//div[text()='%s']";
-	  
+	  //Поле ОКПД 2
+	  @FindBy(xpath=".//tr[th/div[text()='ОКПД 2']]/following-sibling::tr/descendant::th[5]/descendant::td[input]")
+	  private WebElementFacade okpd2Field;
+	  private static String okpd2FieldXpath = ".//tr[th/div[text()='ОКПД 2']]/following-sibling::tr/descendant::th[5]/descendant::td[input]";
+	  @FindBy(xpath=".//tr[th/div[text()='ОКПД 2']]/following-sibling::tr/descendant::th[5]/descendant::input")
+	  private WebElementFacade okpd2Input;
+
 	  //Кнопка OK
 	  @FindBy(xpath=".//button[text()='OK']")
 	  private WebElementFacade okButton;
@@ -106,6 +110,30 @@ public class SelectPositionOfProcurementPlanDiictionaryPage extends BasePage {
 	  public String getValueObjectOfTenderName(){
 		  waitForLoadJS();
 		  return objectOfTenderNameInput.waitUntilClickable().getAttribute("value");
+	  }
+	  /**
+	   * Клик в поле ОКПД 2
+	   */
+	  public void clickOnFieldOKPD2(){
+		  waitForLoadJS();
+		  getDriver().findElement(By.xpath(okpd2FieldXpath)).click();
+	  }
+	  /**
+	   * Ввести текст в поле ОКПД 2
+	   * @param text
+	   */
+	  public void setTextOKPD2(String text){
+		  waitForLoadJS();
+		  okpd2Input.waitUntilClickable().clear();
+		  okpd2Input.waitUntilClickable().sendKeys(text);
+	  }
+	  /**
+	   * Забрать значение из поля ОКПД 2
+	   * @return text
+	   */
+	  public String getValueOKPD2(){
+		  waitForLoadJS();
+		  return okpd2Input.waitUntilClickable().getAttribute("value");
 	  }
 	  /**
 	   * Клик в поле Номер позиции плана закупок

@@ -68,7 +68,11 @@ public class PlanGraphicsSteps extends ScenarioSteps {
     public void setPlanGraphicsInFilter(String string) {
     	applet.setPlanGraphicsInFilter(string);
     }
-    
+
+    @Step("Возвращаем текст из поля \"Номер плана-графика\" в первой строке таблицы на странице \"План-график\"")
+    public String  getTextNumberPlanGraphics(){
+    	return applet.getTextNumberPlanGraphics();    	
+    }
     @Step("Нажимаем чекбоксу выбора строки в первой строке на странице \"План-график\"")
     public void selectFirstRow(){
     	applet.selectFirstRow();    	

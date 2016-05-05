@@ -20,8 +20,6 @@ public class Create_PPG_Regular extends TestCasesBase{
 		Serenity.setSessionVariable("start_time").to(h.getFormattedCurrentDate("dd.MM.yyyy HH:mm:ss"));
 		Serenity.setSessionVariable("test_name").to("Создание ППГ обычная");
 
-		h.createNewFile("C:\\test.txt");
-		
 		selectPushedProcurementManagement();
 		goToApplicationForms();
 		expandProcurementManagementOnApplicationForms();
@@ -35,7 +33,7 @@ public class Create_PPG_Regular extends TestCasesBase{
 		selectTypeOfProcurementAndProcurementPlanPPZDialogSteps.checkRadioButtonValue("Позиция плана закупок 200");
 		selectTypeOfProcurementAndProcurementPlanPPZDialogSteps.clickOnButtonSelect();
 		
-		selectValueInSelectPositionOfProcurementPlanDiictionary("Концентрат апатитовый 1");
+		selectValueInSelectPositionOfProcurementPlanDiictionaryByName("Концентрат апатитовый 1");
 		
 		positionsPlanGraphicsPurchesTabSteps.waitingForAppletVisible();
 		positionsPlanGraphicsPurchesTabSteps.selectTabBasicInformation();

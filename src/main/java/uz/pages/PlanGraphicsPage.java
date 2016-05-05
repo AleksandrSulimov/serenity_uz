@@ -53,10 +53,10 @@ public class PlanGraphicsPage extends BasePage {
 	  //Поле Номер плана закупок с переданным значением
 	  protected String numberPlanGraphicsXpath = ".//td[@title='%s']";
 	  
-	  //Номер плана закупок
+	  //Номер плана графика
 	  @FindBy(xpath=".//div[3]/table/tbody/tr[1]/td[position() = (count(//th[contains(.,'Номер плана-графика')]/preceding-sibling::*)+1)]/div")
 	  protected WebElementFacade numberPlanGraphicsField;
-	  //Номер плана закупок в фильтре
+	  //Номер плана графика в фильтре
 	  @FindBy(xpath=".//div/table/tbody/tr[2]/th[position() = (count(//th[contains(.,'Номер плана-графика')]/preceding-sibling::*)+1)]/div/descendant::input")
 	  protected WebElementFacade numberPlanGraphicsInFilterInput;
 	  //Сбросить фильтр
@@ -76,33 +76,7 @@ public class PlanGraphicsPage extends BasePage {
 	  protected WebElementFacade refreshListOfDocumentButton;
 	 
 		
-	  /**
-		 * Ожидаем, когда аплет будет visible
-		 */
-		public void waitingForAppletVisible(){
-			waitForLoadJS();
-			waitFor(new ExpectedCondition<Boolean>() {
-			    public Boolean apply(final WebDriver dirver) {
-			    	getDriver().switchTo().defaultContent();
-			    	try {
-			    		int countFrame = getDriver().findElements(By.xpath(".//iframe")).size();
-			    		for(int i=1; i<=countFrame; i++){
-			    			getDriver().switchTo().defaultContent();
-			    			getDriver().switchTo().frame(getDriver().findElement(By.xpath("(.//iframe)["+i+"]")));
-			    			if(getDriver().findElements(By.xpath(appletXpath)).size() > 0){
-				    			return true;
-				    		}
-			    		}
-			    		return false;
-			    		
-					} catch (Exception e) {
-						 return false;
-					}
-			    }
-			});
-			waitFor(ExpectedConditions.elementToBeClickable(applet));
-			//getDriver().switchTo().defaultContent();
-		}
+	  
 		
 		public void clickOnLinkClose(){
 			waitForLoadJS();
@@ -148,7 +122,7 @@ public class PlanGraphicsPage extends BasePage {
 		  waitingForFieldVisible(numberPlanGraphicsInFilterInput);
 	  }
 	  /**
-	   * Очищаем Номер позиции плана закупок в фильтре
+	   * Очищаем Номер плана графика в фильтре
 	   */
 	  public void cleanPlanGraphicsInFilter(){
 		  waitingForFieldVisible(numberPlanGraphicsInFilterInput);
@@ -156,13 +130,21 @@ public class PlanGraphicsPage extends BasePage {
 		  numberPlanGraphicsInFilterInput.waitUntilClickable().typeAndEnter("");
 	  }
 	  /**
-	   * Устанавливаем Номер позиции плана закупок в фильтре
+	   * Устанавливаем Номер плана графика в фильтре
 	   * @param string
 	   */
 	  public void setPlanGraphicsInFilter(String string){
 		  waitingForFieldVisible(numberPlanGraphicsInFilterInput);
 		  numberPlanGraphicsInFilterInput.waitUntilClickable().clear();
 		  numberPlanGraphicsInFilterInput.waitUntilClickable().typeAndEnter(string);
+	  }
+	  /**
+	   * Возвращаем текст поля Номер плана графика
+	   * @return String
+	   */
+	  public String getTextNumberPlanGraphics(){
+		  waitForLoadJS();
+		  return numberPlanGraphicsField.waitUntilClickable().getText();
 	  }
 	  /**
 	   * Клик по чекбоксу выбора строки в первой строке

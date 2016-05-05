@@ -11,6 +11,7 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 /**
@@ -43,7 +44,7 @@ public class AddAttachmentPage extends BasePage {
 	  @FindBy(xpath=".//button[text()='Сохранить']")
 	  private WebElementFacade saveButton;
 	  
-	  
+	  private String attachmentType = ".//div[text()='%s']";
 		
 	  public static void setClipboardData(String string) {
 		   StringSelection stringSelection = new StringSelection(string);
@@ -87,5 +88,16 @@ public class AddAttachmentPage extends BasePage {
 		  waitForLoadJS();
 		  saveButton.waitUntilClickable().click();	
 		  saveButton.waitUntilNotVisible();
+	  }
+
+	  /**
+	   * Выбрать тип вложения 
+	   * @param type
+	   */
+	  public void clickOnFieldAttachmentType(String type){
+		  waitForLoadJS();
+		  String xPathLocator = String.format(attachmentType, type); 
+		  waitFor(ExpectedConditions.elementToBeClickable(By.xpath(xPathLocator)));
+		  getDriver().findElement(By.xpath(xPathLocator)).click();
 	  }
 }
