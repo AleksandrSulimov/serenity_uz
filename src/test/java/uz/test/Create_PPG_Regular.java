@@ -185,6 +185,7 @@ public class Create_PPG_Regular extends TestCasesBase{
 		commonSteps.log("Идентификатор позиции плана-графика закупок = "+ppgId);
 		System.out.println("Идентификатор позиции плана-графика закупок = "+ppgId);
 		Serenity.setSessionVariable("ppgId").to(ppgId);
+		JSON.writeJSON("ppg_id", "ppg_id", ppgId);
 		positionsPlanGraphicsPurchesSteps.clickOnLinkClose();
 	
 	}

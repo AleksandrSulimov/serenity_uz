@@ -152,6 +152,7 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 		commonSteps.log("Идентификатор позиции плана закупок = "+ppzId);
 		System.out.println("Идентификатор позиции плана закупок = "+ppzId);
 		Serenity.setSessionVariable("ppzId").to(ppzId);
+		JSON.writeJSON("ppz_id", "ppz_id", ppzId);
 		positionsPurchasePlan200Steps.clickOnLinkClosePPZ();
 	
 	}

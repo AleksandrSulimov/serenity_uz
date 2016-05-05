@@ -19,6 +19,7 @@ import uz.steps.admin.AdminLoginSteps;
 import uz.steps.admin.AutoprocedureSteps;
 import uz.steps.admin.ParametersRunTaskDialogSteps;
 import uz.utils.Helpers;
+import uz.utils.JSON;
 import uz.utils.PropertyLoader;
 
 @RunWith(SerenityRunner.class)
@@ -53,8 +54,29 @@ public class Autoprocedure_RemoveDocument {
 		
 		Serenity.setSessionVariable("start_time").to(h.getFormattedCurrentDate("dd.MM.yyyy HH:mm:ss"));
 		Serenity.setSessionVariable("test_name").to("Удаление документов через автопроцедуры");
-
-		String guid = "aa797011-0410-47b6-8db0-89b2965b830a";
+		String pzz = "";
+		pzz = JSON.readJSON("pzz_id", "pzz_id");
+		if(!pzz.equals("")){
+			pzz = pzz+";";
+		}
+		String pz = "";
+		pz = JSON.readJSON("pz_id", "pz_id");
+		if(!pz.equals("")){
+			pz = pz+";";
+		}
+		String ppg = "";
+		ppg = JSON.readJSON("ppg_id", "ppg_id");
+		if(!ppg.equals("")){
+			ppg = ppg+";";
+		}
+		String pg = "";
+		pg = JSON.readJSON("pg_id", "pg_id");
+		if(!pg.equals("")){
+			pg = pg+";";
+		}
+		String guid = pzz+pz+ppg+pg;
+		
+		
 		
     	//dictionarySteps.open();
 		dictionarySteps.open("adm");
