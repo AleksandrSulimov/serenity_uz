@@ -9,6 +9,8 @@ import net.thucydides.core.annotations.Title;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import uz.utils.JSON;
+
 @RunWith(SerenityRunner.class)
 public class Create_PPG_Special extends TestCasesBase{
 
@@ -79,6 +81,7 @@ public class Create_PPG_Special extends TestCasesBase{
 		commonSteps.log("Номер позиции плана-графика закупок = "+ppgNum);
 		System.out.println("Номер позиции плана-графика закупок = "+ppgNum);
 		Serenity.setSessionVariable("ppgNum").to(ppgNum);
+		JSON.writeJSON("ppg_num", "ppg_num", ppgNum);
 		positionsPlanGraphicsPurchesBasicInformationSteps.clickOnButtonClose();
 		
 		positionsPlanGraphicsPurchesSteps.waitingForAppletVisible();

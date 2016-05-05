@@ -9,6 +9,8 @@ import net.thucydides.core.annotations.Title;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import uz.utils.JSON;
+
 @RunWith(SerenityRunner.class)
 public class Create_PG extends TestCasesBase{
 
@@ -114,7 +116,7 @@ public class Create_PG extends TestCasesBase{
 		commonSteps.log("Номер плана-графика = "+pgNumber);
 		System.out.println("Номер плана-графика = "+pgNumber);
 		Serenity.setSessionVariable("pgNum").to(pgNumber);
-		
+		JSON.writeJSON("pg_num", "pg_num", pgNumber);
 		assertSteps.assertField("Статус плана-графика", "Черновик", planGraphicsSteps.getTextStatus());
 		
 		purchasePlanTabSteps.waitingForAppletVisible();
@@ -125,7 +127,7 @@ public class Create_PG extends TestCasesBase{
 		commonSteps.log("Идентификатор плана-графика = "+pgId);
 		System.out.println("Идентификатор плана-графика = "+pgId);
 		Serenity.setSessionVariable("pgId").to(pgId);
-		
+		JSON.writeJSON("pg_id", "pg_id", pgId);
 		planGraphicsSteps.clickOnLinkClose();
 	
 	}

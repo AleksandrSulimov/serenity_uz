@@ -7,6 +7,8 @@ import net.thucydides.core.annotations.Title;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import uz.utils.JSON;
+
 @RunWith(SerenityRunner.class)
 public class Approval_PPZ extends TestCasesBase{
 
@@ -19,7 +21,7 @@ public class Approval_PPZ extends TestCasesBase{
 		Serenity.setSessionVariable("test_name").to("Согласование/Утверждение ППЗ");
 
 		//String purshedNumber = "5406105211.540501001.2.16.00004.1601";
-		String purshedNumber = Serenity.sessionVariableCalled("ppzNum").toString();
+		String purshedNumber = JSON.readJSON("ppz_num", "ppz_num");
 
 		selectPushedProcurementManagement();
 			

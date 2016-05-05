@@ -9,6 +9,8 @@ import net.thucydides.core.annotations.Title;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import uz.utils.JSON;
+
 @RunWith(SerenityRunner.class)
 public class Create_PPZ_200_Special extends TestCasesBase{
 
@@ -119,6 +121,7 @@ public class Create_PPZ_200_Special extends TestCasesBase{
 		commonSteps.log("Номер позиции плана закупок = "+ppzNumber);
 		System.out.println("Номер позиции плана закупок = "+ppzNumber);
 		Serenity.setSessionVariable("ppzNum").to(ppzNumber);
+		JSON.writeJSON("ppz_num", "ppz_num", ppzNumber);
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnButtonClose();
 		
 		positionsPurchasePlan200Steps.waitingForAppletVisible();

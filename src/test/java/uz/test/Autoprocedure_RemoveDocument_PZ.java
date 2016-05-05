@@ -19,6 +19,7 @@ import uz.steps.admin.AdminLoginSteps;
 import uz.steps.admin.AutoprocedureSteps;
 import uz.steps.admin.ParametersRunTaskDialogSteps;
 import uz.utils.Helpers;
+import uz.utils.JSON;
 import uz.utils.PropertyLoader;
 
 @RunWith(SerenityRunner.class)
@@ -55,7 +56,7 @@ public class Autoprocedure_RemoveDocument_PZ {
 		Serenity.setSessionVariable("test_name").to("Удаление документов через автопроцедуры");
 
 		//String guid = "aa797011-0410-47b6-8db0-89b2965b830a";
-		String guid = Serenity.sessionVariableCalled("pzId").toString();
+		String guid = JSON.readJSON("pz_id", "pz_id");
     	//dictionarySteps.open();
 		dictionarySteps.open("adm");
     	//dictionarySteps.goToUrl(PropertyLoader.loadProperty("admin_url"));

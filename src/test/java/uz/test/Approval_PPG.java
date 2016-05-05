@@ -7,6 +7,8 @@ import net.thucydides.core.annotations.Title;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import uz.utils.JSON;
+
 @RunWith(SerenityRunner.class)
 public class Approval_PPG extends TestCasesBase{
 
@@ -19,7 +21,7 @@ public class Approval_PPG extends TestCasesBase{
 		Serenity.setSessionVariable("test_name").to("Согласование/Утверждение ППГ");
 
 		//String purshedNumber = "5406105211.540501001.2.16.00010.1601.003";
-		String purshedNumber = Serenity.sessionVariableCalled("ppgNum").toString();
+		String purshedNumber = JSON.readJSON("ppg_num", "ppg_num");
 		String status = "";
 
 		selectPushedProcurementManagement();
