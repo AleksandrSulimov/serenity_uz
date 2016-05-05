@@ -12,14 +12,15 @@ import org.json.simple.parser.ParseException;
 public class JSON {
 
 
-	@SuppressWarnings({ "unchecked", "resource" })
+	@SuppressWarnings({ "unchecked" })
 	public static void writeJSON(String filePath, String key, String value) {
 		JSONObject obj = new JSONObject();
-		
+		obj.put(key, value);
 		try {
-			obj.put(key, value);
+			
 			FileWriter file = new FileWriter("src/main/resources/"+filePath);
 			file.write(obj.toJSONString());
+			file.close();
 			System.out.println("Successfully Copied JSON Object to File...");
 			System.out.println("\nJSON Object: " + obj);
 		} catch (Exception e) {

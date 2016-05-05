@@ -13,6 +13,8 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import uz.utils.AutoIt;
+
 
 /**
  * Добавление вложения
@@ -59,6 +61,7 @@ public class AddAttachmentPage extends BasePage {
 		  getDriver().findElement(By.xpath(loadButtonXpath));
 		  setClipboardData(path);
 		  getDriver().findElement(By.xpath(loadButtonXpath)).click();
+		  /*
 		  Robot robot;
 		try {
 			robot = new Robot();
@@ -77,7 +80,8 @@ public class AddAttachmentPage extends BasePage {
 			  robot.delay(1000);	
 		} catch (AWTException e) {
 			e.printStackTrace();
-		}	  
+		}	
+		*/  
 	  }
 		
 	  /**

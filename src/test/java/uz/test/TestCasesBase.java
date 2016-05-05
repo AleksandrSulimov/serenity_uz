@@ -483,6 +483,7 @@ public class TestCasesBase {
 	    public void addAttachment(String filePath){
 	    	addAttachmentPageSteps.waitingForAppletVisible(); 
 			addAttachmentPageSteps.loadFile(filePath);
+	    	autoItSteps.selectFileInFireFox();
 			addAttachmentPageSteps.clickOnButtonSave();
 	    }
 	    /**
@@ -494,6 +495,7 @@ public class TestCasesBase {
 	    	addAttachmentPageSteps.waitingForAppletVisible(); 
 	    	addAttachmentPageSteps.clickOnFieldAttachmentType(attachmentType);
 			addAttachmentPageSteps.loadFile(filePath);
+	    	autoItSteps.selectFileInFireFox();
 			addAttachmentPageSteps.clickOnButtonSave();
 	    }
 	    /**

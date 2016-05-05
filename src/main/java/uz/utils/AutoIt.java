@@ -69,5 +69,23 @@ public class AutoIt {
 		}
 	 }
 	 
+	 public void selectFileInFireFox(){
+		 File f = new File("src/main/resources/test.txt");
+		 String path = f.getAbsolutePath();
+		 control.winWait("Выгрузка файла", "", 5); //[Title:Jinn-Client]
+		if(control.winExists("Выгрузка файла")){
+			control.winActivate("Выгрузка файла");
+			control.controlClick("Выгрузка файла", "", "[CLASS:Edit; INSTANCE:1]");
+			control.controlSend("Выгрузка файла","","[CLASS:Edit; INSTANCE:1]",path);
+			control.controlClick("Выгрузка файла", "", "[CLASS:Button; INSTANCE:1]");
+			Boolean isClose = control.winWaitClose("Выгрузка файла", "", 5);
+			if(!isClose){
+				MatcherAssert.assertThat("Окно Выгрузка файла не закрылось", false);
+			}
+		}else{
+			System.out.println("Окно Выгрузка файла не появилось");
+			//MatcherAssert.assertThat("Окно Jinn-Client. Просмотр документа перед формированием подписи не появилось", false);
+		}
+	 }
 	 
 }

@@ -27,4 +27,8 @@ public class AutoItSteps extends ScenarioSteps {
 		new AutoIt().selectCertInJinnClient();
 	}
 
+	@Step("В окне \"Выгрузка файла\" FireFox указать файл")
+	public void selectFileInFireFox() {
+		new AutoIt().selectFileInFireFox();
+	}
 }
