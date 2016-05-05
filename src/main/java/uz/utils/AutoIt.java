@@ -29,7 +29,7 @@ public class AutoIt {
 	 * Выбираем сертификат
 	 */
 	 public void selectCertInJinnClient(){
-		 control.winWait("Jinn-Client", "", 5); //[Title:Jinn-Client]
+		 control.winWait("Jinn-Client", "", 20); //[Title:Jinn-Client]
 		if(control.winExists("Jinn-Client")){
 			control.winActivate("Jinn-Client");
 			/*
@@ -43,7 +43,7 @@ public class AutoIt {
 			control.controlClick("Jinn-Client", "", "[CLASS:Edit; INSTANCE:1]");
 			control.controlSend("Jinn-Client","","[CLASS:Edit; INSTANCE:1]","12345678");
 			control.controlClick("Jinn-Client", "", "[CLASS:Button; INSTANCE:2]");
-			Boolean isClose = control.winWaitClose("Jinn-Client", "", 5);
+			Boolean isClose = control.winWaitClose("Jinn-Client", "", 20);
 			if(!isClose){
 				MatcherAssert.assertThat("Окно Jinn-Clien не закрылось", false);
 			}
@@ -54,12 +54,12 @@ public class AutoIt {
 	 }
 	 
 	 public void signInJinnClient(){
-		 control.winWait("Jinn-Client. Просмотр документа перед формированием подписи", "", 5); //[Title:Jinn-Client]
+		 control.winWait("Jinn-Client. Просмотр документа перед формированием подписи", "", 20); //[Title:Jinn-Client]
 		if(control.winExists("Jinn-Client. Просмотр документа перед формированием подписи")){
 			control.winActivate("Jinn-Client. Просмотр документа перед формированием подписи");
 			control.controlClick("Jinn-Client. Просмотр документа перед формированием подписи", "", "[CLASS:Button; INSTANCE:1]");
 			
-			Boolean isClose = control.winWaitClose("Jinn-Client. Просмотр документа перед формированием подписи", "", 5);
+			Boolean isClose = control.winWaitClose("Jinn-Client. Просмотр документа перед формированием подписи", "", 20);
 			if(!isClose){
 				MatcherAssert.assertThat("Jinn-Client. Просмотр документа перед формированием подписи", false);
 			}
@@ -72,13 +72,13 @@ public class AutoIt {
 	 public void selectFileInFireFox(){
 		 File f = new File("src/main/resources/test.txt");
 		 String path = f.getAbsolutePath();
-		 control.winWait("Выгрузка файла", "", 5); //[Title:Jinn-Client]
+		 control.winWait("Выгрузка файла", "", 10); //[Title:Jinn-Client]
 		if(control.winExists("Выгрузка файла")){
 			control.winActivate("Выгрузка файла");
 			control.controlClick("Выгрузка файла", "", "[CLASS:Edit; INSTANCE:1]");
 			control.controlSend("Выгрузка файла","","[CLASS:Edit; INSTANCE:1]",path);
 			control.controlClick("Выгрузка файла", "", "[CLASS:Button; INSTANCE:1]");
-			Boolean isClose = control.winWaitClose("Выгрузка файла", "", 5);
+			Boolean isClose = control.winWaitClose("Выгрузка файла", "", 10);
 			if(!isClose){
 				MatcherAssert.assertThat("Окно Выгрузка файла не закрылось", false);
 			}
