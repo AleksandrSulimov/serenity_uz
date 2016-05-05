@@ -478,6 +478,40 @@ public class TestCasesBase {
 			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnButtonOK();
 	    }
 	    /**
+	     * Выбрать значение в справочнике 'Выбрать позицию плана закупок'
+	     * @param value
+	     */
+	    public void selectValueInSelectPositionOfProcurementPlanDiictionaryByPPZ(String value){
+	    	selectPositionOfProcurementPlanDiictionaryPageSteps.waitingForAppletVisible();
+			if(selectPositionOfProcurementPlanDiictionaryPageSteps.checkFilterOn()){
+				selectPositionOfProcurementPlanDiictionaryPageSteps.clickFilter();
+			}
+			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnFieldProcurementPlanPositionNumber();
+			selectPositionOfProcurementPlanDiictionaryPageSteps.setTextProcurementPlanPositionNumber(value);
+			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnButtonRefresh();
+			if(!selectPositionOfProcurementPlanDiictionaryPageSteps.getValueProcurementPlanPositionNumber().equals(value)){
+				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
+			}
+			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnButtonOK();
+	    }
+	    /**
+	     * Выбрать значение в справочнике 'Выбор ППГ для включения в ПГ'
+	     * @param value
+	     */
+	    public void selectValueInChoosePpgForIncludeInPGDiictionaryByPPZ(String value){
+	    	choosePpgForIncludeInPGDiictionaryPageSteps.waitingForAppletVisible();
+			if(choosePpgForIncludeInPGDiictionaryPageSteps.checkFilterOn()){
+				choosePpgForIncludeInPGDiictionaryPageSteps.clickFilter();
+			}
+			choosePpgForIncludeInPGDiictionaryPageSteps.clickOnFieldPpgNumber();
+			choosePpgForIncludeInPGDiictionaryPageSteps.setTextPpgNumber(value);
+			choosePpgForIncludeInPGDiictionaryPageSteps.clickOnButtonRefresh();
+			if(!choosePpgForIncludeInPGDiictionaryPageSteps.getValuePpgNumber().equals(value)){
+				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
+			}
+			choosePpgForIncludeInPGDiictionaryPageSteps.clickOnButtonOK();
+	    }
+	    /**
 	     * Загрузить файл в диалоговом окне 'Добавление вложения'
 	     * @param filePath
 	     */

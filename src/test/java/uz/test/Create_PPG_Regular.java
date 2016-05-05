@@ -22,6 +22,8 @@ public class Create_PPG_Regular extends TestCasesBase{
 		Serenity.setSessionVariable("start_time").to(h.getFormattedCurrentDate("dd.MM.yyyy HH:mm:ss"));
 		Serenity.setSessionVariable("test_name").to("Создание ППГ обычная");
 
+		String ppzNum = JSON.readJSON("ppz_num", "ppz_num");
+		
 		selectPushedProcurementManagement();
 		goToApplicationForms();
 		expandProcurementManagementOnApplicationForms();
@@ -35,7 +37,8 @@ public class Create_PPG_Regular extends TestCasesBase{
 		selectTypeOfProcurementAndProcurementPlanPPZDialogSteps.checkRadioButtonValue("Позиция плана закупок 200");
 		selectTypeOfProcurementAndProcurementPlanPPZDialogSteps.clickOnButtonSelect();
 		
-		selectValueInSelectPositionOfProcurementPlanDiictionaryByName("Концентрат апатитовый 1");
+		//selectValueInSelectPositionOfProcurementPlanDiictionaryByName("Концентрат апатитовый 1");
+		selectValueInSelectPositionOfProcurementPlanDiictionaryByPPZ(ppzNum);
 		
 		positionsPlanGraphicsPurchesTabSteps.waitingForAppletVisible();
 		positionsPlanGraphicsPurchesTabSteps.selectTabBasicInformation();
@@ -89,7 +92,7 @@ public class Create_PPG_Regular extends TestCasesBase{
 		positionsPlanGraphicsPurchesSpecificationTruEditingRecordSteps.waitingForAppletVisible();
 		assertSteps.assertField("Код ОКВЭД2", "26.30.13", positionsPlanGraphicsPurchesSpecificationTruEditingRecordSteps.getValueCodeOKVED2());
 		assertSteps.assertField("Наименование кода вида экономической деятельности по ОКВЭД 2", "Производство средств связи, выполняющих функцию систем управления и мониторинга", positionsPlanGraphicsPurchesSpecificationTruEditingRecordSteps.getValueCodeEconomicActivityOKVED2());
-		assertSteps.assertField("Наименование товара работы или услуги*", "Концентрат апатитовый 3", positionsPlanGraphicsPurchesSpecificationTruEditingRecordSteps.getValueNameOfProductJobService());
+		assertSteps.assertField("Наименование товара работы или услуги*", "Книжки электронные записные и аналогичная компьютерная техника", positionsPlanGraphicsPurchesSpecificationTruEditingRecordSteps.getValueNameOfProductJobService());
 		
 		positionsPlanGraphicsPurchesSpecificationTruEditingRecordSteps.clickOnFieldNameOfProductJobService();
 		positionsPlanGraphicsPurchesSpecificationTruEditingRecordSteps.setTextMinimumNecessaryRequirements("Материнская плата");

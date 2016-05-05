@@ -22,6 +22,8 @@ public class Create_PG extends TestCasesBase{
 		Serenity.setSessionVariable("start_time").to(h.getFormattedCurrentDate("dd.MM.yyyy HH:mm:ss"));
 		Serenity.setSessionVariable("test_name").to("Создание ПГ");
 		
+		String ppgNum = JSON.readJSON("ppg_num", "ppg_num");
+		
 		selectPushedProcurementManagement();
 		goToApplicationForms();
 		expandProcurementManagementOnApplicationForms();
@@ -57,9 +59,11 @@ public class Create_PG extends TestCasesBase{
 		planGraphicsPositionsPlanGraficsSteps.waitingForAppletVisible();
 		planGraphicsPositionsPlanGraficsSteps.clickOnButtonIncludePositionsInPlanGrafic();
 		
-		choosePpgForIncludeInPGDiictionaryPageSteps.waitingForAppletVisible();
-		choosePpgForIncludeInPGDiictionaryPageSteps.clickCheckBoxSelectFirstRow();
-		choosePpgForIncludeInPGDiictionaryPageSteps.clickOnButtonOK();
+		//choosePpgForIncludeInPGDiictionaryPageSteps.waitingForAppletVisible();
+		//choosePpgForIncludeInPGDiictionaryPageSteps.clickCheckBoxSelectFirstRow();
+		//choosePpgForIncludeInPGDiictionaryPageSteps.clickOnButtonOK();
+		
+		selectValueInChoosePpgForIncludeInPGDiictionaryByPPZ(ppgNum);
 		
 		planGraphicsTabSteps.waitingForAppletVisible();
 		planGraphicsTabSteps.selectTabSpecialPurchases();

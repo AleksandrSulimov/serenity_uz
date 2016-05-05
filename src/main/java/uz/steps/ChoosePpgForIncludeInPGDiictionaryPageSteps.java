@@ -45,4 +45,16 @@ public class ChoosePpgForIncludeInPGDiictionaryPageSteps extends ScenarioSteps {
 	public void clickCheckBoxSelectFirstRow(){
 		applet.clickCheckBoxSelectFirstRow();    	
 	}
+	@Step("Клик в поле \"Номер позиции плана графика закупок\" в справочнике \"Выбрать позицию плана закупок\"")
+	public void clickOnFieldPpgNumber(){
+		applet.clickOnFieldPpgNumber();    	
+	}
+	@Step("Ввести текст {0} в поле \"Номер позиции плана графика закупок\" в справочнике \"Выбрать позицию плана закупок\"")
+	public void setTextPpgNumber(String text){
+		applet.setTextPpgNumber(text);    	
+	}
+	@Step("Забрать значение из поля \"Номер позиции плана графика закупок\" в справочнике \"Выбрать позицию плана закупок\"")
+	public String getValuePpgNumber(){
+		return applet.getValuePpgNumber();    	
+	}
 }

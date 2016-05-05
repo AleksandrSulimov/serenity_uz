@@ -144,7 +144,6 @@ public class PositionsPlanGraphicsPurchesPage extends BasePage {
 	  public void clickOnLinkFilter(){
 		  waitingForFieldVisible(filterLink);
 		  filterLink.waitUntilClickable().click();
-		  waitingForFieldVisible(numberPositionPlanGraphicInFilterInput);
 	  }
 	  /**
 	   * Очищаем Номер позиции плана закупок в фильтре

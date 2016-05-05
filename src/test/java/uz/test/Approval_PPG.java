@@ -21,7 +21,7 @@ public class Approval_PPG extends TestCasesBase{
 		Serenity.setSessionVariable("test_name").to("Согласование/Утверждение ППГ");
 
 		//String purshedNumber = "5406105211.540501001.2.16.00010.1601.003";
-		String purshedNumber = JSON.readJSON("ppg_num", "ppg_num");
+		String ppgNumber = JSON.readJSON("ppg_num", "ppg_num");
 		String status = "";
 
 		selectPushedProcurementManagement();
@@ -45,7 +45,7 @@ public class Approval_PPG extends TestCasesBase{
 			positionsPlanGraphicsPurchesSteps.clickOnButtonResetFilter();
 		}
 		
-		positionsPlanGraphicsPurchesSteps.setPositionPlanGraphicInFilter(purshedNumber);
+		positionsPlanGraphicsPurchesSteps.setPositionPlanGraphicInFilter(ppgNumber);
 		positionsPlanGraphicsPurchesSteps.selectFirstRow();
 		positionsPlanGraphicsPurchesSteps.clickOnButtonSendToMatching();
 		positionsPlanGraphicsPurchesSteps.clickOnButtonRefreshListOfDocument();
@@ -82,7 +82,7 @@ public class Approval_PPG extends TestCasesBase{
 			positionsPlanGraphicsPurchesOnApprovalSteps.clickOnButtonResetFilter();
 		}
 		
-		positionsPlanGraphicsPurchesOnApprovalSteps.setPositionPlanGraphicInFilter(purshedNumber);
+		positionsPlanGraphicsPurchesOnApprovalSteps.setPositionPlanGraphicInFilter(ppgNumber);
 		positionsPlanGraphicsPurchesOnApprovalSteps.selectFirstRow();
 		positionsPlanGraphicsPurchesOnApprovalSteps.clickOnButtonApproval();
 		
@@ -126,7 +126,7 @@ public class Approval_PPG extends TestCasesBase{
 			positionsPlanGraphicsPurchesStatementSteps.clickOnButtonResetFilter();
 		}
 		
-		positionsPlanGraphicsPurchesStatementSteps.setPositionPlanGraphicInFilter(purshedNumber);
+		positionsPlanGraphicsPurchesStatementSteps.setPositionPlanGraphicInFilter(ppgNumber);
 		positionsPlanGraphicsPurchesStatementSteps.selectFirstRow();
 		positionsPlanGraphicsPurchesStatementSteps.clickOnButtonStatement();
 		

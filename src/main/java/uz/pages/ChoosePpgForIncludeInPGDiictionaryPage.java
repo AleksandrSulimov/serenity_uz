@@ -38,15 +38,21 @@ public class ChoosePpgForIncludeInPGDiictionaryPage extends BasePage {
 	  private WebElementFacade okButton;
 
 	  //Значок Видимость фильтров ON
-	  private static String filterOn = ".//table[tbody/tr/th//div='Номер позиции плана закупок']/descendant::img[@title='Видимость фильтров' and contains(@src, 'filter_on')]";
+	  private static String filterOn = ".//table[tbody/tr/th//div='Номер позиции плана графика закупок']/descendant::img[@title='Видимость фильтров' and contains(@src, 'filter_on')]";
 	  //Значок Видимость фильтров OFF
-	  private static String filterOff = ".//table[tbody/tr/th//div='Номер позиции плана закупок']/descendant::img[@title='Видимость фильтров' and contains(@src, 'filter_off')]";
+	  private static String filterOff = ".//table[tbody/tr/th//div='Номер позиции плана графика закупок']/descendant::img[@title='Видимость фильтров' and contains(@src, 'filter_off')]";
 	 
 	  //Чекбокс в первой строке
 	  @FindBy(xpath=".//tr[th/div='Номер позиции плана графика закупок']/ancestor::table[1]/ancestor::div[1]/following-sibling::div[2]/descendant::td[1]/div/span")
 	  private WebElementFacade selectFirstRowCheckBox;
 
-
+	  //Поле Номер позиции плана графика закупок
+	  @FindBy(xpath=".//div[text()='Номер позиции плана графика закупок']/ancestor::table[1]/ancestor::div[1]/following-sibling::div[2]/descendant::tr[1]/td[4]/div")
+	  private WebElementFacade ppgNumberField;
+	  private String ppgNumberXpath = ".//div[text()='Номер позиции плана графика закупок']/ancestor::tr[1]/following-sibling::tr[1]/th[4]/descendant::td[input]";
+	  @FindBy(xpath=".//div[text()='Номер позиции плана графика закупок']/ancestor::tr[1]/following-sibling::tr[1]/th[4]/descendant::td/input")
+	  private WebElementFacade ppgNumberInput;
+	  
 	  /**
 	   * Нажать кнопку Обновить
 	   */
@@ -88,5 +94,30 @@ public class ChoosePpgForIncludeInPGDiictionaryPage extends BasePage {
 	  public void clickCheckBoxSelectFirstRow(){
 		  waitForLoadJS();
 		  selectFirstRowCheckBox.waitUntilClickable().click();
+	  }
+	  
+	  /**
+	   * Клик в поле Номер позиции плана графика закупок
+	   */
+	  public void clickOnFieldPpgNumber(){
+		  waitForLoadJS();
+		  getDriver().findElement(By.xpath(ppgNumberXpath)).click();
+	  }
+	  /**
+	   * Ввести текст в поле Номер позиции плана графика закупок
+	   * @param text
+	   */
+	  public void setTextPpgNumber(String text){
+		  waitForLoadJS();
+		  ppgNumberInput.waitUntilClickable().clear();
+		  ppgNumberInput.waitUntilClickable().sendKeys(text);
+	  }
+	  /**
+	   * Забрать значение из поля Номер позиции плана графика закупок
+	   * @return text
+	   */
+	  public String getValuePpgNumber(){
+		  waitForLoadJS();
+		  return ppgNumberInput.waitUntilClickable().getAttribute("value");
 	  }
 }

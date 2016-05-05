@@ -22,6 +22,8 @@ public class Create_PPG_Special extends TestCasesBase{
 		Serenity.setSessionVariable("start_time").to(h.getFormattedCurrentDate("dd.MM.yyyy HH:mm:ss"));
 		Serenity.setSessionVariable("test_name").to("Создание ППГ особая");
 		
+		String ppzNum = JSON.readJSON("ppz_num", "ppz_num");
+		
 		selectPushedProcurementManagement();
 		goToApplicationForms();
 		expandProcurementManagementOnApplicationForms();
@@ -35,7 +37,8 @@ public class Create_PPG_Special extends TestCasesBase{
 		selectTypeOfProcurementAndProcurementPlanPPZDialogSteps.checkRadioButtonValue("Позиция плана закупок 200");
 		selectTypeOfProcurementAndProcurementPlanPPZDialogSteps.clickOnButtonSelect();
 		
-		selectValueInSelectPositionOfProcurementPlanDiictionaryByOKPD2("26.20.22.000");
+		//selectValueInSelectPositionOfProcurementPlanDiictionaryByOKPD2("26.20.22.000");
+		selectValueInSelectPositionOfProcurementPlanDiictionaryByPPZ(ppzNum);
 		
 		positionsPlanGraphicsPurchesTabSteps.waitingForAppletVisible();
 		positionsPlanGraphicsPurchesTabSteps.selectTabBasicInformation();
