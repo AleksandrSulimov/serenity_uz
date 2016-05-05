@@ -25,6 +25,7 @@ public class JSON {
 			System.out.println("\nJSON Object: " + obj);
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
 		} 
 	}
 	
@@ -37,6 +38,7 @@ public class JSON {
 			value = (String) jsonObject.get(key);
 		} catch (IOException | ParseException e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		 return value;
 	}
