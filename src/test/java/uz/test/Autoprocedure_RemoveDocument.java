@@ -54,21 +54,25 @@ public class Autoprocedure_RemoveDocument {
 		
 		Serenity.setSessionVariable("start_time").to(h.getFormattedCurrentDate("dd.MM.yyyy HH:mm:ss"));
 		Serenity.setSessionVariable("test_name").to("Удаление документов через автопроцедуры");
+		
 		String pzz = "";
 		pzz = JSON.readJSON("pzz_id", "pzz_id");
 		if(!pzz.equals("")){
 			pzz = pzz+";";
 		}
+		
 		String pz = "";
 		pz = JSON.readJSON("pz_id", "pz_id");
 		if(!pz.equals("")){
 			pz = pz+";";
 		}
+		
 		String ppg = "";
 		ppg = JSON.readJSON("ppg_id", "ppg_id");
 		if(!ppg.equals("")){
 			ppg = ppg+";";
 		}
+		
 		String pg = "";
 		pg = JSON.readJSON("pg_id", "pg_id");
 		if(!pg.equals("")){
