@@ -78,7 +78,7 @@ public class PlanGraphicsTotalIndicatorsPlanGrafics extends BasePage {
 	   */
 	  public void clickOnButtonFillProcurementVolumeDeterminedAccordingFederalLaw(){
 		  waitForLoadJS();
-		  fillProcurementVolumeOfImplementedByRequestQuotationButton.waitUntilClickable().click();
+		  fillProcurementVolumeDeterminedAccordingFederalLawButton.waitUntilClickable().click();
 	  }
 	  
 }
