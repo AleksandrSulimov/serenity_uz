@@ -88,5 +88,10 @@ public class PlanPurchaseSteps extends ScenarioSteps {
     public boolean checkNumberPlanPurshedEists(String text){
     	return applet.checkNumberPlanPurshedEists(text);    	
     }
+
+	@Step("Проверяем существование первой записи на странице \"План закупок\"")
+	public Boolean isFirstRowExist() {
+    	return applet.isFirstRowExist();
+	}
     
 }

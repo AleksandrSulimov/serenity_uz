@@ -156,7 +156,7 @@ public class Create_PPG_Regular extends TestCasesBase{
 		String ppgNum = positionsPlanGraphicsPurchesBasicInformationSteps.getValuePositionsPlanGraphicsPurchesNumber();
 		commonSteps.log("Номер позиции плана-графика закупок = "+ppgNum);
 		System.out.println("Номер позиции плана-графика закупок = "+ppgNum);
-		
+		Serenity.setSessionVariable("ppgNum").to(ppgNum);
 		positionsPlanGraphicsPurchesBasicInformationSteps.clickOnButtonClose();
 		
 		positionsPlanGraphicsPurchesSteps.waitingForAppletVisible();
@@ -181,7 +181,7 @@ public class Create_PPG_Regular extends TestCasesBase{
 		String ppgId = attributesPageSteps.getTextId();
 		commonSteps.log("Идентификатор позиции плана-графика закупок = "+ppgId);
 		System.out.println("Идентификатор позиции плана-графика закупок = "+ppgId);
-		
+		Serenity.setSessionVariable("ppgId").to(ppgId);
 		positionsPlanGraphicsPurchesSteps.clickOnLinkClose();
 	
 	}

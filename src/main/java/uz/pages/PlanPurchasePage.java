@@ -234,4 +234,27 @@ public class PlanPurchasePage extends BasePage {
 		  }
 		  return false;
 	  }
+
+	public Boolean isFirstRowExist() {
+		try {
+			  (new WebDriverWait(getDriver(), waitForUnviseble)).until(new ExpectedCondition<Boolean>() {
+					public Boolean apply(final WebDriver dirver) {
+				    	try {
+				    		if(!statusField.isCurrentlyVisible()){
+				    			return true;
+				    		}else{
+				    			return false;
+				    		}
+				    		
+						} catch (Exception e) {
+							 return false;
+						}
+		
+				    }
+				});
+				
+			} catch (Exception e) {
+			}
+		return statusField.isCurrentlyVisible();
+	}
 }

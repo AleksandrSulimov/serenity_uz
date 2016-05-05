@@ -113,6 +113,7 @@ public class Create_PG extends TestCasesBase{
 		String pgNumber = planGraphicsSteps.getTextNumberPlanGraphics();
 		commonSteps.log("Номер плана-графика = "+pgNumber);
 		System.out.println("Номер плана-графика = "+pgNumber);
+		Serenity.setSessionVariable("pgNum").to(pgNumber);
 		
 		assertSteps.assertField("Статус плана-графика", "Черновик", planGraphicsSteps.getTextStatus());
 		
@@ -123,6 +124,7 @@ public class Create_PG extends TestCasesBase{
 		String pgId = attributesPageSteps.getTextId();
 		commonSteps.log("Идентификатор плана-графика = "+pgId);
 		System.out.println("Идентификатор плана-графика = "+pgId);
+		Serenity.setSessionVariable("pgId").to(pgId);
 		
 		planGraphicsSteps.clickOnLinkClose();
 	

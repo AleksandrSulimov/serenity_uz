@@ -118,7 +118,7 @@ public class Create_PPZ_200_Special extends TestCasesBase{
 		String ppzNumber = positionsPurchasePlanOfProductJobService200BasicInformationSteps.getValueProcurementPlanPositionNumber();
 		commonSteps.log("Номер позиции плана закупок = "+ppzNumber);
 		System.out.println("Номер позиции плана закупок = "+ppzNumber);
-		
+		Serenity.setSessionVariable("ppzNum").to(ppzNumber);
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnButtonClose();
 		
 		positionsPurchasePlan200Steps.waitingForAppletVisible();
@@ -141,6 +141,7 @@ public class Create_PPZ_200_Special extends TestCasesBase{
 		String ppzId = attributesPageSteps.getTextId();
 		commonSteps.log("Идентификатор позиции плана закупок = "+ppzId);
 		System.out.println("Идентификатор позиции плана закупок = "+ppzId);
+		Serenity.setSessionVariable("ppzId").to(ppzId);
 		
 		positionsPurchasePlan200Steps.clickOnLinkClosePPZ();
 	

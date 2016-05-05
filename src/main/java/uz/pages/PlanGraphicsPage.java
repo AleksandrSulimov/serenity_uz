@@ -6,7 +6,6 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -216,4 +215,28 @@ public class PlanGraphicsPage extends BasePage {
 		  }
 		  return false;
 	  }
+
+
+	public Boolean isFirstRowExist() {
+		try {
+			  (new WebDriverWait(getDriver(), waitForUnviseble)).until(new ExpectedCondition<Boolean>() {
+					public Boolean apply(final WebDriver dirver) {
+				    	try {
+				    		if(!statusField.isCurrentlyVisible()){
+				    			return true;
+				    		}else{
+				    			return false;
+				    		}
+				    		
+						} catch (Exception e) {
+							 return false;
+						}
+		
+				    }
+				});
+				
+			} catch (Exception e) {
+			}
+		return statusField.isCurrentlyVisible();
+	}
 }

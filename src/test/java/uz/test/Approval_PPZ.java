@@ -18,8 +18,8 @@ public class Approval_PPZ extends TestCasesBase{
 		Serenity.setSessionVariable("start_time").to(h.getFormattedCurrentDate("dd.MM.yyyy HH:mm:ss"));
 		Serenity.setSessionVariable("test_name").to("Согласование/Утверждение ППЗ");
 
-		String purshedNumber = "5406105211.540501001.2.16.00004.1601";
-		
+		//String purshedNumber = "5406105211.540501001.2.16.00004.1601";
+		String purshedNumber = Serenity.sessionVariableCalled("ppzNum").toString();
 
 		selectPushedProcurementManagement();
 			

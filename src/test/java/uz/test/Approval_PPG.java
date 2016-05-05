@@ -18,7 +18,8 @@ public class Approval_PPG extends TestCasesBase{
 		Serenity.setSessionVariable("start_time").to(h.getFormattedCurrentDate("dd.MM.yyyy HH:mm:ss"));
 		Serenity.setSessionVariable("test_name").to("Согласование/Утверждение ППГ");
 
-		String purshedNumber = "5406105211.540501001.2.16.00010.1601.003";
+		//String purshedNumber = "5406105211.540501001.2.16.00010.1601.003";
+		String purshedNumber = Serenity.sessionVariableCalled("ppgNum").toString();
 		String status = "";
 
 		selectPushedProcurementManagement();

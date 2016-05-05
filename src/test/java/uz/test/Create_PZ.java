@@ -91,6 +91,7 @@ public class Create_PZ extends TestCasesBase{
 		String pzNumber = purchasePlanSteps.getTextNumberPlanPurshed();
 		commonSteps.log("Номер плана закупок = "+pzNumber);
 		System.out.println("Номер плана закупок = "+pzNumber);
+		Serenity.setSessionVariable("pzNum").to(pzNumber);
 		
 		assertSteps.assertField("Статус плана закупки", "Черновик", purchasePlanSteps.getTextStatus());
 		
@@ -101,6 +102,7 @@ public class Create_PZ extends TestCasesBase{
 		String pzId = attributesPageSteps.getTextId();
 		commonSteps.log("Идентификатор плана закупок = "+pzId);
 		System.out.println("Идентификатор плана закупок = "+pzId);
+		Serenity.setSessionVariable("pzId").to(pzId);
 		
 		purchasePlanSteps.clickOnLinkClosePZ();
 	}

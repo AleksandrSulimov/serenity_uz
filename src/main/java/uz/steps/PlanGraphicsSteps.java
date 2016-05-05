@@ -92,5 +92,9 @@ public class PlanGraphicsSteps extends ScenarioSteps {
     public boolean checkNumberPlanGraphicsEists(String text){
     	return applet.checkNumberPlanGraphicsEists(text);
     }
+    @Step("Проверяем существование первой записи на странице \"План-график\"")
+	public Boolean isFirstRowExist() {
+    	return applet.isFirstRowExist();
+	}
     
 }
