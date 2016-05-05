@@ -163,6 +163,7 @@ public class PlanPurchasePage extends BasePage {
 		  waitingForFieldVisible(numberPlanPurshedInFilterInput);
 		  numberPlanPurshedInFilterInput.waitUntilClickable().clear();
 		  numberPlanPurshedInFilterInput.waitUntilClickable().typeAndEnter(string);
+		  waitForLoadJS();
 	  }
 	  /**
 	   * Клик по чекбоксу выбора строки в первой строке
