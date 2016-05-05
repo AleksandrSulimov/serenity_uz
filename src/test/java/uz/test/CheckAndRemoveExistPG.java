@@ -1,7 +1,5 @@
 package uz.test;
 
-import java.awt.AWTException;
-
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Title;
@@ -16,7 +14,7 @@ public class CheckAndRemoveExistPG extends TestCasesBase{
 
 	@Title("Проверка наличия ранее созданного ПГ и его удаление")
     @Test
-	public void checkAndRemoveExistPG() throws AWTException{
+	public void checkAndRemoveExistPG() {
 		
 		
 		Serenity.setSessionVariable("start_time").to(h.getFormattedCurrentDate("dd.MM.yyyy HH:mm:ss"));
