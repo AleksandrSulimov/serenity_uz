@@ -271,12 +271,13 @@ public class TestCasesBase {
 	    
 	    @After
 	    public void report(){
+	    	/*
 	    	try {
 	    		headerSteps.clickOnButtonExit();
 			} catch (Exception e) {
 
 			}
-	    	
+	    	*/
 	    		    	
 	    } 
 	    /**

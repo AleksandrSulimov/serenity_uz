@@ -48,7 +48,7 @@ public class Approval_PPG extends TestCasesBase{
 		positionsPlanGraphicsPurchesSteps.setPositionPlanGraphicInFilter(purshedNumber);
 		positionsPlanGraphicsPurchesSteps.selectFirstRow();
 		positionsPlanGraphicsPurchesSteps.clickOnButtonSendToMatching();
-
+		positionsPlanGraphicsPurchesSteps.clickOnButtonRefreshListOfDocument();
 		status = "";
 		for(int i=0; i<6; i++){
 			status = positionsPlanGraphicsPurchesSteps.getTextStatus();

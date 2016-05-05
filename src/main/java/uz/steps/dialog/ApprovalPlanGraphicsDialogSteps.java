@@ -33,5 +33,5 @@ public class ApprovalPlanGraphicsDialogSteps extends ScenarioSteps {
 	public void clickOnButtonOk() {
 		applet.clickOnButtonOk();
 	}
-		
+	
 }

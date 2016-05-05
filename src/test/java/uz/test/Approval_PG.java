@@ -49,7 +49,8 @@ public class Approval_PG extends TestCasesBase{
 		planGraphicsSteps.setPlanGraphicsInFilter(purshedNumber);
 		planGraphicsSteps.selectFirstRow();
 		planGraphicsSteps.clickOnButtonSendToMatching();
-
+		planGraphicsSteps.clickOnButtonRefreshListOfDocument();
+		
 		status = "";
 		for(int i=0; i<6; i++){
 			status = planGraphicsSteps.getTextStatus();
@@ -91,7 +92,7 @@ public class Approval_PG extends TestCasesBase{
 		approvalPlanGraphicsDialogSteps.clickOnButtonApproval();
 		approvalPlanGraphicsDialogSteps.waitingForAppletVisible();
 		approvalPlanGraphicsDialogSteps.clickOnButtonOk();
-		
+
 		status = "";
 		for(int i=0; i<6; i++){
 			status = planGraphicsOnApprovalSteps.getTextStatus();

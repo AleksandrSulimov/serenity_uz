@@ -47,7 +47,7 @@ public class Approval_PPZ extends TestCasesBase{
 		positionsPurchasePlan200Steps.setPositionPlanPurshedInFilter(purshedNumber);
 		positionsPurchasePlan200Steps.selectFirstRow();
 		positionsPurchasePlan200Steps.clickOnButtonSendToMatching();
-
+		positionsPurchasePlan200Steps.clickOnButtonRefreshListOfDocument();
 		String status = "";
 		for(int i=0; i<6; i++){
 			status = positionsPurchasePlan200Steps.getTextStatus();
