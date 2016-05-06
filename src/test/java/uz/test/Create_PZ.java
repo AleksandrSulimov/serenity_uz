@@ -22,6 +22,8 @@ public class Create_PZ extends TestCasesBase{
 		Serenity.setSessionVariable("start_time").to(h.getFormattedCurrentDate("dd.MM.yyyy HH:mm:ss"));
 		Serenity.setSessionVariable("test_name").to("Создание ПЗ");
 
+		String ppzNum = JSON.readJSON("ppz_num", "ppz_num");
+		
 		h.createNewFile("C:\\test.txt");
 		
 		selectPushedProcurementManagement();
@@ -48,9 +50,11 @@ public class Create_PZ extends TestCasesBase{
 		purchasePlanOfProductJobServicePositionPurchasePlanSteps.waitingForAppletVisible();
 		purchasePlanOfProductJobServicePositionPurchasePlanSteps.clickOnButtonIncludePositionsPurchasePlan();
 		
-		choosePpzForIncludeInPZDiictionaryPageSteps.waitingForAppletVisible();
-		choosePpzForIncludeInPZDiictionaryPageSteps.clickCheckBoxSelectFirstRow();
-		choosePpzForIncludeInPZDiictionaryPageSteps.clickOnButtonOK();
+		//choosePpzForIncludeInPZDiictionaryPageSteps.waitingForAppletVisible();
+		//choosePpzForIncludeInPZDiictionaryPageSteps.clickCheckBoxSelectFirstRow();
+		//choosePpzForIncludeInPZDiictionaryPageSteps.clickOnButtonOK();
+		
+		selectValueInChoosePpzForIncludeInPZDiictionaryByPPZ(ppzNum);
 		
 		purchasePlanOfProductJobServiceTabSteps.waitingForAppletVisible();
 		purchasePlanOfProductJobServiceTabSteps.selectTabSpecialPurchases();

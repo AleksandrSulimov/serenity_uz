@@ -512,6 +512,23 @@ public class TestCasesBase {
 			choosePpgForIncludeInPGDiictionaryPageSteps.clickOnButtonOK();
 	    }
 	    /**
+	     * Выбрать значение в справочнике 'Выбор ППЗ для включения в ПЗ'
+	     * @param value
+	     */
+	    public void selectValueInChoosePpzForIncludeInPZDiictionaryByPPZ(String value){
+	    	choosePpzForIncludeInPZDiictionaryPageSteps.waitingForAppletVisible();
+			if(choosePpzForIncludeInPZDiictionaryPageSteps.checkFilterOn()){
+				choosePpzForIncludeInPZDiictionaryPageSteps.clickFilter();
+			}
+			choosePpzForIncludeInPZDiictionaryPageSteps.clickOnFieldProcurementPlanPositionNumber();
+			choosePpzForIncludeInPZDiictionaryPageSteps.setTextProcurementPlanPositionNumber(value);
+			choosePpzForIncludeInPZDiictionaryPageSteps.clickOnButtonRefresh();
+			if(!choosePpzForIncludeInPZDiictionaryPageSteps.getValueProcurementPlanPositionNumber().equals(value)){
+				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
+			}
+			choosePpzForIncludeInPZDiictionaryPageSteps.clickOnButtonOK();
+	    }
+	    /**
 	     * Загрузить файл в диалоговом окне 'Добавление вложения'
 	     * @param filePath
 	     */
