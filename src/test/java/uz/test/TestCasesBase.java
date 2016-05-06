@@ -486,7 +486,7 @@ public class TestCasesBase {
 			if(selectPositionOfProcurementPlanDiictionaryPageSteps.checkFilterOn()){
 				selectPositionOfProcurementPlanDiictionaryPageSteps.clickFilter();
 			}
-			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnFieldProcurementPlanPositionNumber();
+			//selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnFieldProcurementPlanPositionNumber();
 			selectPositionOfProcurementPlanDiictionaryPageSteps.setTextProcurementPlanPositionNumber(value);
 			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnButtonRefresh();
 			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnFieldProcurementPlanPositionNumber();

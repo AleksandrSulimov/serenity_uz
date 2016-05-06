@@ -42,7 +42,7 @@ public class SelectPositionOfProcurementPlanDiictionaryPage extends BasePage {
 	  //Поле Номер позиции плана закупок
 	  @FindBy(xpath=".//tr[th/div[text()='ОКПД 2']]/following-sibling::tr/descendant::th[3]/descendant::td[input]")
 	  private WebElementFacade procurementPlanPositionNumberField;
-	  private static String procurementPlanPositionNumberFieldXpath = ".//tr[th/div[text()='ОКПД 2']]/following-sibling::tr/descendant::th[3]/descendant::td[input]";
+	  private static String procurementPlanPositionNumberFieldXpath = ".//div[text()='ОКПД 2']/ancestor::table[1]/ancestor::div[1]/following-sibling::div[2]/descendant::tr[1]/td[3]/div";
 	  @FindBy(xpath=".//tr[th/div[text()='ОКПД 2']]/following-sibling::tr/descendant::th[3]/descendant::input")
 	  private WebElementFacade procurementPlanPositionNumberInput;
 
@@ -157,7 +157,8 @@ public class SelectPositionOfProcurementPlanDiictionaryPage extends BasePage {
 	   */
 	  public String getValueProcurementPlanPositionNumber(){
 		  waitForLoadJS();
-		  return procurementPlanPositionNumberInput.waitUntilClickable().getAttribute("value");
+		  return getDriver().findElement(By.xpath(procurementPlanPositionNumberFieldXpath)).getText();
+		  //return procurementPlanPositionNumberInput.waitUntilClickable().getAttribute("value");
 	  }
 	  /**
 	   * Нажать кнопку OK
