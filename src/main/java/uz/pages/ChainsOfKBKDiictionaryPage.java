@@ -75,7 +75,8 @@ public class ChainsOfKBKDiictionaryPage extends BasePage {
 	   */
 	  public String getValueChainsOfKBK(){
 		  waitForLoadJS();
-		  return сhainsOfKBKInput.waitUntilClickable().getAttribute("value");
+		  waitingForFieldVisible(сhainsOfKBKInput);
+		  return сhainsOfKBKInput.getAttribute("value");
 	  }
 	  /**
 	   * Нажать кнопку Обновить
