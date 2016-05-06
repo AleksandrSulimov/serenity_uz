@@ -56,7 +56,7 @@ public class Autoprocedure_RemoveDocument {
 		Serenity.setSessionVariable("test_name").to("Удаление документов через автопроцедуры");
 		
 		String pzz = "";
-		pzz = JSON.readJSON("pzz_id", "pzz_id");
+		pzz = JSON.readJSON("ppz_id", "ppz_id");
 		if(!pzz.equals("")){
 			pzz = pzz+";";
 		}
