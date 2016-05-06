@@ -83,6 +83,7 @@ public  class BasePage extends PageObject { //abstract
 	 */
 	public void waitingForAppletVisibleInFrame(){
 		waitForLoadJS();
+		getDriver().switchTo().defaultContent();
 		waitFor(new ExpectedCondition<Boolean>() {
 		    public Boolean apply(final WebDriver dirver) {
 		    	getDriver().switchTo().defaultContent();

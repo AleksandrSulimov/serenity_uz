@@ -489,6 +489,7 @@ public class TestCasesBase {
 			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnFieldProcurementPlanPositionNumber();
 			selectPositionOfProcurementPlanDiictionaryPageSteps.setTextProcurementPlanPositionNumber(value);
 			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnButtonRefresh();
+			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnFieldProcurementPlanPositionNumber();
 			if(!selectPositionOfProcurementPlanDiictionaryPageSteps.getValueProcurementPlanPositionNumber().equals(value)){
 				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
 			}
