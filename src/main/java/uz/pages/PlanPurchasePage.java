@@ -162,6 +162,7 @@ public class PlanPurchasePage extends BasePage {
 	  public void setPlanPurshedInFilter(String string){
 		  waitingForFieldVisible(numberPlanPurshedInFilterInput);
 		  numberPlanPurshedInFilterInput.waitUntilClickable().clear();
+		  waitingForFieldVisible(numberPlanPurshedInFilterInput);
 		  numberPlanPurshedInFilterInput.waitUntilClickable().typeAndEnter(string);
 		  waitForLoadJS();
 	  }

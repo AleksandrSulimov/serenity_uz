@@ -166,6 +166,7 @@ public class PositionsPurchasePlan200Page extends BasePage {
 		  numberPositionPlanPurshedInFilterInput.waitUntilClickable().clear();
 		  waitingForFieldVisible(numberPositionPlanPurshedInFilterInput);
 		  numberPositionPlanPurshedInFilterInput.waitUntilClickable().typeAndEnter(string);
+		  waitForLoadJS();
 	  }
 	  /**
 	   * Клик по чекбоксу выбора строки в первой строке

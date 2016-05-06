@@ -135,7 +135,9 @@ public class PlanGraphicsPage extends BasePage {
 	  public void setPlanGraphicsInFilter(String string){
 		  waitingForFieldVisible(numberPlanGraphicsInFilterInput);
 		  numberPlanGraphicsInFilterInput.waitUntilClickable().clear();
+		  waitingForFieldVisible(numberPlanGraphicsInFilterInput);
 		  numberPlanGraphicsInFilterInput.waitUntilClickable().typeAndEnter(string);
+		  waitForLoadJS();
 	  }
 	  /**
 	   * Возвращаем текст поля Номер плана графика

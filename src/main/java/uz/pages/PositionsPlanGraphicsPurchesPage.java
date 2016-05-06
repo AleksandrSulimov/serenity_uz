@@ -160,7 +160,9 @@ public class PositionsPlanGraphicsPurchesPage extends BasePage {
 	  public void setPositionPlanGraphicInFilter(String string){
 		  waitingForFieldVisible(numberPositionPlanGraphicInFilterInput);
 		  numberPositionPlanGraphicInFilterInput.waitUntilClickable().clear();
+		  waitingForFieldVisible(numberPositionPlanGraphicInFilterInput);
 		  numberPositionPlanGraphicInFilterInput.waitUntilClickable().typeAndEnter(string);
+		  waitForLoadJS();
 	  }
 	  /**
 	   * Клик по чекбоксу выбора строки в первой строке
