@@ -164,6 +164,7 @@ public class PositionsPurchasePlan200Page extends BasePage {
 		  //getDriver().findElement(By.xpath(numberPositionPlanPurshedInFilterXpath).clear();
 		  waitingForFieldVisible(numberPositionPlanPurshedInFilterInput);
 		  numberPositionPlanPurshedInFilterInput.waitUntilClickable().clear();
+		  waitingForFieldVisible(numberPositionPlanPurshedInFilterInput);
 		  numberPositionPlanPurshedInFilterInput.waitUntilClickable().typeAndEnter(string);
 	  }
 	  /**
