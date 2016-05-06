@@ -5,6 +5,8 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 /**
@@ -49,9 +51,12 @@ public class NameOfMeasureDictionaryPage extends BasePage {
 
 	  //Значок Видимость фильтров ON
 	  private static String filterOn = ".//table[tbody/tr/th//div='Код']/descendant::img[@title='Видимость фильтров' and contains(@src, 'filter_on')]";
+	  @FindBy(xpath=".//table[tbody/tr/th//div='Код']/descendant::img[@title='Видимость фильтров' and contains(@src, 'filter_on')]")
+	  private WebElementFacade filterOnEl;
 	  //Значок Видимость фильтров OFF
 	  private static String filterOff = ".//table[tbody/tr/th//div='Код']/descendant::img[@title='Видимость фильтров' and contains(@src, 'filter_off')]";
-	 
+	  @FindBy(xpath=".//table[tbody/tr/th//div='Код']/descendant::img[@title='Видимость фильтров' and contains(@src, 'filter_off')]")
+	  private WebElementFacade filterOffEl;
 	  /**
 	   * Клик в поле Наименование
 	   */
@@ -102,20 +107,47 @@ public class NameOfMeasureDictionaryPage extends BasePage {
 	   * @return boolean
 	   */
 	  public boolean checkFilterOn(){
+		  /*
 		  waitForLoadJS();
 		  int count = getDriver().findElements(By.xpath(filterOn)).size();
 		  if(count>0){
 			  return true;
 		  }
 		  return false;
+		  */
+		  try {
+			  (new WebDriverWait(getDriver(), waitForUnviseble)).until(new ExpectedCondition<Boolean>() {
+					public Boolean apply(final WebDriver dirver) {
+				    	try {
+				    		if(!filterOnEl.isCurrentlyVisible()){
+				    			return true;
+				    		}else{
+				    			return false;
+				    		}
+				    		
+						} catch (Exception e) {
+							 return false;
+						}
+		
+				    }
+				});
+				
+			} catch (Exception e) {
+			}
+		return filterOnEl.isCurrentlyVisible();
 	  }
 	  /**
 	   * Нажать кнопку Видимость фильтров
 	   */
 	  public void clickFilter(){
+		  /*
 		  waitForLoadJS();
 		  getDriver().findElement(By.xpath(filterOn)).click();
 		  getDriver().findElement(By.xpath(filterOff));
+		  */
+		  waitingForFieldVisible(filterOnEl);
+		  filterOnEl.waitUntilClickable().click();
+		  waitingForFieldVisible(filterOffEl);
 	  }
 	  
 }
