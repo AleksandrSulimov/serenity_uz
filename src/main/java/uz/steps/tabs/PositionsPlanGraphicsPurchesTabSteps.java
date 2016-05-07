@@ -1,9 +1,9 @@
 package uz.steps.tabs;
 
-import uz.pages.tabs.PositionsPlanGraphicsPurchesTab;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
+import uz.pages.tabs.PositionsPlanGraphicsPurchesTab;
 /**
  * Вкладки на странице 'Позиция плана-графика закупок'	
  * @author e.kuzmina 03.05.2016

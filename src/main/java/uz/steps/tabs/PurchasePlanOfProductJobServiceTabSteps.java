@@ -1,9 +1,9 @@
 package uz.steps.tabs;
 
-import uz.pages.tabs.PurchasePlanOfProductJobServiceTab;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
+import uz.pages.tabs.PurchasePlanOfProductJobServiceTab;
 /**
  * Вкладки на странице 'План закупок товаров, работ, услуг'	
  * @author e.kuzmina 29.04.2016
