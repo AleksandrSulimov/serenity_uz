@@ -111,9 +111,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.18.1</version>
                 <configuration>
-	                <includes>
-	                    <include>${runSuiteRegular}</include>
-	                </includes>
+	                 <includes>
+				        <include>TestCaseSuitRegular.java</include>
+				        <include>TestCaseSuitSpecial.java</include>
+				     </includes>
                     <skip>true</skip>
                 </configuration>
             </plugin>
@@ -126,6 +127,8 @@
                         <include>**/Test*.java</include>
                         <include>**/When*.java</include>
                         <include>**/*Story.java</include>
+                        <include>TestCaseSuitRegular.java</include>
+				        <include>TestCaseSuitSpecial.java</include>
                     </includes>
                     <argLine>-Xmx512m</argLine>
                     <systemPropertyVariables>
