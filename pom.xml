@@ -115,7 +115,7 @@
 				        <include>**/TestCaseSuitRegular.java</include>
 				        <include>**/TestCaseSuitSpecial.java</include>
 				     </includes>
-                    <skip>true</skip>
+                    <skip>false</skip>
                 </configuration>
             </plugin>
             <plugin>
