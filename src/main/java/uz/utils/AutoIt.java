@@ -17,18 +17,19 @@ public class AutoIt {
 	 final String JACOB_DLL_TO_USE = System.getProperty("sun.arch.data.model").contains("32") ?
 	          "jacob-1.18-x86.dll" : "jacob-1.18-x64.dll";
 	 
-	 private AutoItX control;
+	// private AutoItX control;
 	 
 	 public AutoIt(){
 		 File file = new File(System.getProperty("user.dir")+"\\lib", JACOB_DLL_TO_USE);
 		  System.setProperty(LibraryLoader.JACOB_DLL_PATH, file.getAbsolutePath());
 		  
-		  control = new AutoItX();
+		  //control = new AutoItX();
 	 }
 	/**
 	 * Выбираем сертификат
 	 */
 	 public void selectCertInJinnClient(){
+		 AutoItX control = new AutoItX();
 		 control.winWait("Jinn-Client", "", 20); //[Title:Jinn-Client]
 		if(control.winExists("Jinn-Client")){
 			control.winActivate("Jinn-Client");
@@ -54,6 +55,7 @@ public class AutoIt {
 	 }
 	 
 	 public void signInJinnClient(){
+		 AutoItX control = new AutoItX();
 		 control.winWait("Jinn-Client. Просмотр документа перед формированием подписи", "", 20);
 		if(control.winExists("Jinn-Client. Просмотр документа перед формированием подписи")){
 			control.winActivate("Jinn-Client. Просмотр документа перед формированием подписи");
@@ -69,6 +71,7 @@ public class AutoIt {
 	 }
 	 
 	 public void selectFileInFireFox(){
+		 AutoItX control = new AutoItX();
 		 File f = new File("src/main/resources/test.txt");
 		 String path = f.getAbsolutePath();
 		 control.winWait("Выгрузка файла", "", 10); //[Title:Jinn-Client]
@@ -88,6 +91,7 @@ public class AutoIt {
 	 }
 	 
 	public void signInJinnClientAndSelectFirstCertificateInJinnClient() {
+		AutoItX control = new AutoItX();
 		control.winWait("Jinn-Client. Просмотр документа перед формированием подписи", "", 20);
 		if(control.winExists("Jinn-Client. Просмотр документа перед формированием подписи")){
 			control.winActivate("Jinn-Client. Просмотр документа перед формированием подписи");

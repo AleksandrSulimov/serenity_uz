@@ -17,26 +17,26 @@ public class AutoItSteps extends ScenarioSteps {
         super(pages);
     }
 	*/
-	AutoIt it = new AutoIt();
+	//AutoIt it = new AutoIt();
 	
 	@Step("В Jinn-Client нажать \"Подписать\"")
 	public void signInJinnClient() {
-		it.signInJinnClient();
+		new AutoIt().signInJinnClient();
 	}
 	
 	@Step("В Jinn-Client выбрать первый сертификат")
 	public void selectFirstCertificateInJinnClient() {
-		it.selectCertInJinnClient();
+		new AutoIt().selectCertInJinnClient();
 	}
 	
 	@Step("В Jinn-Client нажать \"Подписать\" и выбрать первый сертификат")
 	public void signInJinnClientAndSelectFirstCertificateInJinnClient() {
-		it.signInJinnClientAndSelectFirstCertificateInJinnClient();
+		new AutoIt().signInJinnClientAndSelectFirstCertificateInJinnClient();
 	}
 	
 	
 	@Step("В окне \"Выгрузка файла\" FireFox указать файл")
 	public void selectFileInFireFox() {
-		it.selectFileInFireFox();
+		new AutoIt().selectFileInFireFox();
 	}
 }
