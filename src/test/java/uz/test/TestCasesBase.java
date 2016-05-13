@@ -255,6 +255,11 @@ public class TestCasesBase {
 	    	myProfile.setAcceptUntrustedCertificates(true);
 	    	myProfile.setPreference("plugin.state.npjinnbrowserplugin",2);
 	    	myProfile.setPreference("plugin.state.java",2);
+	    	myProfile.setPreference("dom.ipc.plugins.enabled","false");
+	    	myProfile.setPreference("dom.ipc.plugins.enabled.npctrl.dll","false");
+	    	myProfile.setPreference("dom.ipc.plugins.enabled.npqtplugin.dll","false");
+	    	myProfile.setPreference("dom.ipc.plugins.enabled.npswf32.dll","false");
+	    	myProfile.setPreference("dom.ipc.plugins.enabled.nptest.dll","false");
 			  //myProfile.setPreference("network.proxy.socks_port",9999);
 			  //myProfile.setAlwaysLoadNoFocusLib(true);
 			  //myProfile.setEnableNativeEvents(true);
