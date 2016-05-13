@@ -23,18 +23,22 @@ public class AdditionalAnalyticalSignDictionaryPage extends BasePage {
 	
 	  }
 	  
-	  @FindBy(xpath=".//div[div='Дополнительный аналитический признак']")
+	  @FindBy(xpath=".//div[text()='Дополнительный аналитический признак']")
 	  private WebElementFacade applet;
 	  
-	  @FindBy(xpath=".//div[div='.//div[div='Дополнительный аналитический признак']']")
+	  @FindBy(xpath=".//div[text()='Дополнительный аналитический признак']")
 	  private WebElementFacade field;
 	  
-	  //Поле Дополнительный аналитический признак
-	  @FindBy(xpath="(.//tr[th/div[text()='Дополнительный аналитический признак']]/following-sibling::tr/descendant::td[input])[1]")
-	  private WebElementFacade additionalAnalyticalSignField;
-	  @FindBy(xpath=".//tr[th/div[text()='Дополнительный аналитический признак']]/following-sibling::tr/descendant::input[1]")
-	  private WebElementFacade additionalAnalyticalSignInput;
+	  //Поле Дополнительный аналитический признак в фильтре
+	  @FindBy(xpath="(.//tr[th/div[text()='Дополнительный аналитический признак']]/following-sibling::tr/descendant::td[input])[2]")
+	  private WebElementFacade additionalAnalyticalSignFilterField;
+	  @FindBy(xpath=".//tr[th/div[text()='Дополнительный аналитический признак']]/following-sibling::tr/descendant::input[2]")
+	  private WebElementFacade additionalAnalyticalSignFilterInput;
 
+	  //Поле Дополнительный аналитический признак
+	  @FindBy(xpath=".//tr[th/div[text()='Дополнительный аналитический признак']]/ancestor::div[1]/following-sibling::div[2]/descendant::tr[1]/td[3]/div")
+	  private WebElementFacade additionalAnalyticalSignField;
+	  
 	  //Радиокнопка в поле Дополнительный аналитический признак
 	  @FindBy(xpath="(.//span[contains(@class,'radio')])[1]")
 	  private WebElementFacade additionalAnalyticalSignRadioButton;
@@ -61,26 +65,26 @@ public class AdditionalAnalyticalSignDictionaryPage extends BasePage {
 	   * Клик в поле Дополнительный аналитический признак
 	   */
 	  public void clickOnFieldAdditionalAnalyticalSign(){
-		  waitingForFieldVisible(additionalAnalyticalSignField);
-		  additionalAnalyticalSignField.waitUntilClickable().click();
+		  waitingForFieldVisible(additionalAnalyticalSignFilterField);
+		  additionalAnalyticalSignFilterField.waitUntilClickable().click();
 	  }
 	  /**
 	   * Ввести текст в поле Дополнительный аналитический признак
 	   * @param text
 	   */
 	  public void setTextAdditionalAnalyticalSign(String text){
-		  waitingForFieldVisible(additionalAnalyticalSignInput);
-		  additionalAnalyticalSignInput.waitUntilClickable().clear();
-		  waitingForFieldVisible(additionalAnalyticalSignInput);
-		  additionalAnalyticalSignInput.waitUntilClickable().sendKeys(text);
+		  waitingForFieldVisible(additionalAnalyticalSignFilterInput);
+		  additionalAnalyticalSignFilterInput.waitUntilClickable().clear();
+		  waitingForFieldVisible(additionalAnalyticalSignFilterInput);
+		  additionalAnalyticalSignFilterInput.waitUntilClickable().sendKeys(text);
 	  }
 	  /**
 	   * Забрать значение из поля Дополнительный аналитический признак
 	   * @return text
 	   */
 	  public String getValueAdditionalAnalyticalSign(){
-		  waitingForFieldVisible(additionalAnalyticalSignInput);
-		  return additionalAnalyticalSignInput.waitUntilClickable().getAttribute("value");
+		  waitingForFieldVisible(additionalAnalyticalSignField);
+		  return additionalAnalyticalSignField.waitUntilClickable().getText();
 	  }
 	  /**
 	   * Нажать кнопку Обновить

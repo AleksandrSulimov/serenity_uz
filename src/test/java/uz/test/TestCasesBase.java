@@ -383,7 +383,12 @@ public class TestCasesBase {
 			additionalAnalyticalSignDictionaryPageSteps.clickOnFieldAdditionalAnalyticalSign();
 			additionalAnalyticalSignDictionaryPageSteps.setTextAdditionalAnalyticalSign(value);
 			additionalAnalyticalSignDictionaryPageSteps.clickOnButtonRefresh();
-			if(!additionalAnalyticalSignDictionaryPageSteps.getValueAdditionalAnalyticalSign().equals(value)){
+			try{
+				String currentValue = additionalAnalyticalSignDictionaryPageSteps.getValueAdditionalAnalyticalSign();
+				if(!currentValue.equals(value)){
+					assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
+				}
+			}catch(Exception e){
 				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
 			}
 			additionalAnalyticalSignDictionaryPageSteps.clickOnRadioButtonAdditionalAnalyticalSign();
