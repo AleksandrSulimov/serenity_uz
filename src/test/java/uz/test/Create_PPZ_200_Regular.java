@@ -42,11 +42,24 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 		assertSteps.assertField("Тип закупки", "Закупка", positionsPurchasePlanOfProductJobService200BasicInformationSteps.getValuePurchaseType());
 		positionsPurchasePlanOfProductJobService200BasicInformationSteps.clickOnButtonOkpdOpenDictionary();
 		okpd2DictionaryPageSteps.waitingForAppletVisible();
-		okpd2DictionaryPageSteps.openListFirstLevel("26", 2);
-		okpd2DictionaryPageSteps.openListSecondLevel("26.2");
-		okpd2DictionaryPageSteps.openListSecondLevel("26.20");
-		okpd2DictionaryPageSteps.openListSecondLevel("26.20.1");
-		okpd2DictionaryPageSteps.clickOnElementSecondLevel("26.20.11");
+		try{
+			okpd2DictionaryPageSteps.openListFirstLevel("26", 1);
+			okpd2DictionaryPageSteps.openListSecondLevel("26.2");
+			okpd2DictionaryPageSteps.openListSecondLevel("26.20");
+			okpd2DictionaryPageSteps.openListSecondLevel("26.20.1");
+			okpd2DictionaryPageSteps.clickOnElementSecondLevel("26.20.11");
+			
+		}catch(Exception e){
+			try{
+				okpd2DictionaryPageSteps.openListFirstLevel("26", 2);
+				okpd2DictionaryPageSteps.openListSecondLevel("26.2");
+				okpd2DictionaryPageSteps.openListSecondLevel("26.20");
+				okpd2DictionaryPageSteps.openListSecondLevel("26.20.1");
+				okpd2DictionaryPageSteps.clickOnElementSecondLevel("26.20.11");
+			}catch(Exception e1){
+				assertSteps.assertFalse("Поиск значения \"26.20.11.120\" в справочнике", "Значение \"26.20.11.120\" не найдено в справочнике");
+			}
+		}
 		if(okpd2DictionaryPageSteps.checkFilterOn()){
 			okpd2DictionaryPageSteps.clickFilter();
 		}
