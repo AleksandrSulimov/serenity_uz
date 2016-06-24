@@ -78,16 +78,16 @@ public class PositionsPlanGraphicsPurchesTermsOfPurchase extends BasePage {
 	  @FindBy(xpath=".//td[div/textarea[text()='Организациям инвалидов (в соответствии со Статьей 29 Федерального закона № 44-ФЗ)']]/following-sibling::td[2]/div/textarea")
 	  private WebElementFacade contentOrganizationOfInvalidsField;
 
-	  //Чекбокс Единые требования к участникам (в соответствии с пунктом 1 части 1 Статьи 31 Федерального закона № 44-ФЗ)
-	  @FindBy(xpath=".//td[div/textarea[text()='Единые требования к участникам (в соответствии с пунктом 1 части 1 Статьи 31 Федерального закона № 44-ФЗ)']]/preceding-sibling::td[1]/div")
+	  //Чекбокс Единые требования к участникам (в соответствии с частью 2.1 Статьи 31 Федерального закона № 44-ФЗ)
+	  @FindBy(xpath=".//td[div/textarea[text()='Единые требования к участникам (в соответствии с частью 2.1 Статьи 31 Федерального закона № 44-ФЗ)']]/preceding-sibling::td[1]/div")
 	  private WebElementFacade uniformRequirementsForParticipantsCheckBox;
 
-	  //Чекбокс Наличие/требуется в строке Единые требования к участникам (в соответствии с пунктом 1 части 1 Статьи 31 Федерального закона № 44-ФЗ)
-	  @FindBy(xpath=".//td[div/textarea[text()='Единые требования к участникам (в соответствии с пунктом 1 части 1 Статьи 31 Федерального закона № 44-ФЗ)']]/preceding-sibling::td[1]/div")
+	  //Чекбокс Наличие/требуется в строке Единые требования к участникам (в соответствии с частью 2.1 Статьи 31 Федерального закона № 44-ФЗ)
+	  @FindBy(xpath=".//td[div/textarea[text()='Единые требования к участникам (в соответствии с частью 2.1 Статьи 31 Федерального закона № 44-ФЗ)']]/preceding-sibling::td[1]/div")
 	  private WebElementFacade availabilityUniformRequirementsForParticipantsCheckBox;
 
-	  //Поле Содержание в строке Единые требования к участникам (в соответствии с пунктом 1 части 1 Статьи 31 Федерального закона № 44-ФЗ)
-	  @FindBy(xpath=".//td[div/textarea[text()='Единые требования к участникам (в соответствии с пунктом 1 части 1 Статьи 31 Федерального закона № 44-ФЗ)']]/following-sibling::td[2]/div/textarea")
+	  //Поле Содержание в строке Единые требования к участникам (в соответствии с частью 2.1 Статьи 31 Федерального закона № 44-ФЗ)
+	  @FindBy(xpath=".//td[div/textarea[text()='Единые требования к участникам (в соответствии с частью 2.1 Статьи 31 Федерального закона № 44-ФЗ)']]/following-sibling::td[2]/div/textarea")
 	  private WebElementFacade contentUniformRequirementsForParticipantsField;
 
 		

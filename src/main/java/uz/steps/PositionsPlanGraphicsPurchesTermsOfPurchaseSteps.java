@@ -97,16 +97,16 @@ public class PositionsPlanGraphicsPurchesTermsOfPurchaseSteps extends ScenarioSt
 		applet.setTextContentOrganizationOfInvalids(text);
 	}
 
-	@Step("Кликнуть чекбокс \"Единые требования к участникам (в соответствии с пунктом 1 части 1 Статьи 31 Федерального закона № 44-ФЗ)\" на вкладке \"Условия закупки\"")
+	@Step("Кликнуть чекбокс \"Единые требования к участникам (в соответствии с частью 2.1 Статьи 31 Федерального закона № 44-ФЗ)\" на вкладке \"Условия закупки\"")
 	public void clickCheckBoxUniformRequirementsForParticipants() {
 		applet.clickCheckBoxUniformRequirementsForParticipants();
 	}
-	@Step("Кликнуть чекбокс \"Наличие/требуется\" в строке \"Единые требования к участникам (в соответствии с пунктом 1 части 1 Статьи 31 Федерального закона № 44-ФЗ)\" на вкладке \"Условия закупки\"")
+	@Step("Кликнуть чекбокс \"Наличие/требуется\" в строке \"Единые требования к участникам (в соответствии с частью 2.1 Статьи 31 Федерального закона № 44-ФЗ)\" на вкладке \"Условия закупки\"")
 	public void clickCheckBoxAvailabilityUniformRequirementsForParticipants() {
 		applet.clickCheckBoxAvailabilityUniformRequirementsForParticipants();
 	}
 
-	@Step("Ввести текст {0} в поле \"Содержание\" в строке \"Единые требования к участникам (в соответствии с пунктом 1 части 1 Статьи 31 Федерального закона № 44-ФЗ)\" на вкладке \"Условия закупки\"")
+	@Step("Ввести текст {0} в поле \"Содержание\" в строке \"Единые требования к участникам (в соответствии с частью 2.1 Статьи 31 Федерального закона № 44-ФЗ)\" на вкладке \"Условия закупки\"")
 	public void setTextContentUniformRequirementsForParticipants(String text) {
 		applet.setTextContentUniformRequirementsForParticipants(text);
 	}
