@@ -38,7 +38,7 @@ public class PlanGraphicsPage extends BasePage {
 	  protected WebElementFacade closeLink;
 	  
 	  //Кнопка Создать план-график
-	  @FindBy(xpath=".//button[@title='Создать план-график']")
+	  @FindBy(xpath=".//button[@title='Создать новый документ']")
 	  protected WebElementFacade creteNewDocumentButton;
 
 	  //Отправить на согласование
