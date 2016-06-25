@@ -35,8 +35,9 @@ public class Create_PG extends TestCasesBase{
 		
 		selectYearOfPlanGraficsPageSteps.waitingForAppletVisible();
 		assertSteps.assertField("Заказчик", "Управление Федерального казначейства по Кировской области", selectYearOfPlanGraficsPageSteps.getValueCustomer());
-		assertSteps.assertField("Год плана-графика*", "2016", selectYearOfPlanGraficsPageSteps.getValueYearPlanGrafics());
-		selectYearOfPlanGraficsPageSteps.clickOnButtonSelect();
+		assertSteps.assertField("Год плана-графика", "2016", selectYearOfPlanGraficsPageSteps.getValueYearPlanGrafics());
+		
+//		selectYearOfPlanGraficsPageSteps.clickOnButtonSelect(); Кнопку убрали
 		
 		planGraphicsTabSteps.waitingForAppletVisible();
 		planGraphicsTabSteps.selectTabBasicInformation();

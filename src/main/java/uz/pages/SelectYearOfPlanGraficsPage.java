@@ -20,23 +20,23 @@ public class SelectYearOfPlanGraficsPage extends BasePage {
 		setApplet(applet);
 	
 	  }
-	  
-	  @FindBy(xpath=".//div[text()='Выбор года плана-графика закупок']")
+	  //
+	  @FindBy(xpath=".//input[contains(@name, 'bi_tenderyear')]")
 	  private WebElementFacade applet;
 	  
-	  @FindBy(xpath=".//div[text()='Выбор года плана-графика закупок']")
+	  @FindBy(xpath=".//input[contains(@name, 'bi_tenderyear')]")
 	  private WebElementFacade field;
 	  
 	  //Поле Заказчик
-	  @FindBy(xpath=".//td[div/span='Заказчик']/following-sibling::td[1]/div")
+	  @FindBy(xpath=".//td[div/span='Заказчик']/following-sibling::td[1]/div/input")
 	  private WebElementFacade customerField;
-	  @FindBy(xpath=".//td[div/span='Заказчик']/following-sibling::td[1]/div/span")
+	  @FindBy(xpath=".//td[div/span='Заказчик']/following-sibling::td[1]/div/input")
 	  private WebElementFacade customerInput;
 
 	  //Поле Год плана-графика*
-	  @FindBy(xpath=".//td[div/span='Год плана-графика*']/following-sibling::td[1]/div")
+	  @FindBy(xpath=".//td[div/span='Год плана-графика']/following-sibling::td[1]/div")
 	  private WebElementFacade yearPlanGraficsField;
-	  @FindBy(xpath=".//td[div/span='Год плана-графика*']/following-sibling::td[1]/div/span/input")
+	  @FindBy(xpath=".//td[div/span='Год плана-графика']/following-sibling::td[1]/div/span/input")
 	  private WebElementFacade yearPlanGraficsInput;
 
 	  //Кнопка Выбрать
@@ -56,7 +56,7 @@ public class SelectYearOfPlanGraficsPage extends BasePage {
 	   */
 	  public String getValueCustomer(){
 		  waitForLoadJS();
-		  return customerField.waitUntilClickable().getText();
+		  return customerField.waitUntilClickable().getAttribute("value");
 	  }
 	  
 	  /**
