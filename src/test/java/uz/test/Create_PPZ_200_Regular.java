@@ -101,7 +101,7 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.selectFromDropDownList("2016");
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.clickOnButtonOpenDictionaryKD();
 		
-		selectValueInChainsOfKBKDiictionary("100.01.06.39.2.04.00190.243 14");
+		selectValueInChainsOfKBKDiictionary("100.01.06.00.1.04.00012.261 14");
 		
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.waitingForAppletVisible();
 		positionsPurchasePlanOfProductJobService200AmountOfFinancialSupportSteps.clickOnButtonOpenDictionaryAdditionalAnalyticalSig();

@@ -28,6 +28,7 @@ public class Approval_PPZ extends TestCasesBase{
 		expandProcurementManagementOnApplicationForms();
 		expandPlanningOnApplicationForms();
 		expandPlanProcurementOnApplicationForms();
+		expandPositionsPlanProcurementOnApplicationForms();
 		
 		applicationFormsSteps.clickOnLinkPositionPlanProcurement200();
 		

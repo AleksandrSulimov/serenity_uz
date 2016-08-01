@@ -30,6 +30,7 @@ public class Approval_PPG extends TestCasesBase{
 		expandProcurementManagementOnApplicationForms();
 		expandPlanningOnApplicationForms();
 		expandPlanGraphicsFirstLevelOnApplicationForms();
+		expandPlanGraphicsSecondLevelOnApplicationForms();
 		expandPositionPlanGraphicsOnApplicationForms();
 		
 		applicationFormsSteps.clickOnLinkPositionPlanGraphicsPurches();
