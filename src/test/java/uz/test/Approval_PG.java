@@ -24,16 +24,14 @@ public class Approval_PG extends TestCasesBase{
 		String purshedNumber = JSON.readJSON("pg_num", "pg_num");
 		String status = "";
 
-		selectPushedProcurementManagement();
-			
+		selectPushedProcurementManagement();	
 		goToApplicationForms();
-
 		expandProcurementManagementOnApplicationForms();
-		
+		expandPlanningOnApplicationForms();
 		expandPlanGraphicsFirstLevelOnApplicationForms();
+		expandPlanGraphicsSecondLevelOnApplicationForms();
 		
 		applicationFormsSteps.clickOnLinkPlanGraphicsAfterPlanGraphicsExpandLink();
-		
 		
 		planGraphicsSteps.waitingForAppletVisible();
 		
