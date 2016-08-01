@@ -25,11 +25,9 @@ public class Approval_PZ extends TestCasesBase{
 		
 
 		selectPushedProcurementManagement();
-			
 		goToApplicationForms();
-
 		expandProcurementManagementOnApplicationForms();
-		
+		expandPlanningOnApplicationForms();
 		expandPlanProcurementOnApplicationForms();
 		
 		//План закупок

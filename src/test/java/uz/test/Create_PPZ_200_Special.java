@@ -27,7 +27,9 @@ public class Create_PPZ_200_Special extends TestCasesBase{
 		selectPushedProcurementManagement();
 		goToApplicationForms();
 		expandProcurementManagementOnApplicationForms();
-		expandPlanProcurementOnApplicationForms();	
+		expandPlanningOnApplicationForms();
+		expandPlanProcurementOnApplicationForms();
+		expandPositionsPlanProcurementOnApplicationForms();
 		
 		applicationFormsSteps.clickOnLinkPositionPlanProcurement200();
 		

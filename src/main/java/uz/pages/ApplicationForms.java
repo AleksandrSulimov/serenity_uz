@@ -30,6 +30,11 @@ public class ApplicationForms extends BasePage {
 	  //Управление закупками
 	  @FindBy(xpath=".//div[span[2]/span[@style[contains(.,'font-weight')]][contains(.,'Управление закупками')]]/span[1]/a")//div[span/span[contains(.,'Управление закупками')]]/span[1]/a
 	  private WebElementFacade procurementManagementLink;
+	  
+	  //Планирование
+	  @FindBy(xpath=".//span[text()='Планирование']/ancestor::span/preceding-sibling::span/a")
+	  private WebElementFacade planningLink;
+	  
 	  //План закупок
 	  @FindBy(xpath=".//div[span/span[contains(.,'План закупок')]]/span[1]/a")
 	  private WebElementFacade planProcurementLink;
@@ -38,6 +43,9 @@ public class ApplicationForms extends BasePage {
 	  @FindBy(xpath=".//span[text()='План закупок']/ancestor::tr/descendant::a[span[text()='План закупок']]")
 	  private WebElementFacade planProcurementInPlanProcurementLink;
 	  
+	  //Позиции плана закупок (папка)
+	  @FindBy(xpath=".//div[span/span[contains(.,'Позиции плана закупок')]]/span[1]/a")
+	  private WebElementFacade positionsPlanProcurementLink;
 	  
 	  //Позиции плана закупок 200
 	  @FindBy(xpath=".//a[span[text()='Позиция плана закупок - 200']]")
@@ -78,7 +86,7 @@ public class ApplicationForms extends BasePage {
 	  private WebElementFacade statementPlanPurchaseLink;
 	  
 	  //ППГ
-	  //Раскрывающийся линк Позиции плана-графика под управление закупками
+	  //Раскрывающийся линк Позиции плана-графика под План-график закупок
 	  @FindBy(xpath=".//div[span/span[contains(.,'Позиции плана-графика')]]/span[1]/a")
 	  private WebElementFacade positionPlanGraphicFirstLevelExpandLink;
 	  //Позиции плана-графика закупок
@@ -95,11 +103,14 @@ public class ApplicationForms extends BasePage {
 	  private WebElementFacade statementPositonPlanGraphicPurchaseLink;
 	  
 	  //ПГ
-	  //Раскрывающийся линк План-график под управление закупками
-	  @FindBy(xpath=".//div[span/span[contains(.,'План-график')]]/span[1]/a")
+	  //Раскрывающийся линк План-график под Планирование
+	  @FindBy(xpath=".//div[span/span[contains(.,'План-график закупок')]]/span[1]/a")
 	  private WebElementFacade planGraphicsFirstLevelExpandLink;
+	  //Раскрывающийся линк План-график закупок --> План-график закупок
+	  @FindBy(xpath=".//div[span/span[contains(.,'План-график закупок')]]/following::div[span/span[contains(.,'План-график закупок')]]/span[1]/a")
+	  private WebElementFacade planGraphicsSecondLevelExpandLink;
 	  //План-график под Раскрывающийся линк План-график
-	  @FindBy(xpath=".//div[span/span[contains(.,'План-график')]]/following::a[span[text()='План-график']]")
+	  @FindBy(xpath=".//div[span/span[contains(.,'План-график закупок')]]/following::a[span[text()='План-график']]")
 	  private WebElementFacade planGraphicsAfterPlanGraphicsExpandLink;
 	  //Мои документы после Раскрывающийся План-график
 	  @FindBy(xpath=".//div[span/span[contains(.,'План-график')]]/following::div[span/span[contains(.,'Мои документы')]]/span[1]/a")
@@ -131,6 +142,27 @@ public class ApplicationForms extends BasePage {
 		  return false;
 	  }
 	
+	  /**
+	   * Клик по линку Планирование
+	   */	  
+	  public void clickOnLinkPlanning(){
+		  waitingForFieldVisible(planningLink);
+		  planningLink.waitUntilClickable().click();
+	  }
+	  
+	  /**
+	   * Проверяем нажат ли линк Планирование
+	   * @return Boolean (true - если линк нажат)
+	   */	  
+	  public boolean isPushedLinkPlanning(){
+		  waitingForFieldVisible(planningLink);
+		  String title = planningLink.waitUntilClickable().getAttribute("title");
+		  if(title.contains("Свернуть")){
+			  return true;
+		  }
+		  return false;
+	  }
+	
 	  
 	  /**
 	   * Клик по линку План закупок
@@ -154,6 +186,27 @@ public class ApplicationForms extends BasePage {
 	  public Boolean isPushedLinkPlanProcurement(){
 		  waitingForFieldVisible(planProcurementLink);
 		  String title = planProcurementLink.waitUntilClickable().getAttribute("title");
+		  if(title.contains("Свернуть")){
+			  return true;
+		  }
+		  return false;
+	  }
+	  
+	  /**
+	   * Клик по линку План закупок --> Позиции плана закупок
+	   */
+	  public void clickOnLinkPositionsPlanProcurement(){
+		  waitingForFieldVisible(positionsPlanProcurementLink);
+		  positionsPlanProcurementLink.waitUntilClickable().click();
+	  }
+	  
+	  /**
+	   * Проверяем нажат ли линк План закупок --> Позиции плана закупок
+	   * @return Boolean (true - если линк нажат)
+	   */
+	  public Boolean isPushedLinkPositionsPlanProcurement(){
+		  waitingForFieldVisible(positionsPlanProcurementLink);
+		  String title = positionsPlanProcurementLink.waitUntilClickable().getAttribute("title");
 		  if(title.contains("Свернуть")){
 			  return true;
 		  }
@@ -255,14 +308,14 @@ public class ApplicationForms extends BasePage {
 		  return false;
 	  }
 	  /**
-	   * Нажимаем линк \"Мои документы\" расположенный под раскрывшемся элементом \"План закупок\"
+	   * Нажимаем линк "Мои документы" расположенный под раскрывшемся элементом "План закупок"
 	   */
 	  public void clickOnLinkMyDocumentAfterPlanPurchase() {
 		  waitingForFieldVisible(myDocumentAfterPlanPurchaseLink);
 		  myDocumentAfterPlanPurchaseLink.waitUntilClickable().click();
 	  }
 	  /**
-	   * Проверяем нажат ли линк \"Мои документы\" расположенный под раскрывшемся элементом \"План закупок\"
+	   * Проверяем нажат ли линк "Мои документы" расположенный под раскрывшемся элементом "План закупок"
 	   * @return Boolean (true - если линк нажат)
 	   */
 	  public boolean isPushedLinkMyDocumentAfterPlanPurchase() {
@@ -357,10 +410,10 @@ public class ApplicationForms extends BasePage {
 	  //    	ПГ
 	  //==================
 	  /**
-	   * Проверяем нажат ли линк План-график
+	   * Проверяем нажат ли линк План-график под Планирование
 	   * @return Boolean (true - если линк нажат)
 	   */
-	  public Boolean isPushedLinkPlanGraphics(){
+	  public Boolean isPushedLinkPlanGraphicsFirstLevel(){
 		  waitingForFieldVisible(planGraphicsFirstLevelExpandLink);
 		  String title = planGraphicsFirstLevelExpandLink.waitUntilClickable().getAttribute("title");
 		  if(title.contains("Свернуть")){
@@ -369,11 +422,32 @@ public class ApplicationForms extends BasePage {
 		  return false;
 	  }
 	  /**
-	   * Клик по линку План-график
+	   * Клик по линку План-график под Планирование
 	   */
-	  public void clickOnLinkPlanGraphics() {
+	  public void clickOnLinkPlanGraphicsFirstLevel() {
 		  waitingForFieldVisible(planGraphicsFirstLevelExpandLink);
 		  planGraphicsFirstLevelExpandLink.waitUntilClickable().click();
+	  }
+	  
+	  /**
+	   * Проверяем нажат ли линк План-график закупок --> План-график закупок
+	   * @return Boolean (true - если линк нажат)
+	   */
+	  public Boolean isPushedLinkPlanGraphicsSecondLevel(){
+		  waitingForFieldVisible(planGraphicsSecondLevelExpandLink);
+		  String title = planGraphicsSecondLevelExpandLink.waitUntilClickable().getAttribute("title");
+		  if(title.contains("Свернуть")){
+			  return true;
+		  }
+		  return false;
+	  }
+	  
+	  /**
+	   * Клик по линку План-график закупок --> План-график закупок
+	   */
+	  public void clickOnLinkPlanGraphicsSecondLevel(){
+		  waitingForFieldVisible(planGraphicsSecondLevelExpandLink);
+		  planGraphicsSecondLevelExpandLink.waitUntilClickable().click();
 	  }
 	  /**
 	   * Клик по линку План-график закупок расположенный под раскрывшемся элементом План-график

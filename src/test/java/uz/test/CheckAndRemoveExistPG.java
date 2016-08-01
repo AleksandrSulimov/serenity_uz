@@ -23,7 +23,9 @@ public class CheckAndRemoveExistPG extends TestCasesBase{
 		selectPushedProcurementManagement();
 		goToApplicationForms();
 		expandProcurementManagementOnApplicationForms();
-		expandPlanGraphicsOnApplicationForms();
+		expandPlanningOnApplicationForms();
+		expandPlanGraphicsFirstLevelOnApplicationForms();
+		expandPlanGraphicsSecondLevelOnApplicationForms();
 		applicationFormsSteps.clickOnLinkPlanGraphicsAfterPlanGraphicsExpandLink();
 		
 		planGraphicsSteps.waitingForAppletVisible();

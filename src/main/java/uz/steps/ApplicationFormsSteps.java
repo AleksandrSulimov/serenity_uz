@@ -34,6 +34,16 @@ public class ApplicationFormsSteps extends ScenarioSteps {
     	applet.clickOnLinkProcurementManagement();    	
     }
     
+    @Step("Проверяем нажат ли линк \"Планирование\" в \"Формуляры\"")
+    public Boolean isPushedLinkPlanning(){
+    	return applet.isPushedLinkPlanning();
+    }
+    
+    @Step("Нажимаем линк \"Планирование\" в \"Формуляры\"")
+    public void clickOnLinkPlanning(){
+    	applet.clickOnLinkPlanning();
+    }
+    
     @Step("Проверяем нажат ли линк \"План закупок\" в \"Формуляры\"")
     public Boolean isPushedLinkPlanProcurement() {
     	return applet.isPushedLinkPlanProcurement();
@@ -44,14 +54,21 @@ public class ApplicationFormsSteps extends ScenarioSteps {
     }
     @Step("Нажимаем линк \"План закупок\" --> \"План закупок\" в \"Формуляры\"")
     public void clickOnLinkPlanProcurementInPlanProcurement(){
-    	applet.clickOnLinkPlanProcurementInPlanProcurement();    	
+    	applet.clickOnLinkPlanProcurementInPlanProcurement();
+    }
+    @Step("Проверяем нажат ли линк \"План закупок\" --> \"Позиции плана закупок\" в \"Формуляры\"")
+    public Boolean isPushedLinkPositionsPlanProcurement(){
+    	return applet.isPushedLinkPositionsPlanProcurement();
+    }
+    @Step("Нажимаем линк \"План закупок\" --> \"Позиции плана закупок\" в \"Формуляры\"")
+    public void clickOnLinkPositionsPlanProcurement(){
+    	applet.clickOnLinkPositionsPlanProcurement();
     }
     @Step("Нажимаем линк \"Позиции плана закупок - 200\" в \"Формуляры\"")
     public void clickOnLinkPositionPlanProcurement200(){
     	applet.clickOnLinkPositionPlanProcurement200();    	
     }
 
-    
     @Step("Проверяем нажат ли линк \"Позиция 200\" в \"Формуляры\"")
     public boolean isPushedLinkPosition200() {
     	return applet.isPushedLinkPosition200();
@@ -145,14 +162,22 @@ public class ApplicationFormsSteps extends ScenarioSteps {
 	//==================
 	//    	ПГ
 	//==================
-    @Step("Проверяем нажат ли линк \"План-график\" в \"Формуляры\"")
-    public Boolean isPushedLinkPlanGraphics() {
-    	return applet.isPushedLinkPlanGraphics();
+    @Step("Проверяем нажат ли линк \"План-график закупок\" под \"Планирование\" в \"Формуляры\"")
+    public Boolean isPushedLinkPlanGraphicsFirstLevel() {
+    	return applet.isPushedLinkPlanGraphicsFirstLevel();
     }
-    @Step("Нажимаем раскрывающийся линк \"План-график\" в \"Формуляры\"")	
-	public void clickOnLinkPlanGraphics() {      	
-    	applet.clickOnLinkPlanGraphics();	
+    @Step("Нажимаем раскрывающийся линк \"План-график закупок\" под \"Планирование\" в \"Формуляры\"")	
+	public void clickOnLinkPlanGraphicsFirstLevel() {      	
+    	applet.clickOnLinkPlanGraphicsFirstLevel();	
 	}
+    @Step("Проверяем нажат ли линк \"План-график закупок\" --> \"План-график закупок\" в \"Формуляры\"")
+    public Boolean isPushedLinkPlanGraphicsSecondLevel(){
+    	return applet.isPushedLinkPlanGraphicsSecondLevel();
+    }
+    @Step("Нажимаем раскрывающийся линк \"План-график закупок\" --> \"План-график закупок\" в \"Формуляры\"")
+    public void clickOnLinkPlanGraphicsSecondLevel(){
+    	applet.clickOnLinkPlanGraphicsSecondLevel();
+    }
     @Step("Нажимаем линк \"План-график\" расположенный под раскрывшемся элементом \"План-график\" в \"Формуляры\"")	
 	public void clickOnLinkPlanGraphicsAfterPlanGraphicsExpandLink() {      	
     	applet.clickOnLinkPlanGraphicsAfterPlanGraphicsExpandLink();	

@@ -28,7 +28,8 @@ public class Test1 extends TestCasesBase{
 
 		expandProcurementManagementOnApplicationForms();
 		
-		expandPlanGraphicsOnApplicationForms();
+		expandPlanGraphicsFirstLevelOnApplicationForms();
+		expandPlanGraphicsSecondLevelOnApplicationForms();
 
 		if(!applicationFormsSteps.isPushedLinkMyDocumentAfterPlanGraphicsLink()){
 			applicationFormsSteps.clickOnLinkMyDocumentAfterPlanGraphicsLink();

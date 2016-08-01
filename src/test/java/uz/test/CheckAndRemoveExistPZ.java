@@ -24,6 +24,7 @@ public class CheckAndRemoveExistPZ extends TestCasesBase{
 		selectPushedProcurementManagement();
 		goToApplicationForms();
 		expandProcurementManagementOnApplicationForms();
+		expandPlanningOnApplicationForms();
 		expandPlanProcurementOnApplicationForms();
 		
 		applicationFormsSteps.clickOnLinkPlanProcurementInPlanProcurement();

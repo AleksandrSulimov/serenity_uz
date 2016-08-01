@@ -30,7 +30,7 @@ public class Approval_PG extends TestCasesBase{
 
 		expandProcurementManagementOnApplicationForms();
 		
-		expandPlanGraphicsOnApplicationForms();
+		expandPlanGraphicsFirstLevelOnApplicationForms();
 		
 		applicationFormsSteps.clickOnLinkPlanGraphicsAfterPlanGraphicsExpandLink();
 		
@@ -66,8 +66,8 @@ public class Approval_PG extends TestCasesBase{
 		//Согласование
 		applicationFormsSteps.waitingForAppletVisible();
 		
-		expandPlanGraphicsOnApplicationForms();
-		
+		expandPlanGraphicsFirstLevelOnApplicationForms();
+		expandPlanGraphicsSecondLevelOnApplicationForms();
 
 		if(!applicationFormsSteps.isPushedLinkMyDocumentAfterPlanGraphicsLink()){
 			applicationFormsSteps.clickOnLinkMyDocumentAfterPlanGraphicsLink();
@@ -108,7 +108,7 @@ public class Approval_PG extends TestCasesBase{
 		//Утверждение
 		applicationFormsSteps.waitingForAppletVisible();
 		
-		expandPlanGraphicsOnApplicationForms();
+		expandPlanGraphicsFirstLevelOnApplicationForms();
 
 		if(!applicationFormsSteps.isPushedLinkMyDocumentAfterPlanGraphicsLink()){
 			applicationFormsSteps.clickOnLinkMyDocumentAfterPlanGraphicsLink();

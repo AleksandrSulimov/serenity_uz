@@ -24,11 +24,9 @@ public class Approval_PPZ extends TestCasesBase{
 		String purshedNumber = JSON.readJSON("ppz_num", "ppz_num");
 
 		selectPushedProcurementManagement();
-			
 		goToApplicationForms();
-
 		expandProcurementManagementOnApplicationForms();
-		
+		expandPlanningOnApplicationForms();
 		expandPlanProcurementOnApplicationForms();
 		
 		applicationFormsSteps.clickOnLinkPositionPlanProcurement200();

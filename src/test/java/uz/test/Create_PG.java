@@ -27,7 +27,9 @@ public class Create_PG extends TestCasesBase{
 		selectPushedProcurementManagement();
 		goToApplicationForms();
 		expandProcurementManagementOnApplicationForms();
-		expandPlanGraphicsOnApplicationForms();
+		expandPlanningOnApplicationForms();
+		expandPlanGraphicsFirstLevelOnApplicationForms();
+		expandPlanGraphicsSecondLevelOnApplicationForms();
 		applicationFormsSteps.clickOnLinkPlanGraphicsAfterPlanGraphicsExpandLink();
 		
 		planGraphicsSteps.waitingForAppletVisible();

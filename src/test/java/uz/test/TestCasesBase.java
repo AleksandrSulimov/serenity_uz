@@ -307,6 +307,24 @@ public class TestCasesBase {
 			}
 	    }
 	    /**
+	     * Раскрыть Планирование на Формулярах
+	     */
+	    public void expandPlanningOnApplicationForms(){
+	    	if(!applicationFormsSteps.isPushedLinkPlanning()){
+	    		applicationFormsSteps.clickOnLinkPlanning();
+	    	}
+	    }
+	    
+	    /**
+	     * Раскрыть План-закупок --> Позиции плана закупок на Формулярах
+	     */
+	    public void expandPositionsPlanProcurementOnApplicationForms(){
+	    	if(!applicationFormsSteps.isPushedLinkPositionsPlanProcurement()){
+	    		applicationFormsSteps.clickOnLinkPositionsPlanProcurement();
+	    	}
+	    }
+	    
+	    /**
 	     * Раскрыть План закупок на Формулярах
 	     */
 	    public void expandPlanProcurementOnApplicationForms(){
@@ -323,13 +341,22 @@ public class TestCasesBase {
 			}
 	    }
 	    /**
-	     * Раскрыть План-график на Формулярах
+	     * Раскрыть План-график закупок под Планированием на Формулярах
 	     */
-	    protected void expandPlanGraphicsOnApplicationForms() {
-	    	if(!applicationFormsSteps.isPushedLinkPlanGraphics()){
-				applicationFormsSteps.clickOnLinkPlanGraphics();
+	    public void expandPlanGraphicsFirstLevelOnApplicationForms() {
+	    	if(!applicationFormsSteps.isPushedLinkPlanGraphicsFirstLevel()){
+				applicationFormsSteps.clickOnLinkPlanGraphicsFirstLevel();
 			}
 		}
+	    
+	    /**
+	     * Раскрыть "План-график закупок" --> "План-график закупок" на Формулярах
+	     */	    
+	    public void expandPlanGraphicsSecondLevelOnApplicationForms(){
+	    	if(!applicationFormsSteps.isPushedLinkPlanGraphicsSecondLevel()){
+	    		applicationFormsSteps.clickOnLinkPlanGraphicsSecondLevel();
+	    	}
+	    }
 	    /**
 	     * Нажать на иконку фильтра для отображения полей фильтра на Позиции плана закупок 200
 	     */

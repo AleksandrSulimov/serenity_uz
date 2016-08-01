@@ -27,6 +27,8 @@ public class Create_PPG_Special extends TestCasesBase{
 		selectPushedProcurementManagement();
 		goToApplicationForms();
 		expandProcurementManagementOnApplicationForms();
+		expandPlanningOnApplicationForms();
+		expandPlanGraphicsFirstLevelOnApplicationForms();
 		expandPositionPlanGraphicsOnApplicationForms();
 		applicationFormsSteps.clickOnLinkPositionPlanGraphicsPurches();
 		
