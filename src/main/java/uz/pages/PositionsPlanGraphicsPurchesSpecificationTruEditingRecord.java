@@ -223,7 +223,7 @@ public class PositionsPlanGraphicsPurchesSpecificationTruEditingRecord extends B
 	   */
 	  public String getValueNameOfMeasure(){
 		  waitForLoadJS();
-		  return nameOfMeasureInput.getAttribute("value");
+		  return nameOfMeasureInput.getAttribute("title");
 	  }
 	  /**
 	   * Открыть справочник в поле Наименование единицы измерения*
