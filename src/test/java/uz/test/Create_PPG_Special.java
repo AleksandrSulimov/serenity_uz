@@ -68,10 +68,10 @@ public class Create_PPG_Special extends TestCasesBase{
 		assertSteps.assertField("Этап в блоке \"Согласующие\"", "1", positionsPlanGraphicsPurchesCoordinationSheetSteps.getValueStageMatcher());
 		assertSteps.assertField("Код группы в блоке \"Согласующие\"", "1", positionsPlanGraphicsPurchesCoordinationSheetSteps.getValueCodeGroupMatcher());
 		assertSteps.assertField("Порядковый номер согласующего в блоке \"Согласующие\"", "1", positionsPlanGraphicsPurchesCoordinationSheetSteps.getValueSequenceNumberMatching());
-		assertSteps.assertField("ФИО сотрудника в блоке \"Согласующие\"", "Сафронов", positionsPlanGraphicsPurchesCoordinationSheetSteps.getValueFioEmployeeMatching());
+		assertSteps.assertField("ФИО сотрудника в блоке \"Согласующие\"", "Олег В. Сафронов", positionsPlanGraphicsPurchesCoordinationSheetSteps.getValueFioEmployeeMatching());
 		assertSteps.assertField("Должность в блоке \"Согласующие\"", "Начальник", positionsPlanGraphicsPurchesCoordinationSheetSteps.getValuePositionMatching());
 		assertSteps.assertField("Результат согласования в блоке \"Согласующие\"", "Требует согласования", positionsPlanGraphicsPurchesCoordinationSheetSteps.getValueResultMatching());
-		assertSteps.assertField("ФИО сотрудника в блоке \"Утверждающий\"", "Сафронов", positionsPlanGraphicsPurchesCoordinationSheetSteps.getValueFioEmployeePredicating());
+		assertSteps.assertField("ФИО сотрудника в блоке \"Утверждающий\"", "Олег В. Сафронов", positionsPlanGraphicsPurchesCoordinationSheetSteps.getValueFioEmployeePredicating());
 		assertSteps.assertField("Должность в блоке \"Утверждающий\"", "Начальник", positionsPlanGraphicsPurchesCoordinationSheetSteps.getValuePositionPredicating());
 
 		positionsPlanGraphicsPurchesCoordinationSheetSteps.clickOnButtonCheckDocument();
