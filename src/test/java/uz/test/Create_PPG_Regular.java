@@ -101,8 +101,9 @@ public class Create_PPG_Regular extends TestCasesBase{
 		positionsPlanGraphicsPurchesSpecificationTruEditingRecordSteps.clickOnButtonNameOfMeasure();
 
 		selectValueInNameOfMeasureDictionary("Штука");
-		
+//Временно убран, нужно разобраться почему получает getAttribute("title") пустую строку		
 //		assertSteps.assertField("Наименование единицы измерения", "Штука", positionsPlanGraphicsPurchesSpecificationTruEditingRecordSteps.getValueNameOfMeasure());
+//		
 		assertSteps.assertField("Количество (объем)*", "1,00", positionsPlanGraphicsPurchesSpecificationTruEditingRecordSteps.getValueAmount());
 		positionsPlanGraphicsPurchesSpecificationTruEditingRecordSteps.setTextAmount("25");
 		positionsPlanGraphicsPurchesSpecificationTruEditingRecordSteps.clickOnButtonOK();
