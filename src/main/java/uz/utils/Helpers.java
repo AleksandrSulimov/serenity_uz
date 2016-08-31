@@ -107,7 +107,7 @@ public class Helpers {
 	}
 	
 	/**
-	 * Возращает рандомный номер мобильного телефона
+	 * Возвращает рандомный номер мобильного телефона
 	 * @return String
 	 */
 	public String rndCellNum(){
@@ -193,7 +193,7 @@ public class Helpers {
 		return;
 	}
 	/**
-	 * Взвращает дату в указанном формате
+	 * Возвращает дату в указанном формате
 	 * @param date
 	 * @param format
 	 * @return formattedDate
@@ -245,7 +245,7 @@ public class Helpers {
 		  return formattedDate;
 	 }
 	/**
-	 * Взвращает текущуюю дату в указанном формате +- указанное количество минут
+	 * Возвращает текущуюю дату в указанном формате +- указанное количество минут
 	 * @param format
 	 * @param year
 	 * @return formattedDate
@@ -278,7 +278,7 @@ public class Helpers {
 		  return formattedDate;
 	 }
 	 /**
-		 * Возвращает радомное число типа String. На вход количество симаолов
+		 * Возвращает рандомное число типа String. На вход количество симаолов
 		 * @param length
 		 */
 		public String randomNum(int length){

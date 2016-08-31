@@ -23,12 +23,12 @@ public class AddAttachmentPageSteps extends ScenarioSteps {
 		page.waitingForAppletVisible();
 	}
 	
-    @Step("Загрузить файл {0)")
+    @Step("Загрузить файл {0}")
     public void loadFile(String path) {
     	page.loadFile(path);
     }
 
-    @Step("Нажать кнопку Сохранить")
+    @Step("Нажать кнопку \"Сохранить\"")
     public void clickOnButtonSave() {
     	page.clickOnButtonSave();
     }

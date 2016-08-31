@@ -68,7 +68,7 @@ public class PlanGraphicsStatementSteps extends ScenarioSteps {
     	return applet.getTextStatus();    	
     }
     
-    @Step("Закрыть вклвдку \"Планы-графики на утверждении\"")
+    @Step("Закрыть вкладку \"Планы-графики на утверждении\"")
     public void clickOnLinkClose(){
     	applet.clickOnLinkClose();  	
     }

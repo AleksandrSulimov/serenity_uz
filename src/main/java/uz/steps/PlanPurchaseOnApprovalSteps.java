@@ -69,7 +69,7 @@ public class PlanPurchaseOnApprovalSteps extends ScenarioSteps {
     	return applet.getTextStatus();    	
     }
     
-    @Step("Закрыть вклвдку \"План закупок на согласовании\"")
+    @Step("Закрыть вкладку \"План закупок на согласовании\"")
     public void clickOnLinkClose(){
     	applet.clickOnLinkClose();  	
     }

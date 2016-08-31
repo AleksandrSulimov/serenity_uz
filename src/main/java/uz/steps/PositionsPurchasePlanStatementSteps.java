@@ -68,7 +68,7 @@ public class PositionsPurchasePlanStatementSteps extends ScenarioSteps {
     	return applet.getTextStatus();    	
     }
     
-    @Step("Закрыть вклвдку \"Позиции плана закупок на утверждении\"")
+    @Step("Закрыть вкладку \"Позиции плана закупок на утверждении\"")
     public void clickOnLinkClosePPZOnStatement(){
     	applet.clickOnLinkClosePPZOnStatement();  	
     }
