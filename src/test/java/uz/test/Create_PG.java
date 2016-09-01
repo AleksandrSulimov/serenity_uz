@@ -26,6 +26,7 @@ public class Create_PG extends TestCasesBase{
 		
 		selectPushedProcurementManagement();
 		goToApplicationForms();
+		checkApplicationFormsIsActive();
 		expandProcurementManagementOnApplicationForms();
 		expandPlanningOnApplicationForms();
 		expandPlanGraphicsFirstLevelOnApplicationForms();

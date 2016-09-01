@@ -28,4 +28,8 @@ public class MainPageTabSteps extends ScenarioSteps {
     public void clickOnTabApplicationForms(){
     	applet.clickOnTabApplicationForms();    	
     }
+    @Step("Проверяем выбрана ли вкладка 'Формуляры' на основное странице")
+    public void checkTabApplicationFormsIsActive(){
+    	applet.checkTabApplicationFormsIsActive();
+    }
 }

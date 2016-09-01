@@ -13,7 +13,7 @@ import uz.utils.JSON;
 public class Approval_PG extends TestCasesBase{
 
 
-	@Title("Согласование/Утверждение ПГ")
+	@Title("Согласование / Утверждение ПГ")
     @Test
 	public void approval_PG(){
 		
@@ -26,6 +26,7 @@ public class Approval_PG extends TestCasesBase{
 
 		selectPushedProcurementManagement();	
 		goToApplicationForms();
+		checkApplicationFormsIsActive();
 		expandProcurementManagementOnApplicationForms();
 		expandPlanningOnApplicationForms();
 		expandPlanGraphicsFirstLevelOnApplicationForms();

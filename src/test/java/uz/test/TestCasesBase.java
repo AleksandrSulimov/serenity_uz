@@ -297,6 +297,14 @@ public class TestCasesBase {
 	    	mainPageTabSteps.waitingForAppletVisible();
 			mainPageTabSteps.clickOnTabApplicationForms();
 	    }
+	    
+	    /**
+	     * Проверить вкладка 'Формуляры' выбрана
+	     */
+	    public void checkApplicationFormsIsActive(){
+	    	mainPageTabSteps.checkTabApplicationFormsIsActive();
+	    }
+	    
 	    /**
 	     * Раскрыть Управление закупками на Формулярах
 	     */

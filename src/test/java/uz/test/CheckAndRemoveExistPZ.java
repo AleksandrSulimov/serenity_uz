@@ -23,6 +23,7 @@ public class CheckAndRemoveExistPZ extends TestCasesBase{
 		selectPushedProcurementManagement();
 		selectPushedProcurementManagement();
 		goToApplicationForms();
+		checkApplicationFormsIsActive();
 		expandProcurementManagementOnApplicationForms();
 		expandPlanningOnApplicationForms();
 		expandPlanProcurementOnApplicationForms();

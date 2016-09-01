@@ -28,6 +28,7 @@ public class Create_PZ extends TestCasesBase{
 		
 		selectPushedProcurementManagement();
 		goToApplicationForms();
+		checkApplicationFormsIsActive();
 		expandProcurementManagementOnApplicationForms();
 		expandPlanningOnApplicationForms();
 		expandPlanProcurementOnApplicationForms();

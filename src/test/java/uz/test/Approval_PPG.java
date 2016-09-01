@@ -12,7 +12,7 @@ import uz.utils.JSON;
 @RunWith(SerenityRunner.class)
 public class Approval_PPG extends TestCasesBase{
 
-	@Title("Согласование/Утверждение ППГ")
+	@Title("Согласование / Утверждение ППГ")
     @Test
 	public void approval_PPG(){
 		
@@ -25,8 +25,8 @@ public class Approval_PPG extends TestCasesBase{
 		String status = "";
 
 		selectPushedProcurementManagement();
-			
 		goToApplicationForms();
+		checkApplicationFormsIsActive();
 		expandProcurementManagementOnApplicationForms();
 		expandPlanningOnApplicationForms();
 		expandPlanGraphicsFirstLevelOnApplicationForms();

@@ -12,7 +12,7 @@ import uz.utils.JSON;
 @RunWith(SerenityRunner.class)
 public class Approval_PPZ extends TestCasesBase{
 
-	@Title("Согласование/Утверждение ППЗ")
+	@Title("Согласование / Утверждение ППЗ")
     @Test
 	public void approval_PPZ(){
 		
@@ -25,6 +25,7 @@ public class Approval_PPZ extends TestCasesBase{
 
 		selectPushedProcurementManagement();
 		goToApplicationForms();
+		checkApplicationFormsIsActive();
 		expandProcurementManagementOnApplicationForms();
 		expandPlanningOnApplicationForms();
 		expandPlanProcurementOnApplicationForms();
