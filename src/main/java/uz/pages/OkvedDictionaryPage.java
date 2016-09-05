@@ -4,6 +4,7 @@ import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 
@@ -79,9 +80,10 @@ public class OkvedDictionaryPage extends BasePage {
 	  /**
 	   * Нажать кнопку Обновить
 	   */
-	  public void clickOnButtonRefresh(){
+	  public void clickOnEnter(){
 		  waitForLoadJS();
-		  refreshButton.waitUntilClickable().click();
+		  codeInput.waitUntilClickable().sendKeys(Keys.ENTER);
+//		  refreshButton.waitUntilClickable().click();
 	  }
 	  /**
 	   * Нажать кнопку OK

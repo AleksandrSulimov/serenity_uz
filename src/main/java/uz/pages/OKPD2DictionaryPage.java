@@ -47,8 +47,8 @@ public class OKPD2DictionaryPage extends BasePage {
 	  private WebElementFacade codeInput;
 
 	  //Кнопка Обновить
-	  @FindBy(xpath=".//button[@title='Обновить']")
-	  private WebElementFacade refreshButton;
+//	  @FindBy(xpath=".//button[@title='Обновить']")
+//	  private WebElementFacade refreshButton;
 
 	  //Кнопка OK
 	  @FindBy(xpath=".//button[text()='OK']")
@@ -186,6 +186,7 @@ public class OKPD2DictionaryPage extends BasePage {
 		  waitForLoadJS();
 		  codeInput.waitUntilClickable().clear();
 		  codeInput.waitUntilClickable().sendKeys(text);
+		  codeInput.waitUntilClickable().sendKeys(Keys.ENTER);
 	  }
 	  /**
 	   * Забрать значение из поля Код
@@ -198,10 +199,10 @@ public class OKPD2DictionaryPage extends BasePage {
 	  /**
 	   * Нажать кнопку Обновить
 	   */
-	  public void clickOnButtonRefresh(){
-		  waitForLoadJS();
-		  refreshButton.waitUntilClickable().click();
-	  }
+//	  public void clickOnButtonRefresh(){
+//		  waitForLoadJS();
+//		  refreshButton.waitUntilClickable().click();
+//	  }
 	  /**
 	   * Нажать кнопку OK
 	   */

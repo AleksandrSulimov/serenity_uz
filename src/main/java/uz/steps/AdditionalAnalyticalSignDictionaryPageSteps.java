@@ -37,9 +37,9 @@ public class AdditionalAnalyticalSignDictionaryPageSteps extends ScenarioSteps {
 	public String getValueAdditionalAnalyticalSign(){
 		return applet.getValueAdditionalAnalyticalSign();    	
 	}
-	@Step("Нажать кнопку \"Обновить\" в справочнике \"Дополнительный аналитический признак\"")
-	public void clickOnButtonRefresh(){
-		applet.clickOnButtonRefresh();    	
+	@Step("Нажать кнопку Enter в справочнике \"Дополнительный аналитический признак\"")
+	public void clickOnEnter(){
+		applet.clickOnEnter();    	
 	}
 	@Step("Нажать кнопку \"OK\" в справочнике \"Дополнительный аналитический признак\"")
 	public void clickOnButtonOK(){

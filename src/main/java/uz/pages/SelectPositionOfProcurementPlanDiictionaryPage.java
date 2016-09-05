@@ -4,6 +4,7 @@ import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 
@@ -168,11 +169,12 @@ public class SelectPositionOfProcurementPlanDiictionaryPage extends BasePage {
 		  okButton.waitUntilClickable().click();
 	  }
 	  /**
-	   * Нажать кнопку Обновить
+	   * Нажать кнопку Enter
 	   */
-	  public void clickOnButtonRefresh(){
+	  public void clickOnEnter(){
 		  waitForLoadJS();
-		  refreshButton.waitUntilClickable().click();
+		  procurementPlanPositionNumberInput.waitUntilClickable().sendKeys(Keys.ENTER);
+//		  refreshButton.waitUntilClickable().click();
 	  }
 	  /**
 	   * Клик в поле Номер позиции плана закупок с переданным значением

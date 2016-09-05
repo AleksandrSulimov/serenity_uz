@@ -8,6 +8,7 @@ import net.thucydides.core.pages.Pages;
 
 import org.junit.After;
 import org.junit.Before;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
@@ -382,7 +383,7 @@ public class TestCasesBase {
 			}
 			frequencyOfPurchasesDictionaryPageSteps.clickOnFieldFrequency();
 			frequencyOfPurchasesDictionaryPageSteps.setTextFrequency(value);
-			frequencyOfPurchasesDictionaryPageSteps.clickOnButtonRefresh();
+			frequencyOfPurchasesDictionaryPageSteps.clickOnEnter();
 			if(!frequencyOfPurchasesDictionaryPageSteps.getValueFrequency().equals(value)){
 				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
 			}
@@ -400,7 +401,7 @@ public class TestCasesBase {
 			}
 			chainsOfKBKDiictionaryPageSteps.clickOnFieldChainsOfKBK();
 			chainsOfKBKDiictionaryPageSteps.setTextChainsOfKBK(value);
-			chainsOfKBKDiictionaryPageSteps.clickOnButtonRefresh();
+			chainsOfKBKDiictionaryPageSteps.clickOnEnter();
 			if(!chainsOfKBKDiictionaryPageSteps.getValueChainsOfKBK().equals(value)){
 				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение\""+value+"\" не найдено в справочнике");
 			}
@@ -418,7 +419,7 @@ public class TestCasesBase {
 			}
 			additionalAnalyticalSignDictionaryPageSteps.clickOnFieldAdditionalAnalyticalSign();
 			additionalAnalyticalSignDictionaryPageSteps.setTextAdditionalAnalyticalSign(value);
-			additionalAnalyticalSignDictionaryPageSteps.clickOnButtonRefresh();
+			additionalAnalyticalSignDictionaryPageSteps.clickOnEnter();
 			try{
 				String currentValue = additionalAnalyticalSignDictionaryPageSteps.getValueAdditionalAnalyticalSign();
 				if(!currentValue.equals(value)){
@@ -441,7 +442,7 @@ public class TestCasesBase {
 			}
 			methodForDeterminingSupplierDictionaryPageSteps.clickOnFieldName();
 			methodForDeterminingSupplierDictionaryPageSteps.setTextName(value);
-			methodForDeterminingSupplierDictionaryPageSteps.clickOnButtonRefresh();
+			methodForDeterminingSupplierDictionaryPageSteps.clickOnEnter();
 			if(!methodForDeterminingSupplierDictionaryPageSteps.getValueName().equals(value)){
 				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
 			}
@@ -459,7 +460,7 @@ public class TestCasesBase {
 			}
 			okvedDictionaryPageSteps.clickOnFieldCode();
 			okvedDictionaryPageSteps.setTextCode(value);
-			okvedDictionaryPageSteps.clickOnButtonRefresh();
+			okvedDictionaryPageSteps.clickOnEnter();
 			if(!okvedDictionaryPageSteps.getValueCode().equals(value)){
 				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
 			}
@@ -477,7 +478,7 @@ public class TestCasesBase {
 			}
 			nameOfMeasureDictionaryPageSteps.clickOnFieldName();
 			nameOfMeasureDictionaryPageSteps.setTextName(value);
-			nameOfMeasureDictionaryPageSteps.clickOnButtonRefresh();
+			nameOfMeasureDictionaryPageSteps.clickOnEnter();
 			if(!nameOfMeasureDictionaryPageSteps.getValueName().equals(value)){
 				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
 			}
@@ -495,7 +496,7 @@ public class TestCasesBase {
 			}
 			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnFieldObjectOfTenderName();
 			selectPositionOfProcurementPlanDiictionaryPageSteps.setTextObjectOfTenderName(value);
-			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnButtonRefresh();
+			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnEnter();
 			if(!selectPositionOfProcurementPlanDiictionaryPageSteps.getValueObjectOfTenderName().equals(value)){
 				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
 			}
@@ -512,7 +513,7 @@ public class TestCasesBase {
 			}
 			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnFieldOKPD2();
 			selectPositionOfProcurementPlanDiictionaryPageSteps.setTextOKPD2(value);
-			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnButtonRefresh();
+			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnEnter();
 			if(!selectPositionOfProcurementPlanDiictionaryPageSteps.getValueOKPD2().equals(value)){
 				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
 			}
@@ -529,7 +530,7 @@ public class TestCasesBase {
 			}
 			//selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnFieldProcurementPlanPositionNumber();
 			selectPositionOfProcurementPlanDiictionaryPageSteps.setTextProcurementPlanPositionNumber(value);
-			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnButtonRefresh();
+			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnEnter();
 			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnFieldProcurementPlanPositionNumber();
 			if(!selectPositionOfProcurementPlanDiictionaryPageSteps.getValueProcurementPlanPositionNumber().equals(value)){
 				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
@@ -547,7 +548,7 @@ public class TestCasesBase {
 			}
 			choosePpgForIncludeInPGDiictionaryPageSteps.clickOnFieldPpgNumber();
 			choosePpgForIncludeInPGDiictionaryPageSteps.setTextPpgNumber(value);
-			choosePpgForIncludeInPGDiictionaryPageSteps.clickOnButtonRefresh();
+			choosePpgForIncludeInPGDiictionaryPageSteps.clickOnEnter();
 			if(!choosePpgForIncludeInPGDiictionaryPageSteps.getValuePpgNumber().equals(value)){
 				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
 			}
@@ -564,7 +565,7 @@ public class TestCasesBase {
 			}
 			choosePpzForIncludeInPZDiictionaryPageSteps.clickOnFieldProcurementPlanPositionNumber();
 			choosePpzForIncludeInPZDiictionaryPageSteps.setTextProcurementPlanPositionNumber(value);
-			choosePpzForIncludeInPZDiictionaryPageSteps.clickOnButtonRefresh();
+			choosePpzForIncludeInPZDiictionaryPageSteps.clickOnEnter();
 			if(!choosePpzForIncludeInPZDiictionaryPageSteps.getValueProcurementPlanPositionNumber().equals(value)){
 				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
 			}

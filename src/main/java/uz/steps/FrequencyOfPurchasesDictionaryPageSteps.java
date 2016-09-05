@@ -37,9 +37,9 @@ public class FrequencyOfPurchasesDictionaryPageSteps extends ScenarioSteps {
 	public String getValueFrequency(){
 		return applet.getValueFrequency();    	
 	}
-	@Step("Нажать кнопку \"Обновить\" в справочнике \"Периодичность осуществления закупки\"")
-	public void clickOnButtonRefresh(){
-		applet.clickOnButtonRefresh();    	
+	@Step("Нажать кнопку Enter в справочнике \"Периодичность осуществления закупки\"")
+	public void clickOnEnter(){
+		applet.clickOnEnter();    	
 	}
 	@Step("Нажать кнопку \"OK\" в справочнике \"Периодичность осуществления закупки\"")
 	public void clickOnButtonOK(){

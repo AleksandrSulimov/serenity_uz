@@ -37,9 +37,9 @@ public class ChoosePpzForIncludeInPZDiictionaryPageSteps extends ScenarioSteps {
 	public String getValueProcurementPlanPositionNumber(){
 		return applet.getValueProcurementPlanPositionNumber();    	
 	}
-	@Step("Нажать кнопку \"Обновить\" в справочнике \"Выбор ППЗ для включения в ПЗ\"")
-	public void clickOnButtonRefresh(){
-		applet.clickOnButtonRefresh();    	
+	@Step("Нажать кнопку Enter в справочнике \"Выбор ППЗ для включения в ПЗ\"")
+	public void clickOnEnter(){
+		applet.clickOnEnter();    	
 	}
 	@Step("Нажать кнопку \"OK\" в справочнике \"Выбор ППЗ для включения в ПЗ\"")
 	public void clickOnButtonOK(){

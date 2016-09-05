@@ -37,9 +37,9 @@ public class NameOfMeasureDictionaryPageSteps extends ScenarioSteps {
 	public String getValueName(){
 		return applet.getValueName();    	
 	}
-	@Step("Нажать кнопку \"Обновить\" в справочнике \"Наименование единицы измерения\"")
-	public void clickOnButtonRefresh(){
-		applet.clickOnButtonRefresh();    	
+	@Step("Нажать кнопку Enter в справочнике \"Наименование единицы измерения\"")
+	public void clickOnEnter(){
+		applet.clickOnEnter();    	
 	}
 	@Step("Нажать кнопку \"OK\" в справочнике \"Наименование единицы измерения\"")
 	public void clickOnButtonOK(){

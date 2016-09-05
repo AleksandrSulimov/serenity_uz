@@ -62,9 +62,9 @@ public class SelectPositionOfProcurementPlanDiictionaryPageSteps extends Scenari
 	public String getValueProcurementPlanPositionNumber(){
 		return applet.getValueProcurementPlanPositionNumber();    	
 	}
-	@Step("Нажать кнопку \"Обновить\" в справочнике \"Выбрать позицию плана закупок\"")
-	public void clickOnButtonRefresh(){
-		applet.clickOnButtonRefresh();    	
+	@Step("Нажать кнопку Enter в справочнике \"Выбрать позицию плана закупок\"")
+	public void clickOnEnter(){
+		applet.clickOnEnter();    	
 	}
 	@Step("Нажать кнопку \"OK\" в справочнике \"Выбрать позицию плана закупок\"")
 	public void clickOnButtonOK(){

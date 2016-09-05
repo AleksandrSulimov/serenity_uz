@@ -37,9 +37,9 @@ public class OkvedDictionaryPageSteps extends ScenarioSteps {
 	public String getValueCode(){
 		return applet.getValueCode();    	
 	}
-	@Step("Нажать кнопку \"Обновить\" в справочнике \"ОКВЭД\"")
-	public void clickOnButtonRefresh(){
-		applet.clickOnButtonRefresh();    	
+	@Step("Нажать кнопку Enter в справочнике \"ОКВЭД\"")
+	public void clickOnEnter(){
+		applet.clickOnEnter();    	
 	}
 	@Step("Нажать кнопку \"OK\" в справочнике \"ОКВЭД\"")
 	public void clickOnButtonOK(){

@@ -37,9 +37,9 @@ public class MethodForDeterminingSupplierDictionaryPageSteps extends ScenarioSte
 	public String getValueName(){
 		return applet.getValueName();    	
 	}
-	@Step("Нажать кнопку \"Обновить\" в справочнике \"Способ определения поставщика\"")
-	public void clickOnButtonRefresh(){
-		applet.clickOnButtonRefresh();    	
+	@Step("Нажать кнопку Enter в справочнике \"Способ определения поставщика\"")
+	public void clickOnEnter(){
+		applet.clickOnEnter();    	
 	}
 	@Step("Нажать кнопку \"OK\" в справочнике \"Способ определения поставщика\"")
 	public void clickOnButtonOK(){

@@ -68,7 +68,7 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 		}
 		okpd2DictionaryPageSteps.clickOnFieldCode();
 		okpd2DictionaryPageSteps.setTextCode("26.20.11.120");
-		okpd2DictionaryPageSteps.clickOnButtonRefresh();
+//		okpd2DictionaryPageSteps.clickOnButtonRefresh();
 		if(!okpd2DictionaryPageSteps.getValueCode().equals("26.20.11.120")){
 			assertSteps.assertFalse("Поиск значения \"26.20.11.120\" в справочнике", "Значение \"26.20.11.120\" не найдено в справочнике");
 		}

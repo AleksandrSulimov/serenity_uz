@@ -83,10 +83,10 @@ public class OKPD2DictionaryPageSteps extends ScenarioSteps {
 	public String getValueCode(){
 		return applet.getValueCode();    	
 	}
-	@Step("Нажать кнопку \"Обновить\" в справочнике \"Справочник ОКПД 2\"")
-	public void clickOnButtonRefresh(){
-		applet.clickOnButtonRefresh();    	
-	}
+//	@Step("Нажать кнопку \"Обновить\" в справочнике \"Справочник ОКПД 2\"")
+//	public void clickOnButtonRefresh(){
+//		applet.clickOnButtonRefresh();    	
+//	}
 	@Step("Нажать кнопку \"OK\" в справочнике \"Справочник ОКПД 2\"")
 	public void clickOnButtonOK(){
 		applet.clickOnButtonOK();    	

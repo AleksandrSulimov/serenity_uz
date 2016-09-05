@@ -37,9 +37,9 @@ public class ChainsOfKBKDiictionaryPageSteps extends ScenarioSteps {
 	public String getValueChainsOfKBK(){
 		return applet.getValueChainsOfKBK();    	
 	}
-	@Step("Нажать кнопку \"Обновить\" в справочнике \"Цепочки КБК\"")
-	public void clickOnButtonRefresh(){
-		applet.clickOnButtonRefresh();    	
+	@Step("Нажать кнопку Enter в справочнике \"Цепочки КБК\"")
+	public void clickOnEnter(){
+		applet.clickOnEnter();    	
 	}
 	@Step("Нажать кнопку \"OK\" в справочнике \"Цепочки КБК\"")
 	public void clickOnButtonOK(){

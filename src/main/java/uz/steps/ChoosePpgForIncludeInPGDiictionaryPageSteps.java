@@ -25,9 +25,9 @@ public class ChoosePpgForIncludeInPGDiictionaryPageSteps extends ScenarioSteps {
 		applet.waitingForAppletVisible();
 	}
 	 
-	@Step("Нажать кнопку \"Обновить\" в справочнике \"Выбор ППГ для включения в ПГ\"")
-	public void clickOnButtonRefresh(){
-		applet.clickOnButtonRefresh();    	
+	@Step("Нажать кнопку Enter в справочнике \"Выбор ППГ для включения в ПГ\"")
+	public void clickOnEnter(){
+		applet.clickOnEnter();    	
 	}
 	@Step("Нажать кнопку \"OK\" в справочнике \"Выбор ППГ для включения в ПГ\"")
 	public void clickOnButtonOK(){

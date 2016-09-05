@@ -3,6 +3,7 @@ package uz.pages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -87,11 +88,13 @@ public class AdditionalAnalyticalSignDictionaryPage extends BasePage {
 		  return additionalAnalyticalSignField.waitUntilClickable().getText();
 	  }
 	  /**
-	   * Нажать кнопку Обновить
+	   * Нажать кнопку Enter
 	   */
-	  public void clickOnButtonRefresh(){
-		  waitingForFieldVisible(refreshButton);
-		  refreshButton.waitUntilClickable().click();
+	  public void clickOnEnter(){
+		  waitForLoadJS();
+		  additionalAnalyticalSignFilterInput.waitUntilClickable().sendKeys(Keys.ENTER);
+//		  waitingForFieldVisible(refreshButton);
+//		  refreshButton.waitUntilClickable().click();
 	  }
 	  /**
 	   * Нажать кнопку OK
