@@ -563,9 +563,9 @@ public class TestCasesBase {
 			if(choosePpzForIncludeInPZDiictionaryPageSteps.checkFilterOn()){
 				choosePpzForIncludeInPZDiictionaryPageSteps.clickFilter();
 			}
-			choosePpzForIncludeInPZDiictionaryPageSteps.clickOnFieldProcurementPlanPositionNumber();
 			choosePpzForIncludeInPZDiictionaryPageSteps.setTextProcurementPlanPositionNumber(value);
 			choosePpzForIncludeInPZDiictionaryPageSteps.clickOnEnter();
+			choosePpzForIncludeInPZDiictionaryPageSteps.clickOnFieldProcurementPlanPositionNumber();
 			if(!choosePpzForIncludeInPZDiictionaryPageSteps.getValueProcurementPlanPositionNumber().equals(value)){
 				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
 			}
