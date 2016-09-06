@@ -204,6 +204,15 @@ public class OKPD2DictionaryPage extends BasePage {
 //		  refreshButton.waitUntilClickable().click();
 //	  }
 	  /**
+	   * Выбрать первую строку ОКПД
+	   */
+	  public void clickOnFirstLineOKPD(String value){
+ 		  waitForLoadJS();
+		  String xPathLocator = ".//tr[td/div[text()='" + value + "']]";
+		  waitFor(ExpectedConditions.elementToBeClickable(By.xpath(xPathLocator)));
+		  getDriver().findElement(By.xpath(xPathLocator)).click();
+	  }
+	  /**
 	   * Нажать кнопку OK
 	   */
 	  public void clickOnButtonOK(){

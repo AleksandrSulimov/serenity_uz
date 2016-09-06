@@ -72,7 +72,7 @@ public class Create_PPZ_200_Regular extends TestCasesBase{
 		if(!okpd2DictionaryPageSteps.getValueCode().equals("26.20.11.120")){
 			assertSteps.assertFalse("Поиск значения \"26.20.11.120\" в справочнике", "Значение \"26.20.11.120\" не найдено в справочнике");
 		}
-		okpd2DictionaryPageSteps.clickOnFieldCode();
+		okpd2DictionaryPageSteps.clickOnFirstLineOKPD("26.20.11.120");
 		okpd2DictionaryPageSteps.clickOnButtonOK();
 		
 		assertSteps.assertField("ОКПД *", "26.20.11.120", positionsPurchasePlanOfProductJobService200BasicInformationSteps.getValueOKPD());

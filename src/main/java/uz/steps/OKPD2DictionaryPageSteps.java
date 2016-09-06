@@ -111,4 +111,8 @@ public class OKPD2DictionaryPageSteps extends ScenarioSteps {
 	public void clickFilter(){
 		applet.clickFilter();    	
 	}
+	@Step("Выбрать первую строку из справочника ОКПД 2")
+	public void clickOnFirstLineOKPD(String value) {
+		applet.clickOnFirstLineOKPD(value);
+	}
 }
