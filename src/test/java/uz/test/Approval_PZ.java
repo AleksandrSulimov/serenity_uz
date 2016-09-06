@@ -48,9 +48,9 @@ public class Approval_PZ extends TestCasesBase{
 		planPurchaseSteps.setPlanPurshedInFilter(purshedNumber);
 		planPurchaseSteps.selectFirstRow();
 		planPurchaseSteps.clickOnButtonSendToMatching();
-		planPurchaseSteps.clickOnButtonRefreshListOfDocument();
 		String status = "";
 		for(int i=0; i<6; i++){
+			planPurchaseSteps.clickOnButtonRefreshListOfDocument();
 			status = planPurchaseSteps.getTextStatus();
 			if(status.equals("На согласовании")){
 				break;
