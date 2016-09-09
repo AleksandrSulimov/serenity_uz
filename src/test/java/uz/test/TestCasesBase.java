@@ -536,6 +536,9 @@ public class TestCasesBase {
 				assertSteps.assertFalse("Поиск значения \""+value+"\" в справочнике", "Значение \""+value+"\" не найдено в справочнике");
 			}
 			selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnButtonOK();
+			if(selectPositionOfProcurementPlanDiictionaryPageSteps.windowNotEnoughFinObIsVisible()) {
+				selectPositionOfProcurementPlanDiictionaryPageSteps.clickOnButtonCreateInWindowNotEnough();
+			}
 	    }
 	    /**
 	     * Выбрать значение в справочнике 'Выбор ППГ для включения в ПГ'

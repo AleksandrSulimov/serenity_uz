@@ -67,6 +67,13 @@ public class SelectPositionOfProcurementPlanDiictionaryPage extends BasePage {
 	  //Кнопка OK
 	  @FindBy(xpath=".//button[text()='OK']")
 	  private WebElementFacade okButton;
+	  
+	  //Окно "Недостаточно финансового обеспечения"
+	  private static String windowNotEnoughFinOb = ".//div[text()='Недостаточно финансового обеспечения']";
+	  
+	  //Кнопка "Создать" в окне "Недостаточно финансового обеспечения"
+	  @FindBy(xpath=".//div[text()='Недостаточно финансового обеспечения']/following-sibling::div//button[text()='Создать']")
+	  private WebElementFacade buttonCreateInWindowNotEnough;
 
 	  /**
 	   * Проверить нажата ли кнопка Видимость фильтров
@@ -184,4 +191,17 @@ public class SelectPositionOfProcurementPlanDiictionaryPage extends BasePage {
 		  String xPathLocator = String.format(procurementPlanPositionNumberXpath, text); 
 		  getDriver().findElement(By.xpath(xPathLocator)).click();
 	  }
+	public boolean windowNotEnoughFinObIsVisible() {
+		waitForLoadJS();
+		if(getDriver().findElement(By.xpath(windowNotEnoughFinOb))!= null){
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	public void clickOnButtonCreateInWindowNotEnough() {
+		waitForLoadJS();
+		buttonCreateInWindowNotEnough.waitUntilClickable().click();
+	}
 }

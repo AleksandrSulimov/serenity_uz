@@ -82,4 +82,12 @@ public class SelectPositionOfProcurementPlanDiictionaryPageSteps extends Scenari
 	public void clickOnFieldProcurementPlanPositionNumber(String text){
 		applet.clickOnFieldProcurementPlanPositionNumber(text);    	
 	}
+	@Step("Проверка наличия окна 'Недостаточно финансового обеспечения'")
+	public boolean windowNotEnoughFinObIsVisible() {
+		return applet.windowNotEnoughFinObIsVisible();
+	}
+	@Step("Нажать на кнопку 'Создать' в окне 'Недостаточно финансового обеспечения'")
+	public void clickOnButtonCreateInWindowNotEnough() {
+		applet.clickOnButtonCreateInWindowNotEnough();		
+	}
 }
