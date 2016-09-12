@@ -34,10 +34,11 @@ public class SelectYearOfPlanGraficsPageSteps extends ScenarioSteps {
 		return applet.getValueCustomer();    	
 	}
  
-	@Step("Клик в поле \"Год плана-графика*\" в справочнике \"Выбор года плана-графика закупок\"")
-	public void clickOnFieldYearPlanGrafics(){
-		applet.clickOnFieldYearPlanGrafics();    	
-	}
+//	@Step("Клик в поле \"Год плана-графика*\" в справочнике \"Выбор года плана-графика закупок\"")
+//	public void clickOnFieldYearPlanGrafics(){
+//		applet.clickOnFieldYearPlanGrafics();    	
+//	}
+	
 	@Step("Забрать значение из поля \"Год плана-графика*\" в справочнике \"Выбор года плана-графика закупок\"")
 	public String getValueYearPlanGrafics(){
 		return applet.getValueYearPlanGrafics();    	

@@ -21,10 +21,10 @@ public class SelectYearOfPlanGraficsPage extends BasePage {
 	
 	  }
 	  //
-	  @FindBy(xpath=".//input[contains(@name, 'bi_tenderyear')]")
+	  @FindBy(xpath=".//button[@title='Выбор планового периода']")
 	  private WebElementFacade applet;
 	  
-	  @FindBy(xpath=".//input[contains(@name, 'bi_tenderyear')]")
+	  @FindBy(xpath=".//button[@title='Выбор планового периода']")
 	  private WebElementFacade field;
 	  
 	  //Поле Заказчик
@@ -34,8 +34,8 @@ public class SelectYearOfPlanGraficsPage extends BasePage {
 	  private WebElementFacade customerInput;
 
 	  //Поле Год плана-графика*
-	  @FindBy(xpath=".//td[div/span='Год плана-графика']/following-sibling::td[1]/div")
-	  private WebElementFacade yearPlanGraficsField;
+//	  @FindBy(xpath=".//td[div/span='Год плана-графика']/following-sibling::td[1]/div")
+//	  private WebElementFacade yearPlanGraficsField;
 	  @FindBy(xpath=".//td[div/span='Год плана-графика']/following-sibling::td[1]/div/span/input")
 	  private WebElementFacade yearPlanGraficsInput;
 
@@ -59,20 +59,21 @@ public class SelectYearOfPlanGraficsPage extends BasePage {
 		  return customerField.waitUntilClickable().getAttribute("value");
 	  }
 	  
-	  /**
-	   * Клик в поле Год плана-графика*
-	   */
-	  public void clickOnFieldYearPlanGrafics(){
-		  waitForLoadJS();
-		  yearPlanGraficsField.waitUntilClickable().click();
-	  }
+//	  /**
+//	   * Клик в поле Год плана-графика*
+//	   */
+//	  public void clickOnFieldYearPlanGrafics(){
+//		  waitForLoadJS();
+//		  yearPlanGraficsField.waitUntilClickable().click();
+//	  }
+	  
 	  /**
 	   * Забрать значение из поля Год плана-графика*
 	   * @return text
 	   */
 	  public String getValueYearPlanGrafics(){
 		  waitForLoadJS();
-		  return yearPlanGraficsInput.waitUntilClickable().getAttribute("value");
+		  return yearPlanGraficsInput.getAttribute("value");
 	  }
 	  
 	  /**
