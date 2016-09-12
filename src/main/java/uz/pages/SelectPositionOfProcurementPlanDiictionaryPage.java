@@ -4,6 +4,8 @@ import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
@@ -192,7 +194,7 @@ public class SelectPositionOfProcurementPlanDiictionaryPage extends BasePage {
 		  getDriver().findElement(By.xpath(xPathLocator)).click();
 	  }
 	public boolean windowNotEnoughFinObIsVisible() {
-		waitForLoadJS();
+		getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		if(getDriver().findElement(By.xpath(windowNotEnoughFinOb))!= null){
 			return true;
 		}
